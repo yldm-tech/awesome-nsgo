@@ -5,11 +5,11 @@
 	"mark": "Fp",
 	"official": true,
 	"surface": "go",
-	"import": "github.com/oneo-me/nsgo/ui/filepicker",
+	"import": "github.com/nsgo-dev/nsgo/ui/filepicker",
 	"tags": [
 		"files"
 	],
-	"docs": "https://pkg.go.dev/github.com/oneo-me/nsgo/ui/filepicker",
+	"docs": "https://pkg.go.dev/github.com/nsgo-dev/nsgo/ui/filepicker",
 	"summary": {
 		"en": "A modal file and folder picker, or a browser for copying paths, over a file system the app lists, possibly on another machine, with places, icon and list views and breadcrumbs.",
 		"zh-CN": "模态的文件与文件夹选择器，也可用作复制路径的浏览器，浏览应用提供的文件系统（可以在另一台机器上），带位置侧栏、图标和列表视图以及面包屑路径。",

@@ -7,8 +7,8 @@
 	"platforms": ["mac", "ios", "web"],
 	"category": "DeveloperApplication",
 	"group": "dev",
-	"url": "https://github.com/oneo-me/nsgo/tree/main/examples/orbit",
-	"repo": "oneo-me/nsgo",
+	"url": "https://github.com/nsgo-dev/nsgo/tree/main/examples/orbit",
+	"repo": "nsgo-dev/nsgo",
 	"summary": {
 		"en": "Six live native views on a 3D ring, with WGSL shaders, springs and a floor you drag.",
 		"zh-CN": "六个可交互的原生视图立在 3D 圆环上，配合 WGSL 着色器、弹簧动画和可拖动的地面。",

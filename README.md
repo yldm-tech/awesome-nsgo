@@ -6,9 +6,9 @@
 [![X](https://img.shields.io/badge/X-%40suzukaze__haduki-000000?logo=x&logoColor=white)](https://x.com/suzukaze_haduki)
 [![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/houko)
 
-The apps, packages, components and guides around [NSGo](https://github.com/oneo-me/nsgo), collected on one site: **[awesomensgo.dev](https://awesomensgo.dev)**. NSGo is a cross-platform native UI engine with a Go backend, made by [ONEO](https://github.com/oneo-me): app logic, the reactive graph and layout run in Go, and you write an app once in Go or TSX. It draws with each platform's own views on iOS and its App Clips, tvOS, watchOS, Android, macOS, Windows, Linux and the web, and Go apps also run in WeChat, QQ, Alipay and Douyin mini programs. NSGo is early, with no release or stable API yet.
+The apps, packages, components and guides around [NSGo](https://github.com/nsgo-dev/nsgo), collected on one site: **[awesomensgo.dev](https://awesomensgo.dev)**. NSGo is a cross-platform native UI engine with a Go backend, made by [ONEO](https://github.com/oneo-me): app logic, the reactive graph and layout run in Go, and you write an app once in Go or TSX. It draws with each platform's own views on iOS and its App Clips, tvOS, watchOS, Android, macOS, Windows, Linux and the web, and Go apps also run in WeChat, QQ, Alipay and Douyin mini programs. NSGo is early, with no release or stable API yet.
 
-Awesome NSGo is an unofficial community catalog kept by yldm-tech, not NSGo's official site, which is [oneo-me.github.io/nsgo](https://oneo-me.github.io/nsgo/).
+Awesome NSGo is an unofficial community catalog kept by yldm-tech, not NSGo's official site, which is [nsgo.dev](https://nsgo.dev/).
 
 English · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
 
@@ -17,7 +17,7 @@ English · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) ·
 ## What is on the site
 
 - **Showcase**: apps built with NSGo, sorted by name, newest or most liked, and filtered by category, language (Go or TSX) and platform (macOS, Windows, Linux, iOS, Android, the web or mini programs). Each has its own page with the full description, a screenshot where the project has one, whether it is written in Go or TSX, the platforms it runs on, its category, when it was added and its other apps by the same author.
-- **Plugins**: NSGo's official packages, all in the module `github.com/oneo-me/nsgo` (desktop windows and tray, mobile tab bars, i18n, Lucide icons, charts, data tables, editors, a terminal view, widgets, testing and more), and community packages, each marked by the apps it serves (Go, TSX or both), plus the `nsgo` command-line tool.
+- **Plugins**: NSGo's official packages, all in the module `github.com/nsgo-dev/nsgo` (desktop windows and tray, mobile tab bars, i18n, Lucide icons, charts, data tables, editors, a terminal view, widgets, testing and more), and community packages, each marked by the apps it serves (Go, TSX or both), plus the `nsgo` command-line tool.
 - **UI components**: component libraries, themes and icons made for NSGo apps.
 - **State**: NSGo's own signals, memos and context, beside the state management libraries made for NSGo apps.
 - **Templates**: projects to start an NSGo app from, beginning with the `go`, `tsx` and `mixed` templates of `nsgo init`.
@@ -35,7 +35,7 @@ A pnpm monorepo, served by [TanStack Start](https://tanstack.com/start) on [Clou
 |---|---|
 | `apps/web` | The site: React 19, TanStack Start (server rendering) and Vite with `@cloudflare/vite-plugin`. `wrangler.jsonc` deploys it to `awesomensgo.dev`. |
 | `packages/catalog` | The data: `data/*.json` (apps, UI components, state solutions, templates, AI tools, plugins, articles, guides) and their JSON Schemas, the UI copy in five languages, search and the submit form's entries. Its tests validate every entry. |
-| `packages/enrich` | Completes a pull request the submission bot opens: the app's icon from its repository, its screenshot from the image uploaded or the link given in the form, or else from the repository, and its copy in all five languages (written with Claude). Run by `.github/workflows/enrich-submission.yml`. Once a week `.github/workflows/verify.yml` also checks every listed project's repository and opens a pull request per entry for what the repository says has changed: a deleted, private or disabled repository removes the entry, a renamed or transferred one updates it, a missing homepage is added and a stand-in image is replaced once the project has its own; an archived repository, or one no longer built with NSGo (its `go.mod` no longer requires `github.com/oneo-me/nsgo`), is only listed in the run's summary. Once a week `.github/workflows/prune.yml` proposes, in one pull request a maintainer merges, taking off the entries below the site's bar: a score under 20 after 30 days on the site, no commit for more than 180 days, an archived repository, or one no longer built with NSGo; an entry a maintainer keeps is not proposed again. |
+| `packages/enrich` | Completes a pull request the submission bot opens: the app's icon from its repository, its screenshot from the image uploaded or the link given in the form, or else from the repository, and its copy in all five languages (written with Claude). Run by `.github/workflows/enrich-submission.yml`. Once a week `.github/workflows/verify.yml` also checks every listed project's repository and opens a pull request per entry for what the repository says has changed: a deleted, private or disabled repository removes the entry, a renamed or transferred one updates it, a missing homepage is added and a stand-in image is replaced once the project has its own; an archived repository, or one no longer built with NSGo (its `go.mod` no longer requires `github.com/nsgo-dev/nsgo`), is only listed in the run's summary. Once a week `.github/workflows/prune.yml` proposes, in one pull request a maintainer merges, taking off the entries below the site's bar: a score under 20 after 30 days on the site, no commit for more than 180 days, an archived repository, or one no longer built with NSGo; an entry a maintainer keeps is not proposed again. |
 
 App icons come from [yldm-tech/ai-logo](https://github.com/yldm-tech/ai-logo), served by its CDN; the few apps it does not list use their official icon from `apps/web/public/icons/`.
 
@@ -117,8 +117,8 @@ The UI copy is in `packages/catalog/locales/`, one JSON file per language with t
 
 ## Credits
 
-- [NSGo](https://github.com/oneo-me/nsgo) is made by [ONEO](https://github.com/oneo-me) (Apache-2.0); it is a Go port of [NSH](https://nsh.dev). The official showcase apps, plugins, templates and guides follow its repository and [site](https://oneo-me.github.io/nsgo/). This site is not affiliated with or endorsed by ONEO.
-- App icons are from [yldm-tech/ai-logo](https://github.com/yldm-tech/ai-logo) (MIT, a fork of LobeHub's [lobe-icons](https://github.com/lobehub/lobe-icons)) or the apps' own icons. Screenshots of NSGo's official showcase apps come from oneo-me/nsgo's `docs/public/cases`, the others from the projects' READMEs. Both belong to the apps' authors; names and logos are their trademarks and are shown to identify them.
+- [NSGo](https://github.com/nsgo-dev/nsgo) is made by [ONEO](https://github.com/oneo-me) (Apache-2.0); it is a Go port of [NSH](https://nsh.dev). The official showcase apps, plugins, templates and guides follow its repository and [site](https://nsgo.dev/). This site is not affiliated with or endorsed by ONEO.
+- App icons are from [yldm-tech/ai-logo](https://github.com/yldm-tech/ai-logo) (MIT, a fork of LobeHub's [lobe-icons](https://github.com/lobehub/lobe-icons)) or the apps' own icons. Screenshots of NSGo's official showcase apps come from nsgo-dev/nsgo's `docs/public/cases`, the others from the projects' READMEs. Both belong to the apps' authors; names and logos are their trademarks and are shown to identify them.
 
 ## License
 

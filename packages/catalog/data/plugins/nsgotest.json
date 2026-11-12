@@ -5,12 +5,12 @@
 	"mark": "Te",
 	"official": true,
 	"surface": "go",
-	"import": "github.com/oneo-me/nsgo/nsgotest",
+	"import": "github.com/nsgo-dev/nsgo/nsgotest",
 	"tags": [
 		"testing",
 		"headless"
 	],
-	"docs": "https://oneo-me.github.io/nsgo/docs/testing/",
+	"docs": "https://nsgo.dev/docs/testing/",
 	"summary": {
 		"en": "Runs NSGo apps in Go tests as httptest runs handlers: headless by default, or on a platform with native input under nsgo test -target, with Playwright-style selectors.",
 		"zh-CN": "像 httptest 运行 handler 那样在 Go 测试中运行 NSGo 应用：默认无窗口，也可以用 nsgo test -target 在真实平台上配合原生输入运行，选择器写法类似 Playwright。",

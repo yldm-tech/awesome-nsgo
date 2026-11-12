@@ -5,12 +5,12 @@
 	"mark": "Mb",
 	"official": true,
 	"surface": "both",
-	"import": "github.com/oneo-me/nsgo/mobile",
+	"import": "github.com/nsgo-dev/nsgo/mobile",
 	"tags": [
 		"tab-bar",
 		"keyboard"
 	],
-	"docs": "https://oneo-me.github.io/nsgo/docs/navigation/#tabs",
+	"docs": "https://nsgo.dev/docs/navigation/#tabs",
 	"summary": {
 		"en": "What only iOS and Android have: the system's tab bar and a bar above the software keyboard. Elsewhere its components take no room.",
 		"zh-CN": "只有 iOS 和 Android 才有的能力：系统标签栏，以及软键盘上方的工具栏。在其他平台上，这些组件不占空间。",

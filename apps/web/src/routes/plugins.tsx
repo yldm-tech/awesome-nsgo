@@ -20,7 +20,7 @@ const SURF_TONE: Record<PluginSurface, string> = { tsx: 'kind-tsx', go: 'kind-go
 // A CLI command's row: the command row of an entry card, on the panel colour, as it sits on the soft band of the command line's box.
 const cliRow = cmdRow.replace('bg-soft', 'bg-panel');
 
-// `import "github.com/oneo-me/nsgo/base/datatable"`, split before its last two segments.
+// `import "github.com/nsgo-dev/nsgo/base/datatable"`, split before its last two segments.
 function goLine(path: string): { head: string; tail: string } {
 	const parts = path.split('/');
 	const cut = Math.max(parts.length - 2, 1);

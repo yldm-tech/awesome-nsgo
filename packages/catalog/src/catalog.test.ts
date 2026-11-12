@@ -72,8 +72,8 @@ describe('catalog data', () => {
 		}
 		for (const p of [...PLUGINS, ...COMMUNITY_PLUGINS]) if (p.npm) expect(p.surface, p.slug).not.toBe('go');
 		for (const p of COMMUNITY_PLUGINS) expect(pluginPath(p), p.slug).toBe(`plugins/${p.slug}`);
-		expect(pluginPath({ slug: 'ui-chat', official: true, goImport: 'github.com/oneo-me/nsgo/ui/chat' })).toBe('nsgo/ui/chat');
-		expect(pluginPath({ slug: 'kit', official: false, goImport: 'github.com/oneo-me/nsgo/kit' })).toBe('plugins/kit');
+		expect(pluginPath({ slug: 'ui-chat', official: true, goImport: 'github.com/nsgo-dev/nsgo/ui/chat' })).toBe('nsgo/ui/chat');
+		expect(pluginPath({ slug: 'kit', official: false, goImport: 'github.com/nsgo-dev/nsgo/kit' })).toBe('plugins/kit');
 	});
 
 	it('installs with the nsgo CLI of the module the catalog lists', () => {
@@ -145,7 +145,7 @@ describe('catalog data', () => {
 		expect(() => readEntryFile(UI_KIND, 'kit.json', { ...lib, surface: undefined })).toThrow(/surface/);
 		expect(() => readEntryFile(UI_KIND, 'kit.json', { ...lib, surface: 'desktop' })).toThrow(/surface/);
 		const doc = { $schema: '../schema/doc.schema.json', slug: 'ui-button', title: 'Button', file: 'ui/button', summary: { en: 'A push button.' } };
-		expect(readDocs({ 'ui-button.json': doc })[0].url).toBe('https://oneo-me.github.io/nsgo/docs/ui/button/');
+		expect(readDocs({ 'ui-button.json': doc })[0].url).toBe('https://nsgo.dev/docs/ui/button/');
 		expect(() => readDocs({ 'ui-button.json': { ...doc, added: '2026-11-04T12:00:00Z' } })).toThrow(/added is not a known field/);
 	});
 
@@ -260,7 +260,7 @@ describe('catalog data', () => {
 
 	it('strips the scheme and trailing slash for display', () => {
 		expect(hostOf('https://oneo.me/')).toBe('oneo.me');
-		expect(hostOf('https://github.com/oneo-me/nsgo')).toBe('github.com/oneo-me/nsgo');
+		expect(hostOf('https://github.com/nsgo-dev/nsgo')).toBe('github.com/nsgo-dev/nsgo');
 	});
 });
 

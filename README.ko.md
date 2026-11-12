@@ -6,9 +6,9 @@
 [![X](https://img.shields.io/badge/X-%40suzukaze__haduki-000000?logo=x&logoColor=white)](https://x.com/suzukaze_haduki)
 [![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/houko)
 
-[NSGo](https://github.com/oneo-me/nsgo) 관련 앱, 패키지, 컴포넌트, 문서를 한 사이트에 모았습니다: **[awesomensgo.dev](https://awesomensgo.dev)**. NSGo는 [ONEO](https://github.com/oneo-me)가 만드는, Go를 백엔드로 하는 크로스 플랫폼 네이티브 UI 엔진입니다. 앱 로직, 반응형 그래프, 레이아웃이 Go에서 돌아가며, 앱은 Go나 TSX로 한 번만 작성하면 됩니다. iOS와 App Clip, tvOS, watchOS, Android, macOS, Windows, Linux, 웹에서는 각 플랫폼 고유의 네이티브 뷰로 그리고, Go 앱은 WeChat, QQ, Alipay, Douyin 미니 프로그램에서도 실행됩니다. NSGo는 아직 초기 단계로, 릴리스도 안정된 API도 없습니다.
+[NSGo](https://github.com/nsgo-dev/nsgo) 관련 앱, 패키지, 컴포넌트, 문서를 한 사이트에 모았습니다: **[awesomensgo.dev](https://awesomensgo.dev)**. NSGo는 [ONEO](https://github.com/oneo-me)가 만드는, Go를 백엔드로 하는 크로스 플랫폼 네이티브 UI 엔진입니다. 앱 로직, 반응형 그래프, 레이아웃이 Go에서 돌아가며, 앱은 Go나 TSX로 한 번만 작성하면 됩니다. iOS와 App Clip, tvOS, watchOS, Android, macOS, Windows, Linux, 웹에서는 각 플랫폼 고유의 네이티브 뷰로 그리고, Go 앱은 WeChat, QQ, Alipay, Douyin 미니 프로그램에서도 실행됩니다. NSGo는 아직 초기 단계로, 릴리스도 안정된 API도 없습니다.
 
-Awesome NSGo는 yldm-tech가 운영하는 비공식 커뮤니티 카탈로그이며 NSGo의 공식 사이트가 아닙니다. 공식 사이트는 [oneo-me.github.io/nsgo](https://oneo-me.github.io/nsgo/)입니다.
+Awesome NSGo는 yldm-tech가 운영하는 비공식 커뮤니티 카탈로그이며 NSGo의 공식 사이트가 아닙니다. 공식 사이트는 [nsgo.dev](https://nsgo.dev/)입니다.
 
 [English](README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md) · 한국어
 
@@ -17,7 +17,7 @@ Awesome NSGo는 yldm-tech가 운영하는 비공식 커뮤니티 카탈로그이
 ## 사이트 내용
 
 - **쇼케이스**: NSGo로 만든 앱. 이름순, 최신순, 인기순으로 정렬하고 카테고리, 언어(Go 또는 TSX), 플랫폼(macOS, Windows, Linux, iOS, Android, 웹, 미니 프로그램)으로 거를 수 있습니다. 앱마다 전용 페이지가 있어 자세한 설명, 스크린샷(프로젝트가 제공한 경우), Go와 TSX 중 무엇으로 작성했는지, 지원 플랫폼, 카테고리, 등록일, 같은 작성자의 다른 앱을 보여줍니다.
-- **플러그인**: NSGo의 공식 패키지(모두 `github.com/oneo-me/nsgo` 모듈 안에 있으며 데스크톱 창과 트레이, 모바일 탭 바, 다국어 지원, Lucide 아이콘, 차트, 데이터 테이블, 편집기, 터미널 뷰, 위젯, 테스트 등이 있습니다)와 커뮤니티 패키지. Go, TSX, 또는 둘 다 중 어디에서 쓰는지 표시하며, `nsgo` 명령줄 도구도 소개합니다.
+- **플러그인**: NSGo의 공식 패키지(모두 `github.com/nsgo-dev/nsgo` 모듈 안에 있으며 데스크톱 창과 트레이, 모바일 탭 바, 다국어 지원, Lucide 아이콘, 차트, 데이터 테이블, 편집기, 터미널 뷰, 위젯, 테스트 등이 있습니다)와 커뮤니티 패키지. Go, TSX, 또는 둘 다 중 어디에서 쓰는지 표시하며, `nsgo` 명령줄 도구도 소개합니다.
 - **UI 컴포넌트**: NSGo 앱을 위한 컴포넌트 라이브러리, 테마, 아이콘.
 - **상태 관리**: NSGo에 내장된 signal, memo, context와 NSGo 앱을 위한 상태 관리 라이브러리.
 - **템플릿**: NSGo 앱의 출발점. 우선 `nsgo init`에 들어 있는 `go`, `tsx`, `mixed` 템플릿 세 가지입니다.
@@ -35,7 +35,7 @@ pnpm 모노레포이며, [TanStack Start](https://tanstack.com/start)가 [Cloudf
 |---|---|
 | `apps/web` | 사이트: React 19, TanStack Start(서버 렌더링), `@cloudflare/vite-plugin`을 쓰는 Vite. `wrangler.jsonc`로 `awesomensgo.dev`에 배포합니다. |
 | `packages/catalog` | 데이터: `data/*.json`(앱, UI 컴포넌트, 상태 관리 솔루션, 템플릿, AI 도구, 플러그인, 글, 가이드)과 그 JSON Schema, 5개 언어의 UI 문구, 검색, 제출 양식의 항목. 테스트로 모든 항목을 검증합니다. |
-| `packages/enrich` | 제출 bot이 연 풀 리퀘스트를 완성합니다: 프로젝트 저장소에서 앱 아이콘을, 양식에서 업로드한 이미지나 적은 링크(없으면 저장소)에서 스크린샷을 가져오고, 5개 언어 문구를 Claude로 씁니다. `.github/workflows/enrich-submission.yml`이 실행합니다. 또한 `.github/workflows/verify.yml`이 매주 등재된 모든 프로젝트의 저장소를 확인하고, 저장소가 바뀐 항목마다 풀 리퀘스트를 엽니다: 저장소가 삭제·비공개·비활성화되면 항목을 내리고, 이름이 바뀌거나 이전되면 항목을 고치고, 없는 homepage를 채우고, 프로젝트 자체 이미지가 생기면 임시 이미지를 바꿉니다. 보관된 저장소나 더 이상 NSGo로 만들지 않는 저장소(`go.mod`가 더 이상 `github.com/oneo-me/nsgo`를 요구하지 않는 저장소)는 실행 요약에만 적습니다. `.github/workflows/prune.yml`은 매주 사이트 기준에 못 미치는 항목을 내리자는 제안을 풀 리퀘스트 하나로 엽니다: 등재 30일 뒤에도 점수가 20 미만이거나, 180일 넘게 커밋이 없거나, 저장소가 보관되었거나, 더 이상 NSGo로 만들지 않는 항목입니다. 관리자가 병합해야 내려가며, 남겨 둔 항목은 다시 제안되지 않습니다. |
+| `packages/enrich` | 제출 bot이 연 풀 리퀘스트를 완성합니다: 프로젝트 저장소에서 앱 아이콘을, 양식에서 업로드한 이미지나 적은 링크(없으면 저장소)에서 스크린샷을 가져오고, 5개 언어 문구를 Claude로 씁니다. `.github/workflows/enrich-submission.yml`이 실행합니다. 또한 `.github/workflows/verify.yml`이 매주 등재된 모든 프로젝트의 저장소를 확인하고, 저장소가 바뀐 항목마다 풀 리퀘스트를 엽니다: 저장소가 삭제·비공개·비활성화되면 항목을 내리고, 이름이 바뀌거나 이전되면 항목을 고치고, 없는 homepage를 채우고, 프로젝트 자체 이미지가 생기면 임시 이미지를 바꿉니다. 보관된 저장소나 더 이상 NSGo로 만들지 않는 저장소(`go.mod`가 더 이상 `github.com/nsgo-dev/nsgo`를 요구하지 않는 저장소)는 실행 요약에만 적습니다. `.github/workflows/prune.yml`은 매주 사이트 기준에 못 미치는 항목을 내리자는 제안을 풀 리퀘스트 하나로 엽니다: 등재 30일 뒤에도 점수가 20 미만이거나, 180일 넘게 커밋이 없거나, 저장소가 보관되었거나, 더 이상 NSGo로 만들지 않는 항목입니다. 관리자가 병합해야 내려가며, 남겨 둔 항목은 다시 제안되지 않습니다. |
 
 앱 아이콘은 [yldm-tech/ai-logo](https://github.com/yldm-tech/ai-logo)의 CDN에서 가져옵니다. ai-logo에 없는 일부 앱은 `apps/web/public/icons/`의 공식 아이콘을 씁니다.
 
@@ -117,8 +117,8 @@ UI 문구는 `packages/catalog/locales/`에 있으며, 언어마다 키가 같�
 
 ## 크레딧
 
-- [NSGo](https://github.com/oneo-me/nsgo)는 [ONEO](https://github.com/oneo-me)가 만들었습니다(Apache-2.0). [NSH](https://nsh.dev)를 Go로 옮긴 것입니다. 공식 쇼케이스, 플러그인, 템플릿, 가이드 데이터는 그 저장소와 [사이트](https://oneo-me.github.io/nsgo/)를 따릅니다. 이 사이트는 ONEO와 제휴하지 않았으며 보증을 받지도 않았습니다.
-- 앱 아이콘은 [yldm-tech/ai-logo](https://github.com/yldm-tech/ai-logo)(MIT, LobeHub [lobe-icons](https://github.com/lobehub/lobe-icons)의 포크) 또는 앱 자체의 아이콘이며, 스크린샷은 NSGo 공식 쇼케이스 앱의 경우 oneo-me/nsgo의 `docs/public/cases`에서, 나머지는 각 프로젝트의 README에서 가져왔습니다. 모두 각 앱의 작성자에게 속하며, 이름과 로고는 해당 상표로 식별 목적으로만 표시합니다.
+- [NSGo](https://github.com/nsgo-dev/nsgo)는 [ONEO](https://github.com/oneo-me)가 만들었습니다(Apache-2.0). [NSH](https://nsh.dev)를 Go로 옮긴 것입니다. 공식 쇼케이스, 플러그인, 템플릿, 가이드 데이터는 그 저장소와 [사이트](https://nsgo.dev/)를 따릅니다. 이 사이트는 ONEO와 제휴하지 않았으며 보증을 받지도 않았습니다.
+- 앱 아이콘은 [yldm-tech/ai-logo](https://github.com/yldm-tech/ai-logo)(MIT, LobeHub [lobe-icons](https://github.com/lobehub/lobe-icons)의 포크) 또는 앱 자체의 아이콘이며, 스크린샷은 NSGo 공식 쇼케이스 앱의 경우 nsgo-dev/nsgo의 `docs/public/cases`에서, 나머지는 각 프로젝트의 README에서 가져왔습니다. 모두 각 앱의 작성자에게 속하며, 이름과 로고는 해당 상표로 식별 목적으로만 표시합니다.
 
 ## 라이선스
 

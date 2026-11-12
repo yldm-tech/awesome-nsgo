@@ -22,7 +22,7 @@ describe('links', () => {
 		expect(githubUrl({ repo: 'xiyaowong/flagicons', url: 'https://x.dev' })).toBe('https://github.com/xiyaowong/flagicons');
 		expect(githubUrl({ url: 'https://github.com/a/b.git' })).toBe('https://github.com/a/b');
 		expect(githubUrl({ url: 'https://getbamboo.app/' })).toBeUndefined();
-		expect(githubUrl({ docs: 'https://github.com/oneo-me/nsgo/tree/main/base/datatable' })).toBeUndefined();
+		expect(githubUrl({ docs: 'https://github.com/nsgo-dev/nsgo/tree/main/base/datatable' })).toBeUndefined();
 	});
 
 	it('sends an app to its own page and the rest to their category', () => {

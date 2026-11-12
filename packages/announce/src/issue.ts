@@ -6,14 +6,17 @@ import { ENTRY_DIRS, type EntryKind, type Entry, SITE_REPO, SITE_URL, githubUrl,
 // The title every issue has, which is also how a later run finds that it was opened already.
 export const ISSUE_TITLE = 'Listed on Awesome NSGo';
 
-// NSGo's own repository, whose owner is NSGo's author, ONEO.
-export const NSGO_REPO = 'oneo-me/nsgo';
+// NSGo's own repository, under its organization.
+export const NSGO_REPO = 'nsgo-dev/nsgo';
+
+// The GitHub owners of NSGo's author, ONEO, and of its organization.
+const NSGO_OWNERS = new Set(['oneo-me', NSGO_REPO.split('/')[0]]);
 
 // Why a repository is not told, or undefined when it is: one of this site's own owner, or one of NSGo's author, whose projects (NSGo's companions, such as nsgo-flow or nsgo-icons-kubai) are listed without telling them, as NSGo's maintainer knows the site.
 export function notTold(repo: string, siteOwner?: string): string | undefined {
 	const owner = repo.split('/')[0].toLowerCase();
 	if (siteOwner && owner === siteOwner.toLowerCase()) return `it belongs to ${repo.split('/')[0]}, the site's own owner`;
-	if (owner === NSGO_REPO.split('/')[0]) return `it belongs to ${repo.split('/')[0]}, NSGo's author`;
+	if (NSGO_OWNERS.has(owner)) return `it belongs to ${repo.split('/')[0]}, NSGo's author`;
 	return undefined;
 }
 

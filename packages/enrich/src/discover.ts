@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { promisify } from 'node:util';
 import { DEFAULT_MODEL, type LlmConfig } from './copy.ts';
 import { listDir } from './files.ts';
-import { AWESOME_LISTS, BRANCH_PREFIX, type CodeHit, KIND_LABELS, type Listed, NSGO_MODULE, RECHECK_DAYS, type Seen, branchFor, configNear, entryFor, goModsIn, groupHits, isDue, isYoung, isSamplePath, listedAs, listedFrom, moduleOf, quiet, remember, reposInImportedBy, reposInMarkdown, requiresNsgo, tooNewToJudge, uniqueSlug, withoutFailed } from './find.ts';
+import { AWESOME_LISTS, BRANCH_PREFIX, type CodeHit, KIND_LABELS, type Listed, NSGO_MODULE, NSGO_MODULES, NSGO_REPOS, RECHECK_DAYS, type Seen, branchFor, configNear, entryFor, goModsIn, groupHits, isDue, isYoung, isSamplePath, listedAs, listedFrom, moduleOf, quiet, remember, reposInImportedBy, reposInMarkdown, requiresNsgo, tooNewToJudge, uniqueSlug, withoutFailed } from './find.ts';
 import { github, rawFile } from './github.ts';
 import { ENTRY_DIRS, type Entry, type EntryKind, appKindOf } from './source.ts';
 import { triage } from './triage.ts';
@@ -47,7 +47,7 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 // ---- what the site lists, and what was proposed before ----
 
-// What the site's entries list, with NSGo itself (oneo-me/nsgo, whose own packages are the official plugins) and this site among the repositories.
+// What the site's entries list, with NSGo itself (nsgo-dev/nsgo, whose own packages are the official plugins) and this site among the repositories.
 async function listedOnSite(): Promise<Listed> {
 	const entries: Entry[] = [];
 	for (const dir of [...Object.values(ENTRY_DIRS), 'articles']) {
@@ -56,7 +56,7 @@ async function listedOnSite(): Promise<Listed> {
 		}
 	}
 	const listed = listedFrom(entries);
-	listed.repos.add(NSGO_MODULE.replace('github.com/', ''));
+	for (const repo of NSGO_REPOS) listed.repos.add(repo);
 	listed.repos.add(SITE.toLowerCase());
 	return listed;
 }
@@ -145,9 +145,9 @@ async function searchRepos(query: string): Promise<{ repo: string; fork: boolean
 	return out;
 }
 
-// The repositories pkg.go.dev knows import NSGo: Go's module proxy sees them, which GitHub's search does not need to have indexed. A page, not an API, so a failure is reported and the other sources carry on.
-async function importedBy(): Promise<string[]> {
-	const res = await fetch(`https://pkg.go.dev/${NSGO_MODULE}?tab=importedby`, { signal: AbortSignal.timeout(30_000) });
+// The repositories pkg.go.dev knows import NSGo under a module path: Go's module proxy sees them, which GitHub's search does not need to have indexed. A page, not an API, so a failure is reported and the other sources carry on.
+async function importedBy(module: string): Promise<string[]> {
+	const res = await fetch(`https://pkg.go.dev/${module}?tab=importedby`, { signal: AbortSignal.timeout(30_000) });
 	if (!res.ok) throw new Error(`pkg.go.dev answered ${res.status}`);
 	return reposInImportedBy(await res.text());
 }
@@ -387,7 +387,8 @@ async function main(): Promise<void> {
 		if (!f.sources.includes(source)) f.sources.push(source);
 		found.set(key, f);
 	};
-	const goModHits = await searchCode(`"${NSGO_MODULE}" filename:go.mod`);
+	const goModHits: CodeHit[] = [];
+	for (const module of NSGO_MODULES) goModHits.push(...(await searchCode(`"${module}" filename:go.mod`)));
 	// NSGo is young and code search has indexed few of its projects, so finding none is reported rather than fatal: the other sources still run. A token that cannot search would find none either, so the report names that too.
 	if (!goModHits.length) say(`Code search found no go.mod that names ${NSGO_MODULE}; if that persists, check that GITHUB_TOKEN can search code.\n`);
 	for (const [repo, goMods] of groupHits(goModHits, listed.repos)) add(repo, SOURCES.goMod, goMods);
@@ -395,10 +396,12 @@ async function main(): Promise<void> {
 	for (const r of await searchRepos(`${NSGO_MODULE.replace('github.com/', '')} in:readme`)) if (!r.fork) add(r.repo, SOURCES.readme);
 	// Many unrelated repositories are named nsgo (no-src/nsgo, a Go toolkit); their go.mod is checked before the model is asked, which passes them over.
 	for (const r of await searchRepos('nsgo in:name,description,topics language:Go')) if (!r.fork) add(r.repo, SOURCES.name);
-	try {
-		for (const repo of await importedBy()) add(repo, SOURCES.pkgGoDev);
-	} catch (err) {
-		say(`pkg.go.dev could not be read (${err instanceof Error ? err.message : String(err)}), so its importers were left out of this run.\n`);
+	for (const module of NSGO_MODULES) {
+		try {
+			for (const repo of await importedBy(module)) add(repo, SOURCES.pkgGoDev);
+		} catch (err) {
+			say(`pkg.go.dev could not be read for ${module} (${err instanceof Error ? err.message : String(err)}), so its importers were left out of this run.\n`);
+		}
 	}
 	for (const list of AWESOME_LISTS) {
 		try {

@@ -5,12 +5,12 @@
 	"mark": "Mi",
 	"official": true,
 	"surface": "go",
-	"import": "github.com/oneo-me/nsgo/microphone",
+	"import": "github.com/nsgo-dev/nsgo/microphone",
 	"tags": [
 		"audio",
 		"recording"
 	],
-	"docs": "https://pkg.go.dev/github.com/oneo-me/nsgo/microphone",
+	"docs": "https://pkg.go.dev/github.com/nsgo-dev/nsgo/microphone",
 	"summary": {
 		"en": "Records the system's default input on macOS and iOS; elsewhere it builds and reports that it cannot record.",
 		"zh-CN": "在 macOS 和 iOS 上录制系统默认输入设备的声音；其他平台可以编译，但会报告无法录音。",

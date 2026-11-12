@@ -2,20 +2,20 @@ import type { Text } from './lang';
 import type { StringKey } from './strings';
 import { CatalogError, Reader, unique } from './validate';
 
-// The entries live in packages/catalog/data, one file each in their category's directory (apps/, ui/, state/, templates/, ai/, plugins/, articles/, docs/), named after the entry's slug, so submissions that arrive together never touch the same file. data/schema/ describes their fields. Data sources: oneo-me/nsgo (its docs, docs/public/en/, its packages and examples/) and each project's own README.
+// The entries live in packages/catalog/data, one file each in their category's directory (apps/, ui/, state/, templates/, ai/, plugins/, articles/, docs/), named after the entry's slug, so submissions that arrive together never touch the same file. data/schema/ describes their fields. Data sources: nsgo-dev/nsgo (its docs, docs/public/en/, its packages and examples/) and each project's own README.
 
 export const SITE_URL = 'https://awesomensgo.dev';
 // NSGo itself, by ONEO: its site, its showcases page, its repository and the Go module every NSGo app requires. This site is a community catalog, not NSGo's own.
-export const NSGO_SITE = 'https://oneo-me.github.io/nsgo/';
-export const NSGO_SHOWCASE = 'https://oneo-me.github.io/nsgo/showcases/';
-export const NSGO_REPO = 'https://github.com/oneo-me/nsgo';
-export const NSGO_MODULE = 'github.com/oneo-me/nsgo';
+export const NSGO_SITE = 'https://nsgo.dev/';
+export const NSGO_SHOWCASE = 'https://nsgo.dev/showcases/';
+export const NSGO_REPO = 'https://github.com/nsgo-dev/nsgo';
+export const NSGO_MODULE = 'github.com/nsgo-dev/nsgo';
 // This site's own repository, where submissions arrive.
 export const SITE_REPO = 'https://github.com/yldm-tech/awesome-nsgo';
 export const DATA_DIR = 'packages/catalog/data';
 export const SPONSOR_URL = 'https://github.com/sponsors/oneo-me';
 // NSGo's docs on its site, each page at DOCS_BASE + its path + '/' (docUrl).
-export const DOCS_BASE = 'https://oneo-me.github.io/nsgo/docs/';
+export const DOCS_BASE = 'https://nsgo.dev/docs/';
 export const STATE_DOC = `${DOCS_BASE}components/`;
 export const PLUGINS_DOC = `${DOCS_BASE}authoring/`;
 export const NATIVE_UI_DOCS = `${DOCS_BASE}ui/`;
@@ -29,7 +29,7 @@ export const RESOURCES = [
 	{ key: 'res_site', url: NSGO_SITE },
 	{ key: 'res_docs', url: DOCS_BASE },
 	{ key: 'res_ui', url: NATIVE_UI_DOCS },
-	{ key: 'res_demo', url: `${NSGO_SITE}gallery/loader.html` },
+	{ key: 'res_demo', url: `${NSGO_SITE}gallery/` },
 	{ key: 'res_examples', url: `${NSGO_REPO}/tree/main/examples` },
 	{ key: 'res_nsh', url: 'https://nsh.dev' },
 ] as const satisfies readonly { key: StringKey; url: string }[];

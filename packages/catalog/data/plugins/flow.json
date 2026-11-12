@@ -5,12 +5,12 @@
 	"mark": "Fl",
 	"official": true,
 	"surface": "both",
-	"import": "github.com/oneo-me/nsgo/base/flow",
+	"import": "github.com/nsgo-dev/nsgo/base/flow",
 	"tags": [
 		"diagram",
 		"auto-layout"
 	],
-	"docs": "https://pkg.go.dev/github.com/oneo-me/nsgo/base/flow",
+	"docs": "https://pkg.go.dev/github.com/nsgo-dev/nsgo/base/flow",
 	"summary": {
 		"en": "Draws a directed diagram, such as a workflow or a dependency graph, and lays it out automatically in ranks with orthogonal edges; ui/flow is its styled form.",
 		"zh-CN": "绘制有向图，例如工作流或依赖图，并自动分层布局、用直角折线连接；ui/flow 是它的带样式版本。",

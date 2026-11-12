@@ -5,12 +5,12 @@
 	"mark": "Tv",
 	"official": true,
 	"surface": "both",
-	"import": "github.com/oneo-me/nsgo/base/textview",
+	"import": "github.com/nsgo-dev/nsgo/base/textview",
 	"tags": [
 		"markdown",
 		"html"
 	],
-	"docs": "https://oneo-me.github.io/nsgo/docs/text/#documents",
+	"docs": "https://nsgo.dev/docs/text/#documents",
 	"summary": {
 		"en": "Shows Markdown or HTML documents and AI replies with native text: headings, lists, tables, code, footnotes, alerts, images, formulas and links.",
 		"zh-CN": "用原生文本显示 Markdown 或 HTML 文档以及 AI 回复：标题、列表、表格、代码、脚注、提示块、图片、公式和链接。",

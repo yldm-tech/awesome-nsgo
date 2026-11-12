@@ -7,8 +7,8 @@
 	"platforms": ["mac", "ios", "web"],
 	"category": "DeveloperApplication",
 	"group": "dev",
-	"url": "https://github.com/oneo-me/nsgo/tree/main/examples/gallery-tsx",
-	"repo": "oneo-me/nsgo",
+	"url": "https://github.com/nsgo-dev/nsgo/tree/main/examples/gallery-tsx",
+	"repo": "nsgo-dev/nsgo",
 	"summary": {
 		"en": "NSGo's gallery written in TSX with Tailwind classes, compiled ahead of time with no Node.",
 		"zh-CN": "用 TSX 和 Tailwind 类名重写的 NSGo 组件画廊，提前编译，工具链里不需要 Node。",

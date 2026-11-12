@@ -3,7 +3,13 @@
 import type { Entry, EntryKind } from './source.ts';
 
 // A project is built with NSGo when one of its go.mod files requires this module: the same value as NSGO_MODULE in packages/catalog, which this package cannot import, as the catalog loads its data through Vite.
-export const NSGO_MODULE = 'github.com/oneo-me/nsgo';
+export const NSGO_MODULE = 'github.com/nsgo-dev/nsgo';
+
+// NSGo's module paths, the current first: before NSGo moved to nsgo-dev it was github.com/oneo-me/nsgo, which projects made then still require until they update.
+export const NSGO_MODULES = [NSGO_MODULE, 'github.com/oneo-me/nsgo'] as const;
+
+// NSGo's own repositories, as lowercase owner/name: the current one and the one GitHub redirects from.
+export const NSGO_REPOS: ReadonlySet<string> = new Set(NSGO_MODULES.map((m) => m.replace('github.com/', '')));
 
 // The branches the discover script opens its pull requests from. A repository gets the same branch every time, so a pull request of that branch, open or closed, says it was proposed already.
 export const BRANCH_PREFIX = 'discover/';
@@ -94,7 +100,7 @@ export function reposInImportedBy(html: string): string[] {
 	const out = new Map<string, string>();
 	for (const m of html.matchAll(/href="\/github\.com\/([\w.-]+)\/([\w.-]+)[/"?#]/g)) {
 		const repo = `${m[1]}/${m[2]}`;
-		if (repo.toLowerCase() !== NSGO_MODULE.replace('github.com/', '')) out.set(repo.toLowerCase(), repo);
+		if (!NSGO_REPOS.has(repo.toLowerCase())) out.set(repo.toLowerCase(), repo);
 	}
 	return [...out.values()];
 }
@@ -107,7 +113,7 @@ const GITHUB_PAGES = new Set(['about', 'apps', 'collections', 'enterprise', 'fea
 
 // The GitHub repositories a Markdown text links to, as owner/name, each once in the order it first appears, whatever follows the name (/issues, /releases, #readme): not NSGo itself, nor the repositories in skip.
 export function reposInMarkdown(markdown: string, skip: readonly string[] = []): string[] {
-	const skipped = new Set([NSGO_MODULE.replace('github.com/', ''), ...skip].map((r) => r.toLowerCase()));
+	const skipped = new Set([...NSGO_REPOS, ...skip.map((r) => r.toLowerCase())]);
 	const out = new Map<string, string>();
 	for (const m of markdown.matchAll(/github\.com\/([A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)\/([\w.-]+)/g)) {
 		const owner = m[1];
@@ -120,10 +126,10 @@ export function reposInMarkdown(markdown: string, skip: readonly string[] = []):
 	return [...out.values()];
 }
 
-// Whether a go.mod requires NSGo itself, at a version or a pseudo-version (v0.0.0-20261109084144-c226d88b232d, as NSGo has no release yet), not a module whose path merely starts the same (github.com/oneo-me/nsgo-flow) or a comment that names it.
+// Whether a go.mod requires NSGo itself, under either of its module paths, at a version or a pseudo-version (v0.0.0-20261109084144-c226d88b232d, as NSGo has no release yet), not a module whose path merely starts the same (github.com/oneo-me/nsgo-flow) or a comment that names it.
 export function requiresNsgo(gomod: string): boolean {
 	const stripped = gomod.replace(/\/\/.*$/gm, '');
-	return new RegExp(`(^|\\s)${NSGO_MODULE.replace(/[./]/g, '\\$&')}(/v\\d+)?\\s+v\\d`, 'm').test(stripped);
+	return new RegExp(`(^|\\s)(${NSGO_MODULES.map((m) => m.replace(/[./]/g, '\\$&')).join('|')})(/v\\d+)?\\s+v\\d`, 'm').test(stripped);
 }
 
 // The module path a go.mod declares.

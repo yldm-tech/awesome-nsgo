@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { promisify } from 'node:util';
 import { type ScoreSignals, scoreOf, scoreTarget } from '../../catalog/src/score.ts';
 import { listDir } from './files.ts';
-import { NSGO_MODULE, quiet } from './find.ts';
+import { NSGO_REPOS, quiet } from './find.ts';
 import { github } from './github.ts';
 import { type RepoInfo, currentRepo, namedInCode, usesNsgo } from './listed.ts';
 import { type Candidate, type PruneFacts, type PrunePull, type PruneRule, builtWithNsgo, keptEntries, openPrune, pruneBranch, pruneConfig, pruneMarker, pruneReasons, selectProposals } from './prune-plan.ts';
@@ -80,7 +80,7 @@ async function listedEntries(scores: ScoresFile): Promise<Listed[]> {
 			const file = `${DATA_DIR}/${dir}/${name}`;
 			const entry = JSON.parse(await readFile(join(ROOT, file), 'utf8')) as Entry;
 			const repo = repoOfEntry(entry);
-			if (!repo || entry.official === true || repo.toLowerCase() === NSGO_MODULE.replace('github.com/', '')) continue;
+			if (!repo || entry.official === true || NSGO_REPOS.has(repo.toLowerCase())) continue;
 			// The score as the site shows it: from a record taken of the repository and folder the entry names now (scores.ts, scoresFor).
 			const scored = scoredEntry(kind, entry);
 			const signals = scored ? scores.entries[scored.key] : undefined;

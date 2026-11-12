@@ -5,7 +5,7 @@ describe('what the site lists', () => {
 	it('takes every repository an entry points at, in lower case', () => {
 		expect(reposOfEntry({ repo: 'ELY-Open-Source/MujicaUI', url: 'https://github.com/ELY-Open-Source/MujicaUI' })).toEqual(['ely-open-source/mujicaui']);
 		expect(reposOfEntry({ url: 'https://getbamboo.app/', repo: 'OldPanda/bamboo' })).toEqual(['oldpanda/bamboo']);
-		expect(reposOfEntry({ docs: 'https://oneo-me.github.io/nsgo/docs/lists/', import: 'github.com/oneo-me/nsgo/base/datatable' })).toEqual(['oneo-me/nsgo']);
+		expect(reposOfEntry({ docs: 'https://nsgo.dev/docs/lists/', import: 'github.com/nsgo-dev/nsgo/base/datatable' })).toEqual(['nsgo-dev/nsgo']);
 		expect(reposOfEntry({ url: 'https://github.com/you/app.git' })).toEqual(['you/app']);
 		expect(reposOfEntry({ url: 'https://example.com' })).toEqual([]);
 	});
@@ -77,7 +77,7 @@ describe('code search hits', () => {
 	});
 
 	it('reads the repositories pkg.go.dev lists as importers', () => {
-		const html = '<a href="/github.com/oneo-me/nsgo/ui">x</a><a href="/github.com/yldm-tech/nodra">nodra</a><a href="/github.com/yldm-tech/nodra/persist">p</a><a href="/github.com/Licoy/sshyard/internal/app?tab=doc">s</a><a href="/golang.org/x/sys">sys</a>';
+		const html = '<a href="/github.com/nsgo-dev/nsgo/ui">x</a><a href="/github.com/yldm-tech/nodra">nodra</a><a href="/github.com/yldm-tech/nodra/persist">p</a><a href="/github.com/Licoy/sshyard/internal/app?tab=doc">s</a><a href="/golang.org/x/sys">sys</a>';
 		expect(reposInImportedBy(html)).toEqual(['yldm-tech/nodra', 'Licoy/sshyard']);
 		expect(reposInImportedBy('')).toEqual([]);
 	});
@@ -87,7 +87,7 @@ describe('code search hits', () => {
 			'# Awesome NSGo',
 			'[![stars](https://img.shields.io/github/stars/someone/awesome-nsgo)](https://github.com/someone/awesome-nsgo)',
 			'- [Snip](https://github.com/0froq/snip) - snippets. [releases](https://github.com/0froq/snip/releases)',
-			'- [Gloss](https://github.com/CarlOpenLab/Gloss#readme), built on [NSGo](https://github.com/oneo-me/nsgo).',
+			'- [Gloss](https://github.com/CarlOpenLab/Gloss#readme), built on [NSGo](https://github.com/nsgo-dev/nsgo).',
 			'- clone https://github.com/DiiKhanh/burrow.git or see github.com/gomeen/Zakki.',
 			'- [Sponsor](https://github.com/sponsors/oneo-me) · [topic](https://github.com/topics/nsgo) · [org](https://github.com/orgs/yldm-tech/repositories)',
 			'- [same, other case](https://github.com/0FROQ/Snip)',
@@ -98,12 +98,14 @@ describe('code search hits', () => {
 
 	it('takes only a go.mod that requires NSGo itself', () => {
 		// Jungley8/exodrive's go.mod: NSGo has no release, so a pseudo-version.
-		expect(requiresNsgo('module github.com/Jungley8/exodrive\n\ngo 1.26.0\n\nrequire (\n\tgithub.com/oneo-me/nsgo v0.0.0-20261109084144-c226d88b232d\n)\n\ntool github.com/oneo-me/nsgo/cmd/nsgo\n')).toBe(true);
-		expect(requiresNsgo('module x\n\nrequire github.com/oneo-me/nsgo v0.1.0\n')).toBe(true);
+		expect(requiresNsgo('module github.com/Jungley8/exodrive\n\ngo 1.26.0\n\nrequire (\n\tgithub.com/nsgo-dev/nsgo v0.0.0-20261109084144-c226d88b232d\n)\n\ntool github.com/nsgo-dev/nsgo/cmd/nsgo\n')).toBe(true);
+		expect(requiresNsgo('module x\n\nrequire github.com/nsgo-dev/nsgo v0.1.0\n')).toBe(true);
+		// A project made before NSGo moved to nsgo-dev still requires its old module path.
+		expect(requiresNsgo('module x\n\nrequire github.com/oneo-me/nsgo v0.0.0-20261109084144-c226d88b232d\n')).toBe(true);
 		expect(requiresNsgo('module x\n\nrequire github.com/oneo-me/nsgo-flow v0.0.0-20261109142343-48361112bf0e\n')).toBe(false);
-		expect(requiresNsgo('module x\n\n// like github.com/oneo-me/nsgo v1, but smaller\n')).toBe(false);
+		expect(requiresNsgo('module x\n\n// like github.com/nsgo-dev/nsgo v1, but smaller\n')).toBe(false);
 		// A tool directive alone names the CLI, not a requirement.
-		expect(requiresNsgo('module x\n\ntool github.com/oneo-me/nsgo/cmd/nsgo\n')).toBe(false);
+		expect(requiresNsgo('module x\n\ntool github.com/nsgo-dev/nsgo/cmd/nsgo\n')).toBe(false);
 		expect(moduleOf('module github.com/yldm-tech/nodra\n\ngo 1.27\n')).toBe('github.com/yldm-tech/nodra');
 		expect(moduleOf('go 1.27\n')).toBeUndefined();
 	});

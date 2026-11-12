@@ -64,7 +64,7 @@ describe('the repository', () => {
 	it('picks the app’s own nsgo.yaml, not a vendored example', () => {
 		expect(pickNsgoConfig(['README.md', 'app/nsgo.yaml', 'go.mod'])).toBe('app/nsgo.yaml');
 		expect(pickNsgoConfig(['examples/demo/nsgo.yaml', 'nsgo.yaml'])).toBe('nsgo.yaml');
-		expect(pickNsgoConfig(['node_modules/x/nsgo.yaml', 'examples/a/nsgo.yaml', 'vendor/github.com/oneo-me/nsgo/examples/hello/nsgo.yaml'])).toBeUndefined();
+		expect(pickNsgoConfig(['node_modules/x/nsgo.yaml', 'examples/a/nsgo.yaml', 'vendor/github.com/nsgo-dev/nsgo/examples/hello/nsgo.yaml'])).toBeUndefined();
 		expect(pickNsgoConfig(['b/nsgo.yaml', 'a/nsgo.yaml'])).toBe('a/nsgo.yaml');
 		// freewu/ocr-manager keeps its app in desktop/.
 		expect(pickNsgoConfig(['desktop/nsgo.yaml', 'desktop/go.mod', 'web/package.json'])).toBe('desktop/nsgo.yaml');

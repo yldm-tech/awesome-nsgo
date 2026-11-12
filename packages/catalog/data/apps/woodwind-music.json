@@ -1,0 +1,22 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "woodwind-music",
+	"name": "woodwind-music",
+	"author": "HengWh",
+	"kind": "go",
+	"platforms": [
+		"mac",
+		"win",
+		"linux"
+	],
+	"group": "media",
+	"url": "https://github.com/HengWh/woodwind-music",
+	"repo": "HengWh/woodwind-music",
+	"summary": {
+		"en": "基于 NSGo 的原生本地音乐播放器，由 MyGo Music 复刻与移植而来。"
+	},
+	"description": {
+		"en": "基于 NSGo 的原生本地音乐播放器，由 MyGo Music 复刻与移植而来。"
+	},
+	"added": "2026-11-12T16:24:22Z"
+}

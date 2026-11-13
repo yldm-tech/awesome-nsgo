@@ -7,8 +7,8 @@
 	"platforms": ["mac", "ios", "web"],
 	"category": "DeveloperApplication",
 	"group": "dev",
-	"url": "https://oneo-me.github.io/nsgo/gallery/loader.html",
-	"repo": "oneo-me/nsgo",
+	"url": "https://nsgo.dev/gallery/",
+	"repo": "nsgo-dev/nsgo",
 	"summary": {
 		"en": "NSGo's official gallery: every component of base and ui in one app, with a live web demo.",
 		"zh-CN": "NSGo 官方组件画廊：base 与 ui 的全部组件集于一个应用，并提供在线 Web 演示。",

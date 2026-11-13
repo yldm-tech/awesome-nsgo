@@ -5,11 +5,11 @@
 	"mark": "To",
 	"official": true,
 	"surface": "both",
-	"import": "github.com/oneo-me/nsgo/base/toast",
+	"import": "github.com/nsgo-dev/nsgo/base/toast",
 	"tags": [
 		"notifications"
 	],
-	"docs": "https://pkg.go.dev/github.com/oneo-me/nsgo/base/toast",
+	"docs": "https://pkg.go.dev/github.com/nsgo-dev/nsgo/base/toast",
 	"summary": {
 		"en": "Toasts after Sonner's model: a manager that keeps them and their lifecycle, a stack that lays them out, and each toast's root; the look is the app's.",
 		"zh-CN": "仿照 Sonner 的 toast 提示：管理器负责保存提示和它们的生命周期，堆栈负责布局，再加上每条提示的根组件；外观由应用决定。",

@@ -5,12 +5,12 @@
 	"mark": "Tm",
 	"official": true,
 	"surface": "both",
-	"import": "github.com/oneo-me/nsgo/base/terminal",
+	"import": "github.com/nsgo-dev/nsgo/base/terminal",
 	"tags": [
 		"terminal",
 		"ghostty"
 	],
-	"docs": "https://pkg.go.dev/github.com/oneo-me/nsgo/base/terminal",
+	"docs": "https://pkg.go.dev/github.com/nsgo-dev/nsgo/base/terminal",
 	"summary": {
 		"en": "A terminal view on Ghostty's libghostty-vt, loaded at run time with no cgo. It runs programs on macOS, Linux and Windows, and remote sessions there and on iOS.",
 		"zh-CN": "基于 Ghostty 的 libghostty-vt 的终端视图，运行时加载，无需 cgo。可在 macOS、Linux 和 Windows 上运行程序，远程会话还支持 iOS。",

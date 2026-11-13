@@ -106,7 +106,7 @@ describe('the release and the license', () => {
 
 describe('what the site scores', () => {
 	it('derives the key and target as the catalog does', () => {
-		expect(scoredEntry('app', { slug: 'nsgo-gallery', url: 'https://oneo-me.github.io/nsgo/gallery/loader.html' })).toEqual({ key: 'app:nsgo-gallery', target: {}, urlOnly: false });
+		expect(scoredEntry('app', { slug: 'nsgo-gallery', url: 'https://nsgo.dev/gallery/' })).toEqual({ key: 'app:nsgo-gallery', target: {}, urlOnly: false });
 		expect(scoredEntry('app', { slug: 'ocr-manager', url: 'https://github.com/freewu/ocr-manager' })).toEqual({ key: 'app:ocr-manager', target: { repo: 'freewu/ocr-manager' }, urlOnly: true });
 		expect(scoredEntry('app', { slug: 'bamboo', url: 'https://getbamboo.app/', repo: 'OldPanda/bamboo' })).toEqual({ key: 'app:bamboo', target: { repo: 'OldPanda/bamboo' }, urlOnly: false });
 		expect(scoredEntry('ui', { slug: 'mujicaui', repo: 'ELY-Open-Source/MujicaUI', url: 'https://github.com/ELY-Open-Source/MujicaUI/tree/main/x' })).toEqual({ key: 'ui:ELY-Open-Source/MujicaUI', target: { repo: 'ELY-Open-Source/MujicaUI' }, urlOnly: false });
@@ -114,20 +114,20 @@ describe('what the site scores', () => {
 	});
 
 	it('leaves out official plugins, which are packages of NSGo itself', () => {
-		expect(scoredEntry('plugin', { slug: 'datatable', official: true, docs: 'https://oneo-me.github.io/nsgo/docs/lists/', import: 'github.com/oneo-me/nsgo/base/datatable' })).toBeUndefined();
+		expect(scoredEntry('plugin', { slug: 'datatable', official: true, docs: 'https://nsgo.dev/docs/lists/', import: 'github.com/nsgo-dev/nsgo/base/datatable' })).toBeUndefined();
 		expect(scoredEntry('plugin', { slug: 'untie', official: false, docs: 'https://github.com/someone/untie', import: 'github.com/someone/untie' })).toEqual({ key: 'plugin:untie', target: { repo: 'someone/untie' }, urlOnly: false });
 	});
 });
 
 const ledger: ScoreSignals = { repo: 'jane/ledger', stars: 1419, weeks: 12, activeWeeks: 12, license: 'MIT', osi: true, released: '2026-11-01', releaseDays: 11, likes: 0 };
-const sqlite: ScoreSignals = { repo: 'oneo-me/nsgo', path: 'base/datatable', weeks: 6, activeWeeks: 4, license: 'MIT', osi: true, released: '2026-11-01', releaseDays: 26, likes: 0 };
+const sqlite: ScoreSignals = { repo: 'nsgo-dev/nsgo', path: 'base/datatable', weeks: 6, activeWeeks: 4, license: 'MIT', osi: true, released: '2026-11-01', releaseDays: 26, likes: 0 };
 const pulse: ScoreSignals = { likes: 2 };
 
 describe('which entries a run measures', () => {
 	const targets = new Map<string, ScoreTarget>([
 		['app:ledger', { repo: 'jane/ledger' }],
 		['app:pulse', {}],
-		['plugin:sqlite', { repo: 'oneo-me/nsgo', path: 'base/datatable' }],
+		['plugin:sqlite', { repo: 'nsgo-dev/nsgo', path: 'base/datatable' }],
 		['app:new', { repo: 'you/new' }],
 	]);
 
@@ -213,7 +213,7 @@ describe('the file', () => {
 				'\t"entries": {',
 				'\t\t"app:ledger": { "activeWeeks": 12, "license": "MIT", "likes": 0, "osi": true, "releaseDays": 11, "released": "2026-11-01", "repo": "jane/ledger", "stars": 1419, "weeks": 12 },',
 				'\t\t"app:pulse": { "likes": 2 },',
-				'\t\t"plugin:sqlite": { "activeWeeks": 4, "license": "MIT", "likes": 0, "osi": true, "path": "base/datatable", "releaseDays": 26, "released": "2026-11-01", "repo": "oneo-me/nsgo", "weeks": 6 }',
+				'\t\t"plugin:sqlite": { "activeWeeks": 4, "license": "MIT", "likes": 0, "osi": true, "path": "base/datatable", "releaseDays": 26, "released": "2026-11-01", "repo": "nsgo-dev/nsgo", "weeks": 6 }',
 				'\t}',
 				'}',
 				'',
@@ -234,7 +234,7 @@ describe('the file', () => {
 	});
 });
 
-const plugins = Array.from({ length: 12 }, (_, i) => ({ key: `plugin:p${String(i).padStart(2, '0')}`, repo: 'oneo-me/nsgo', path: `base/p${i}` }));
+const plugins = Array.from({ length: 12 }, (_, i) => ({ key: `plugin:p${String(i).padStart(2, '0')}`, repo: 'nsgo-dev/nsgo', path: `base/p${i}` }));
 
 describe('the GraphQL requests', () => {
 	const windows = weekWindows(ASOF);
@@ -245,9 +245,9 @@ describe('the GraphQL requests', () => {
 		expect(out[0].repos.map((r) => [r.repo, r.fields])).toEqual([
 			['aa/aa', true],
 			['jane/ledger', true],
-			['oneo-me/nsgo', true],
+			['nsgo-dev/nsgo', true],
 		]);
-		expect(out[1].repos.map((r) => [r.repo, r.fields])).toEqual([['oneo-me/nsgo', false]]);
+		expect(out[1].repos.map((r) => [r.repo, r.fields])).toEqual([['nsgo-dev/nsgo', false]]);
 		expect(buildQuery(out[0], windows).match(/stargazerCount/g)).toHaveLength(3);
 		expect(buildQuery(out[1], windows)).not.toContain('stargazerCount');
 	});
@@ -262,8 +262,8 @@ describe('the GraphQL requests', () => {
 	});
 
 	it('counts a folder\'s commits in the folder, with those before the weeks', () => {
-		const query = buildQuery({ repos: [{ repo: 'oneo-me/nsgo', fields: true, targets: [{ key: 'plugin:sqlite', path: 'base/datatable' }] }] }, windows);
-		expect(query).toContain('r0: repository(owner: "oneo-me", name: "nsgo")');
+		const query = buildQuery({ repos: [{ repo: 'nsgo-dev/nsgo', fields: true, targets: [{ key: 'plugin:sqlite', path: 'base/datatable' }] }] }, windows);
+		expect(query).toContain('r0: repository(owner: "nsgo-dev", name: "nsgo")');
 		expect(query).toContain('t0w0: history(since: "2026-10-26T00:00:00Z", until: "2026-11-01T23:59:59Z", path: "base/datatable", first: 1) { totalCount }');
 		expect(query).toContain('t0w11: history(since: "2026-08-10T00:00:00Z", until: "2026-08-16T23:59:59Z", path: "base/datatable", first: 1) { totalCount }');
 		expect(query).toContain('t0pre: history(until: "2026-08-09T23:59:59Z", path: "base/datatable", first: 1) { totalCount }');
@@ -286,7 +286,7 @@ describe('reading GitHub\'s answer', () => {
 		repos: [
 			{ repo: 'jane/ledger', fields: true, targets: [{ key: 'app:ledger' }] },
 			{ repo: 'gone/app', fields: true, targets: [{ key: 'app:gone' }] },
-			{ repo: 'oneo-me/nsgo', fields: true, targets: [{ key: 'plugin:sqlite', path: 'base/datatable' }, { key: 'plugin:fetch', path: 'base/plot' }] },
+			{ repo: 'nsgo-dev/nsgo', fields: true, targets: [{ key: 'plugin:sqlite', path: 'base/datatable' }, { key: 'plugin:fetch', path: 'base/plot' }] },
 		],
 	};
 	const weeks = (n: number, counts: number[], pre?: number, ever?: number) => ({ ...Object.fromEntries(counts.map((c, w) => [`t${n}w${w}`, { totalCount: c }])), ...(pre === undefined ? {} : { [`t${n}pre`]: { totalCount: pre }, [`t${n}ever`]: { totalCount: ever } }) });
@@ -312,7 +312,7 @@ describe('reading GitHub\'s answer', () => {
 		expect(out.notFound).toEqual(['app:gone']);
 		// ledger's days: 2026-10-01 (a release and its tag) and 2026-11-01 (two tags); a draft has no date, and a release in July is before the weeks.
 		expect(out.repos.get('jane/ledger')).toEqual({ stars: 1419, archived: false, createdAt: '2025-01-01T00:00:00Z', license: 'MIT', released: '2026-11-01', releaseDays: 2 });
-		expect(out.repos.get('oneo-me/nsgo')).toEqual({ stars: 4592, archived: true, createdAt: '2026-09-25T00:00:00Z', license: 'NOASSERTION', released: '2026-10-20', releaseDays: 1 });
+		expect(out.repos.get('nsgo-dev/nsgo')).toEqual({ stars: 4592, archived: true, createdAt: '2026-09-25T00:00:00Z', license: 'NOASSERTION', released: '2026-10-20', releaseDays: 1 });
 		expect(out.activity.get('app:ledger')).toEqual({ active: activeAt(0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11) });
 		expect(out.activity.get('plugin:sqlite')).toEqual({ active: activeAt(0, 2), pre: 0, ever: 5 });
 		expect(out.activity.get('plugin:fetch')).toEqual({ active: none, pre: 0, ever: 0 });
@@ -348,16 +348,16 @@ describe('reading GitHub\'s answer', () => {
 	it('records the signals the catalog reads', () => {
 		const out = parseBatch(batch, answer, windows, NOW);
 		expect(signalsOf({ repo: 'jane/ledger' }, out.repos.get('jane/ledger')!, out.activity.get('app:ledger')!, 3, ASOF)).toEqual({ repo: 'jane/ledger', stars: 1419, weeks: 12, activeWeeks: 11, license: 'MIT', osi: true, released: '2026-11-01', releaseDays: 2, likes: 3 });
-		expect(signalsOf({ repo: 'oneo-me/nsgo', path: 'base/datatable' }, out.repos.get('oneo-me/nsgo')!, out.activity.get('plugin:sqlite')!, 0, ASOF)).toEqual({ repo: 'oneo-me/nsgo', path: 'base/datatable', weeks: 3, activeWeeks: 2, license: 'NOASSERTION', osi: false, released: '2026-10-20', releaseDays: 1, archived: true, likes: 0 });
+		expect(signalsOf({ repo: 'nsgo-dev/nsgo', path: 'base/datatable' }, out.repos.get('nsgo-dev/nsgo')!, out.activity.get('plugin:sqlite')!, 0, ASOF)).toEqual({ repo: 'nsgo-dev/nsgo', path: 'base/datatable', weeks: 3, activeWeeks: 2, license: 'NOASSERTION', osi: false, released: '2026-10-20', releaseDays: 1, archived: true, likes: 0 });
 		// A folder with no commit ever moved or is misnamed: judged on the repository's weeks, 0 activity, not counted at half as a new one is.
 		const nsgo = { stars: 4592, archived: false, createdAt: '2026-09-28T00:00:00Z', license: 'MIT', releaseDays: 26 };
-		const gone = signalsOf({ repo: 'oneo-me/nsgo', path: 'base/old' }, nsgo, { active: none, pre: 0, ever: 0 }, 0, ASOF);
+		const gone = signalsOf({ repo: 'nsgo-dev/nsgo', path: 'base/old' }, nsgo, { active: none, pre: 0, ever: 0 }, 0, ASOF);
 		expect([gone.weeks, gone.activeWeeks]).toEqual([5, 0]);
 		expect(scoreOf(gone, ASOF).parts.find((p) => p.signal === 'activity')).toMatchObject({ points: 0, basis: 'measured' });
 		// A folder added after the windows (commits, but none in them yet) is new: 0 weeks, counted at half.
-		expect(signalsOf({ repo: 'oneo-me/nsgo', path: 'base/new' }, nsgo, { active: none, pre: 0, ever: 2 }, 0, ASOF).weeks).toBe(0);
+		expect(signalsOf({ repo: 'nsgo-dev/nsgo', path: 'base/new' }, nsgo, { active: none, pre: 0, ever: 2 }, 0, ASOF).weeks).toBe(0);
 		// A folder has its repository's release days, as its license.
-		expect(signalsOf({ repo: 'oneo-me/nsgo', path: 'base/new' }, nsgo, { active: none, pre: 0, ever: 2 }, 0, ASOF).releaseDays).toBe(26);
+		expect(signalsOf({ repo: 'nsgo-dev/nsgo', path: 'base/new' }, nsgo, { active: none, pre: 0, ever: 2 }, 0, ASOF).releaseDays).toBe(26);
 		// The release days are written for every entry with a repository, none included: a record without them is one from before they were counted.
 		const bare = signalsOf({ repo: 'a/b' }, { stars: 0, archived: false, createdAt: '2020-01-01T00:00:00Z', license: null, releaseDays: 0 }, { active: none }, 0, ASOF);
 		expect(bare).toEqual({ repo: 'a/b', stars: 0, weeks: 12, activeWeeks: 0, license: null, releaseDays: 0, likes: 0 });

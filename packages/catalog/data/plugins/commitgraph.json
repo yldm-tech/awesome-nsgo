@@ -5,11 +5,11 @@
 	"mark": "Cg",
 	"official": true,
 	"surface": "both",
-	"import": "github.com/oneo-me/nsgo/base/commitgraph",
+	"import": "github.com/nsgo-dev/nsgo/base/commitgraph",
 	"tags": [
 		"git"
 	],
-	"docs": "https://pkg.go.dev/github.com/oneo-me/nsgo/base/commitgraph",
+	"docs": "https://pkg.go.dev/github.com/nsgo-dev/nsgo/base/commitgraph",
 	"summary": {
 		"en": "Lays out and draws a Git history's revision graph, its lanes and the lines to each commit's parents; ui/commitgraph shows commits as a virtualized list beside it.",
 		"zh-CN": "为 Git 历史布局并绘制提交图：提交所在的轨道和连向父提交的线；ui/commitgraph 在图旁以虚拟化列表显示提交。",

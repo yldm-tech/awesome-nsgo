@@ -5,13 +5,13 @@
 	"mark": "Tx",
 	"official": true,
 	"surface": "tsx",
-	"import": "github.com/oneo-me/nsgo/tsx",
+	"import": "github.com/nsgo-dev/nsgo/tsx",
 	"tags": [
 		"tsx",
 		"tailwind",
 		"no-node"
 	],
-	"docs": "https://oneo-me.github.io/nsgo/docs/tsx/",
+	"docs": "https://nsgo.dev/docs/tsx/",
 	"summary": {
 		"en": "Runs apps written in TSX with Tailwind classes, on goja or the browser engine on the web, compiled ahead with esbuild and no Node; it also signs and verifies .nsgopkg packages of TSX an app downloads.",
 		"zh-CN": "运行用 TSX 和 Tailwind 类名编写的应用，运行在 goja 上，Web 上则用浏览器引擎；借助 esbuild 提前编译，不需要 Node。还能为应用下载的 TSX 签名并校验 .nsgopkg 包。",

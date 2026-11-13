@@ -3,10 +3,10 @@
 	"slug": "nsgo-agents-md",
 	"name": "NSGo AGENTS.md",
 	"author": "oneo-me",
-	"url": "https://github.com/oneo-me/nsgo/blob/main/AGENTS.md",
-	"repo": "oneo-me/nsgo",
+	"url": "https://github.com/nsgo-dev/nsgo/blob/main/AGENTS.md",
+	"repo": "nsgo-dev/nsgo",
 	"type": "rules",
-	"install": "git clone https://github.com/oneo-me/nsgo",
+	"install": "git clone https://github.com/nsgo-dev/nsgo",
 	"tags": [
 		"agents-md",
 		"contributing",

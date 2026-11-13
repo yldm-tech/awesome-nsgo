@@ -6,9 +6,9 @@
 [![X](https://img.shields.io/badge/X-%40suzukaze__haduki-000000?logo=x&logoColor=white)](https://x.com/suzukaze_haduki)
 [![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/houko)
 
-把围绕 [NSGo](https://github.com/oneo-me/nsgo) 的应用、包、组件和文档收集在一个站点里：**[awesomensgo.dev](https://awesomensgo.dev)**。NSGo 是 [ONEO](https://github.com/oneo-me) 开发的、以 Go 为后端的跨平台原生 UI 引擎：应用逻辑、响应式图和布局都在 Go 中运行，应用用 Go 或 TSX 写一次即可。它在 iOS 及其 App Clip（轻 App）、tvOS、watchOS、Android、macOS、Windows、Linux 和 Web 上用各平台自己的原生视图绘制，Go 应用还能运行在微信、QQ、支付宝和抖音小程序里。NSGo 还处在早期，尚未发布正式版本，也没有稳定的 API。
+把围绕 [NSGo](https://github.com/nsgo-dev/nsgo) 的应用、包、组件和文档收集在一个站点里：**[awesomensgo.dev](https://awesomensgo.dev)**。NSGo 是 [ONEO](https://github.com/oneo-me) 开发的、以 Go 为后端的跨平台原生 UI 引擎：应用逻辑、响应式图和布局都在 Go 中运行，应用用 Go 或 TSX 写一次即可。它在 iOS 及其 App Clip（轻 App）、tvOS、watchOS、Android、macOS、Windows、Linux 和 Web 上用各平台自己的原生视图绘制，Go 应用还能运行在微信、QQ、支付宝和抖音小程序里。NSGo 还处在早期，尚未发布正式版本，也没有稳定的 API。
 
-Awesome NSGo 是 yldm-tech 维护的非官方社区目录，不是 NSGo 的官方网站；官网是 [oneo-me.github.io/nsgo](https://oneo-me.github.io/nsgo/)。
+Awesome NSGo 是 yldm-tech 维护的非官方社区目录，不是 NSGo 的官方网站；官网是 [nsgo.dev](https://nsgo.dev/)。
 
 [English](README.md) · 简体中文 · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
 
@@ -17,7 +17,7 @@ Awesome NSGo 是 yldm-tech 维护的非官方社区目录，不是 NSGo 的官�
 ## 站点内容
 
 - **作品**：用 NSGo 做的应用，可按名称、最新或最热排序，并按分类、语言（Go 或 TSX）和平台（macOS、Windows、Linux、iOS、Android、Web 或小程序）筛选。每款都有自己的页面，包含完整介绍、截图（项目提供时）、用 Go 还是 TSX 编写、支持的平台、分类、收录时间，以及同一作者的其他作品。
-- **插件**：NSGo 的官方包（都在 `github.com/oneo-me/nsgo` 这个模块里，包括桌面窗口与托盘、移动端标签栏、国际化、Lucide 图标、图表、数据表格、编辑器、终端视图、小组件、测试等）以及社区包，各自标明适用于 Go、TSX 还是两者，另有 `nsgo` 命令行工具。
+- **插件**：NSGo 的官方包（都在 `github.com/nsgo-dev/nsgo` 这个模块里，包括桌面窗口与托盘、移动端标签栏、国际化、Lucide 图标、图表、数据表格、编辑器、终端视图、小组件、测试等）以及社区包，各自标明适用于 Go、TSX 还是两者，另有 `nsgo` 命令行工具。
 - **UI 组件**：为 NSGo 应用做的组件库、主题与图标。
 - **状态管理**：NSGo 自带的 signal、memo 和 context，以及为 NSGo 应用做的状态管理库。
 - **模板**：开发 NSGo 应用的起点，首先是 `nsgo init` 自带的 `go`、`tsx` 和 `mixed` 三个模板。
@@ -35,7 +35,7 @@ pnpm monorepo，由 [TanStack Start](https://tanstack.com/start) 运行在 [Clou
 |---|---|
 | `apps/web` | 站点：React 19、TanStack Start（服务端渲染），以及带 `@cloudflare/vite-plugin` 的 Vite。`wrangler.jsonc` 把它部署到 `awesomensgo.dev`。 |
 | `packages/catalog` | 数据：`data/*.json`（应用、UI 组件、状态方案、模板、AI 工具、插件、文章、指南）及其 JSON Schema，五种语言的界面文案，搜索与提交表单的条目。测试会校验每个条目。 |
-| `packages/enrich` | 补全提交 bot 开的 PR：从项目仓库取应用图标，截图优先用表单里上传的图片或填的链接、否则从仓库取，并用 Claude 写五种语言的文案。由 `.github/workflows/enrich-submission.yml` 运行。`.github/workflows/verify.yml` 每周还会核验所有已收录项目的仓库，仓库有变化的条目各开一个 PR：仓库被删除、转为私有或被停用时下架条目，被改名或转移时更新条目，补上缺少的 homepage，项目有了自己的图片后替换临时图；仓库被归档或不再用 NSGo 构建（`go.mod` 不再依赖 `github.com/oneo-me/nsgo`）时只在运行摘要里列出。`.github/workflows/prune.yml` 每周还会开一个汇总 PR，提议下架达不到收录标准的条目：收录满 30 天后评分低于 20、超过 180 天没有提交、仓库已归档或不再用 NSGo 构建；维护者合并才生效，保留过的条目不会再被提议。 |
+| `packages/enrich` | 补全提交 bot 开的 PR：从项目仓库取应用图标，截图优先用表单里上传的图片或填的链接、否则从仓库取，并用 Claude 写五种语言的文案。由 `.github/workflows/enrich-submission.yml` 运行。`.github/workflows/verify.yml` 每周还会核验所有已收录项目的仓库，仓库有变化的条目各开一个 PR：仓库被删除、转为私有或被停用时下架条目，被改名或转移时更新条目，补上缺少的 homepage，项目有了自己的图片后替换临时图；仓库被归档或不再用 NSGo 构建（`go.mod` 不再依赖 `github.com/nsgo-dev/nsgo`）时只在运行摘要里列出。`.github/workflows/prune.yml` 每周还会开一个汇总 PR，提议下架达不到收录标准的条目：收录满 30 天后评分低于 20、超过 180 天没有提交、仓库已归档或不再用 NSGo 构建；维护者合并才生效，保留过的条目不会再被提议。 |
 
 应用图标来自 [yldm-tech/ai-logo](https://github.com/yldm-tech/ai-logo)，由它的 CDN 提供；它未收录的少数应用使用 `apps/web/public/icons/` 里的官方图标。
 
@@ -117,8 +117,8 @@ bot 开出 PR 后，*Complete submission* workflow 会补上表单问不到的�
 
 ## 致谢
 
-- [NSGo](https://github.com/oneo-me/nsgo) 由 [ONEO](https://github.com/oneo-me) 开发（Apache-2.0），是 [NSH](https://nsh.dev) 的 Go 移植版。官方作品、插件、模板和指南的数据以它的仓库和[官网](https://oneo-me.github.io/nsgo/)为准。本站与 ONEO 没有关联，也未获其背书。
-- 应用图标来自 [yldm-tech/ai-logo](https://github.com/yldm-tech/ai-logo)（MIT，分叉自 LobeHub 的 [lobe-icons](https://github.com/lobehub/lobe-icons)）或应用自己的图标；NSGo 官方作品的截图来自 oneo-me/nsgo 的 `docs/public/cases`，其余来自各项目的 README。两者都归各应用作者所有，名称和标志是其商标，仅用于识别。
+- [NSGo](https://github.com/nsgo-dev/nsgo) 由 [ONEO](https://github.com/oneo-me) 开发（Apache-2.0），是 [NSH](https://nsh.dev) 的 Go 移植版。官方作品、插件、模板和指南的数据以它的仓库和[官网](https://nsgo.dev/)为准。本站与 ONEO 没有关联，也未获其背书。
+- 应用图标来自 [yldm-tech/ai-logo](https://github.com/yldm-tech/ai-logo)（MIT，分叉自 LobeHub 的 [lobe-icons](https://github.com/lobehub/lobe-icons)）或应用自己的图标；NSGo 官方作品的截图来自 nsgo-dev/nsgo 的 `docs/public/cases`，其余来自各项目的 README。两者都归各应用作者所有，名称和标志是其商标，仅用于识别。
 
 ## 许可证
 

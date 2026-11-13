@@ -6,9 +6,9 @@
 [![X](https://img.shields.io/badge/X-%40suzukaze__haduki-000000?logo=x&logoColor=white)](https://x.com/suzukaze_haduki)
 [![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/houko)
 
-[NSGo](https://github.com/oneo-me/nsgo) まわりのアプリ、パッケージ、コンポーネント、ドキュメントをひとつのサイトに集めました：**[awesomensgo.dev](https://awesomensgo.dev)**。NSGo は [ONEO](https://github.com/oneo-me) が開発している、Go をバックエンドにしたクロスプラットフォームのネイティブ UI エンジンです。アプリのロジック、リアクティブグラフ、レイアウトは Go で動き、アプリは Go か TSX で一度書くだけです。iOS とその App Clip、tvOS、watchOS、Android、macOS、Windows、Linux、Web では各プラットフォーム自身のネイティブビューで描画し、Go のアプリは WeChat、QQ、Alipay、Douyin のミニプログラムでも動きます。NSGo はまだ初期段階で、リリースも安定した API もありません。
+[NSGo](https://github.com/nsgo-dev/nsgo) まわりのアプリ、パッケージ、コンポーネント、ドキュメントをひとつのサイトに集めました：**[awesomensgo.dev](https://awesomensgo.dev)**。NSGo は [ONEO](https://github.com/oneo-me) が開発している、Go をバックエンドにしたクロスプラットフォームのネイティブ UI エンジンです。アプリのロジック、リアクティブグラフ、レイアウトは Go で動き、アプリは Go か TSX で一度書くだけです。iOS とその App Clip、tvOS、watchOS、Android、macOS、Windows、Linux、Web では各プラットフォーム自身のネイティブビューで描画し、Go のアプリは WeChat、QQ、Alipay、Douyin のミニプログラムでも動きます。NSGo はまだ初期段階で、リリースも安定した API もありません。
 
-Awesome NSGo は yldm-tech が運営する非公式のコミュニティカタログで、NSGo の公式サイトではありません。公式サイトは [oneo-me.github.io/nsgo](https://oneo-me.github.io/nsgo/) です。
+Awesome NSGo は yldm-tech が運営する非公式のコミュニティカタログで、NSGo の公式サイトではありません。公式サイトは [nsgo.dev](https://nsgo.dev/) です。
 
 [English](README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · 日本語 · [한국어](README.ko.md)
 
@@ -17,7 +17,7 @@ Awesome NSGo は yldm-tech が運営する非公式のコミュニティカタ�
 ## サイトの内容
 
 - **ショーケース**：NSGo で作られたアプリ。名前順、新着順、人気順で並べ替えられ、カテゴリ、言語（Go か TSX）、プラットフォーム（macOS、Windows、Linux、iOS、Android、Web、ミニプログラム）で絞り込めます。それぞれに専用のページがあり、詳しい説明、スクリーンショット（プロジェクトが用意している場合）、Go と TSX のどちらで書かれているか、対応プラットフォーム、カテゴリ、掲載日、同じ作者のほかのアプリを載せています。
-- **プラグイン**：NSGo の公式パッケージ（すべて `github.com/oneo-me/nsgo` モジュールに含まれ、デスクトップのウィンドウとトレイ、モバイルのタブバー、多言語化、Lucide アイコン、グラフ、データテーブル、エディタ、ターミナルビュー、ウィジェット、テストなどがあります）とコミュニティのパッケージ。Go・TSX・その両方のどれから使えるかを示し、`nsgo` コマンドラインツールも紹介します。
+- **プラグイン**：NSGo の公式パッケージ（すべて `github.com/nsgo-dev/nsgo` モジュールに含まれ、デスクトップのウィンドウとトレイ、モバイルのタブバー、多言語化、Lucide アイコン、グラフ、データテーブル、エディタ、ターミナルビュー、ウィジェット、テストなどがあります）とコミュニティのパッケージ。Go・TSX・その両方のどれから使えるかを示し、`nsgo` コマンドラインツールも紹介します。
 - **UI コンポーネント**：NSGo アプリ向けのコンポーネントライブラリ、テーマ、アイコン。
 - **状態管理**：NSGo 標準の signal・memo・context と、NSGo アプリ向けの状態管理ライブラリ。
 - **テンプレート**：NSGo アプリの出発点。まずは `nsgo init` に付属する `go`、`tsx`、`mixed` の 3 つです。
@@ -35,7 +35,7 @@ pnpm のモノレポで、[TanStack Start](https://tanstack.com/start) が [Clou
 |---|---|
 | `apps/web` | サイト本体：React 19、TanStack Start（サーバーレンダリング）、`@cloudflare/vite-plugin` 付きの Vite。`wrangler.jsonc` で `awesomensgo.dev` にデプロイします。 |
 | `packages/catalog` | データ：`data/*.json`（アプリ、UI コンポーネント、状態管理、テンプレート、AI ツール、プラグイン、記事、ガイド）とその JSON Schema、5 言語の UI 文言、検索、投稿フォームの項目。テストで全項目を検証します。 |
-| `packages/enrich` | 投稿 bot が開いたプルリクエストを補完します：プロジェクトのリポジトリからアプリのアイコンを、フォームでアップロードされた画像か指定されたリンク（なければリポジトリ）からスクリーンショットを取り込み、5 言語の文言を Claude で書きます。`.github/workflows/enrich-submission.yml` が実行します。また `.github/workflows/verify.yml` が週に一度、掲載中のすべてのプロジェクトのリポジトリを確認し、リポジトリが変わったエントリごとにプルリクエストを開きます：リポジトリが削除・非公開化・無効化されたらエントリを外し、名前変更や移管なら更新し、ない homepage を補い、プロジェクト自身の画像ができたら仮の画像を差し替えます。アーカイブされたリポジトリや NSGo を使わなくなったもの（`go.mod` が `github.com/oneo-me/nsgo` を必要としなくなったもの）は、実行のサマリーに挙げるだけです。`.github/workflows/prune.yml` は週に一度、サイトの基準に届かないエントリを外す提案を 1 つのプルリクエストにまとめます：掲載から 30 日たってもスコアが 20 未満、180 日を超えてコミットがない、リポジトリがアーカイブされた、または NSGo を使わなくなったもの。メンテナーがマージして初めて外れ、残したエントリは再び提案されません。 |
+| `packages/enrich` | 投稿 bot が開いたプルリクエストを補完します：プロジェクトのリポジトリからアプリのアイコンを、フォームでアップロードされた画像か指定されたリンク（なければリポジトリ）からスクリーンショットを取り込み、5 言語の文言を Claude で書きます。`.github/workflows/enrich-submission.yml` が実行します。また `.github/workflows/verify.yml` が週に一度、掲載中のすべてのプロジェクトのリポジトリを確認し、リポジトリが変わったエントリごとにプルリクエストを開きます：リポジトリが削除・非公開化・無効化されたらエントリを外し、名前変更や移管なら更新し、ない homepage を補い、プロジェクト自身の画像ができたら仮の画像を差し替えます。アーカイブされたリポジトリや NSGo を使わなくなったもの（`go.mod` が `github.com/nsgo-dev/nsgo` を必要としなくなったもの）は、実行のサマリーに挙げるだけです。`.github/workflows/prune.yml` は週に一度、サイトの基準に届かないエントリを外す提案を 1 つのプルリクエストにまとめます：掲載から 30 日たってもスコアが 20 未満、180 日を超えてコミットがない、リポジトリがアーカイブされた、または NSGo を使わなくなったもの。メンテナーがマージして初めて外れ、残したエントリは再び提案されません。 |
 
 アプリのアイコンは [yldm-tech/ai-logo](https://github.com/yldm-tech/ai-logo) の CDN から配信しています。ai-logo に収録されていない一部のアプリは、`apps/web/public/icons/` にある公式アイコンを使います。
 
@@ -117,8 +117,8 @@ UI の文言は `packages/catalog/locales/` にあり、言語ごとに同じキ
 
 ## クレジット
 
-- [NSGo](https://github.com/oneo-me/nsgo) は [ONEO](https://github.com/oneo-me) が作っています（Apache-2.0）。[NSH](https://nsh.dev) を Go に移植したものです。公式のショーケース、プラグイン、テンプレート、ガイドのデータはそのリポジトリと[サイト](https://oneo-me.github.io/nsgo/)に沿っています。このサイトは ONEO と提携しておらず、その承認も受けていません。
-- アプリのアイコンは [yldm-tech/ai-logo](https://github.com/yldm-tech/ai-logo)（MIT、LobeHub の [lobe-icons](https://github.com/lobehub/lobe-icons) のフォーク）またはアプリ自身のアイコン、スクリーンショットは NSGo 公式のショーケースのアプリについては oneo-me/nsgo の `docs/public/cases`、それ以外は各プロジェクトの README からのものです。いずれも各アプリの作者に帰属し、名称とロゴは各社の商標で、識別のためにのみ表示しています。
+- [NSGo](https://github.com/nsgo-dev/nsgo) は [ONEO](https://github.com/oneo-me) が作っています（Apache-2.0）。[NSH](https://nsh.dev) を Go に移植したものです。公式のショーケース、プラグイン、テンプレート、ガイドのデータはそのリポジトリと[サイト](https://nsgo.dev/)に沿っています。このサイトは ONEO と提携しておらず、その承認も受けていません。
+- アプリのアイコンは [yldm-tech/ai-logo](https://github.com/yldm-tech/ai-logo)（MIT、LobeHub の [lobe-icons](https://github.com/lobehub/lobe-icons) のフォーク）またはアプリ自身のアイコン、スクリーンショットは NSGo 公式のショーケースのアプリについては nsgo-dev/nsgo の `docs/public/cases`、それ以外は各プロジェクトの README からのものです。いずれも各アプリの作者に帰属し、名称とロゴは各社の商標で、識別のためにのみ表示しています。
 
 ## ライセンス
 

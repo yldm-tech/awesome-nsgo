@@ -3,7 +3,7 @@ import { readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { promisify } from 'node:util';
 import { listDir } from './files.ts';
-import { NSGO_MODULE, quiet } from './find.ts';
+import { NSGO_MODULE, NSGO_REPOS, quiet } from './find.ts';
 import { github } from './github.ts';
 import { currentRepo, namedInCode, usesNsgo } from './listed.ts';
 import { type ShotSource, firstShot, iconSource, ownIcon, repoFacts } from './repo.ts';
@@ -75,7 +75,7 @@ async function listedEntries(): Promise<Listed[]> {
 			const entry = JSON.parse(await readFile(join(ROOT, file), 'utf8')) as Entry;
 			const repo = repoOfEntry(entry);
 			const slug = String(entry.slug);
-			if (!repo || entry.official === true || repo.toLowerCase() === NSGO_MODULE.replace('github.com/', '')) continue;
+			if (!repo || entry.official === true || NSGO_REPOS.has(repo.toLowerCase())) continue;
 			if (ONLY.size && !ONLY.has(`${dir}/${slug}`)) continue;
 			out.push({ dir, slug, file, entry, repo });
 		}

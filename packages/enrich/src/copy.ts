@@ -39,7 +39,7 @@ export interface Copy {
 	tooLong: string[];
 }
 
-const SYSTEM = `You write the catalog copy for awesomensgo.dev, an unofficial community directory of apps, UI components, state management libraries, templates, AI tools and plugins built with NSGo (github.com/oneo-me/nsgo), a cross-platform native UI framework with a Go backend: an app is written once in Go or in TSX (compiled ahead of time, with no Node), its logic, reactive graph and layout run in Go, and each platform draws it with its own native views, on macOS, Windows, Linux, iOS, Android, the web (WebAssembly) and, for Go apps, mini programs.
+const SYSTEM = `You write the catalog copy for awesomensgo.dev, an unofficial community directory of apps, UI components, state management libraries, templates, AI tools and plugins built with NSGo (github.com/nsgo-dev/nsgo), a cross-platform native UI framework with a Go backend: an app is written once in Go or in TSX (compiled ahead of time, with no Node), its logic, reactive graph and layout run in Go, and each platform draws it with its own native views, on macOS, Windows, Linux, iOS, Android, the web (WebAssembly) and, for Go apps, mini programs.
 
 You get one entry submitted through the site's form, the project's README and, for an app, its nsgo.yaml, the file NSGo's CLI builds the app from (its name, id, icon, and build.targets, the platforms it builds for: macos_*, windows_*, linux_*, ios, android_*, web, miniprogram_*, or all), plus entries already on the site as examples of the voice and length to match.
 

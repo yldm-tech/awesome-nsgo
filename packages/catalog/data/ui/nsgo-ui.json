@@ -12,9 +12,9 @@
 		"ja": "base の上に作られた NSGo 組み込みのスタイル付きコンポーネント。Onevra の見た目で、フラットな枠付きコントロール、青いアクセントのニュートラルなテーマと、Onevra のテラコッタを使う「暖暮（Warm Dusk）」テーマを備えます。TSX アプリからは nsgo/ui として使えます。",
 		"ko": "base 위에 만든 NSGo 내장 스타일 컴포넌트. Onevra의 모습으로, 평평한 테두리 컨트롤과 파란 강조색의 중립 테마, Onevra의 테라코타를 쓰는 Warm Dusk(暖暮) 테마를 제공합니다. TSX 앱에서는 nsgo/ui로 씁니다."
 	},
-	"repo": "oneo-me/nsgo",
-	"url": "https://github.com/oneo-me/nsgo/tree/main/ui",
-	"homepage": "https://oneo-me.github.io/nsgo/docs/ui/",
+	"repo": "nsgo-dev/nsgo",
+	"url": "https://github.com/nsgo-dev/nsgo/tree/main/ui",
+	"homepage": "https://nsgo.dev/docs/ui/",
 	"screenshot": "nsgo-ui.webp",
 	"added": "2026-11-10T13:57:52Z"
 }

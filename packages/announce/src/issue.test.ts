@@ -9,7 +9,7 @@ describe('the project to tell', () => {
 		expect(projectRepo('app', { url: 'https://kero.sh' })).toBeUndefined();
 		expect(projectRepo('plugin', { official: false, docs: 'https://github.com/caelyreth/untie/tree/main/contrib/nsgo', import: 'github.com/caelyreth/untie/contrib/nsgo' })).toBe('caelyreth/untie');
 		expect(projectRepo('plugin', { official: false, docs: 'https://untie.iki.moe', import: 'github.com/caelyreth/untie/contrib/nsgo' })).toBe('caelyreth/untie');
-		expect(projectRepo('plugin', { official: true, docs: 'https://oneo-me.github.io/nsgo/docs/lists/', import: 'github.com/oneo-me/nsgo/base/datatable' })).toBeUndefined();
+		expect(projectRepo('plugin', { official: true, docs: 'https://nsgo.dev/docs/lists/', import: 'github.com/nsgo-dev/nsgo/base/datatable' })).toBeUndefined();
 	});
 });
 
@@ -41,6 +41,7 @@ describe('missing images', () => {
 		expect(notTold('yldm-tech/nodra', 'yldm-tech')).toBe("it belongs to yldm-tech, the site's own owner");
 		expect(notTold('oneo-me/nsgo-flow', 'yldm-tech')).toBe("it belongs to oneo-me, NSGo's author");
 		expect(notTold('Oneo-Me/nsgo-icons-kubai')).toBe("it belongs to Oneo-Me, NSGo's author");
+		expect(notTold('nsgo-dev/nsgo-extras', 'yldm-tech')).toBe("it belongs to nsgo-dev, NSGo's author");
 		expect(notTold('Jungley8/exodrive', 'yldm-tech')).toBeUndefined();
 		expect(notTold('oneo-mex/app', 'yldm-tech')).toBeUndefined();
 		// MyGo's author is no one special here.
@@ -75,7 +76,7 @@ describe('the issue', () => {
 		expect(body.split(badge).length - 1).toBe(2);
 		expect(body).toContain('已被 [Awesome NSGo]');
 		expect(title).toBe('Listed on Awesome NSGo');
-		expect(body).toContain('built with [NSGo](https://github.com/oneo-me/nsgo)');
+		expect(body).toContain('built with [NSGo](https://github.com/nsgo-dev/nsgo)');
 		expect(SITE_URL).toBe('https://awesomensgo.dev');
 		// The site's repository, wherever the issue sends the project to fix its entry.
 		expect(body).toContain(`open an issue or pull request at ${SITE_REPO}.`);

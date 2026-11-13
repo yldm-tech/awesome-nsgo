@@ -90,7 +90,7 @@ export function scoredEntry(kind: EntryKind, e: Entry): Scored | undefined {
 	const repo = str(e.repo);
 	// An app's and an AI tool's link may be a folder of their repository, which is then what is measured.
 	const target = kind === 'app' || kind === 'ai' ? scoreTarget({ repo, url: str(e.url) }) : kind === 'plugin' ? scoreTarget({ url: str(e.docs), goImport: str(e.import) }) : scoreTarget({ repo });
-	return { key: scoreKey(kind, { slug, repo }), target, urlOnly: kind === 'app' && !repo && Boolean(target.repo) };
+	return { key: scoreKey(kind, { slug }), target, urlOnly: kind === 'app' && !repo && Boolean(target.repo) };
 }
 
 // ---- what a run measures ----

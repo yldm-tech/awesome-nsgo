@@ -109,12 +109,12 @@ describe('what the site scores', () => {
 		expect(scoredEntry('app', { slug: 'nsgo-gallery', url: 'https://nsgo.dev/gallery/' })).toEqual({ key: 'app:nsgo-gallery', target: {}, urlOnly: false });
 		expect(scoredEntry('app', { slug: 'ocr-manager', url: 'https://github.com/freewu/ocr-manager' })).toEqual({ key: 'app:ocr-manager', target: { repo: 'freewu/ocr-manager' }, urlOnly: true });
 		expect(scoredEntry('app', { slug: 'bamboo', url: 'https://getbamboo.app/', repo: 'OldPanda/bamboo' })).toEqual({ key: 'app:bamboo', target: { repo: 'OldPanda/bamboo' }, urlOnly: false });
-		expect(scoredEntry('ui', { slug: 'mujicaui', repo: 'ELY-Open-Source/MujicaUI', url: 'https://github.com/ELY-Open-Source/MujicaUI/tree/main/x' })).toEqual({ key: 'ui:ELY-Open-Source/MujicaUI', target: { repo: 'ELY-Open-Source/MujicaUI' }, urlOnly: false });
+		expect(scoredEntry('ui', { slug: 'mujicaui', repo: 'ELY-Open-Source/MujicaUI', url: 'https://github.com/ELY-Open-Source/MujicaUI/tree/main/x' })).toEqual({ key: 'ui:mujicaui', target: { repo: 'ELY-Open-Source/MujicaUI' }, urlOnly: false });
 		expect(scoredEntry('plugin', { slug: 'untie', official: false, docs: 'https://github.com/someone/untie', import: 'github.com/someone/untie' })).toEqual({ key: 'plugin:untie', target: { repo: 'someone/untie' }, urlOnly: false });
 	});
 
 	it('leaves out official plugins, which are packages of NSGo itself', () => {
-		expect(scoredEntry('plugin', { slug: 'datatable', official: true, docs: 'https://nsgo.dev/docs/lists/', import: 'github.com/nsgo-dev/nsgo/base/datatable' })).toBeUndefined();
+		expect(scoredEntry('plugin', { slug: 'datatable', official: true, package: 'base/datatable', doc: 'lists#tables' })).toBeUndefined();
 		expect(scoredEntry('plugin', { slug: 'untie', official: false, docs: 'https://github.com/someone/untie', import: 'github.com/someone/untie' })).toEqual({ key: 'plugin:untie', target: { repo: 'someone/untie' }, urlOnly: false });
 	});
 });

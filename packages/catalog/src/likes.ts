@@ -1,12 +1,11 @@
 import { AI_TOOLS, type AiTool, APPS, type App, COMMUNITY_PLUGINS, PLUGINS, type Plugin, STATE_SOLUTIONS, type StateSolution, TEMPLATES, type Template, UI_LIBS, type UiLib } from './catalog';
 
-// Every entry a visitor can like has a stable key: its kind and its id in the catalog. The server accepts only keys of entries listed here, so the likes table cannot fill with made-up ids.
+// Every entry a visitor can like has a stable key: its kind and its slug, which names its data file. Not its repository: that changes when the owner renames or transfers it (as NSGo's did, from oneo-me/nsgo to nsgo-dev/nsgo, which verify.ts then writes into the entry), and the likes kept under the old key would be lost; several AI tools may also share one repository (the skills of a collection). The server accepts only keys of entries listed here, so the likes table cannot fill with made-up ids.
 export const likeKey = {
 	app: (a: App) => `app:${a.slug}`,
-	ui: (l: UiLib) => `ui:${l.repo}`,
-	state: (s: StateSolution) => `state:${s.repo}`,
-	template: (x: Template) => `template:${x.repo}`,
-	// By slug, as several tools may share a repository (the skills of a collection).
+	ui: (l: UiLib) => `ui:${l.slug}`,
+	state: (s: StateSolution) => `state:${s.slug}`,
+	template: (x: Template) => `template:${x.slug}`,
 	ai: (x: AiTool) => `ai:${x.slug}`,
 	plugin: (p: Plugin) => `plugin:${p.slug}`,
 } as const;

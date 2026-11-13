@@ -5,12 +5,11 @@
 	"mark": "Do",
 	"official": true,
 	"surface": "both",
-	"import": "github.com/nsgo-dev/nsgo/base/dock",
+	"package": "base/dock",
 	"tags": [
 		"layout",
 		"tabs"
 	],
-	"docs": "https://pkg.go.dev/github.com/nsgo-dev/nsgo/base/dock",
 	"summary": {
 		"en": "A dockable workspace: a center and left, right and bottom docks of splits and tab groups the user drags tabs between, resizes and zooms, shown compactly in narrow windows.",
 		"zh-CN": "可停靠的工作区：中央区域加左、右、底部停靠区，由分栏和标签组构成，用户可拖动标签、调整大小和放大；窄窗口下以紧凑方式呈现。",

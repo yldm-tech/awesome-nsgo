@@ -1,16 +1,14 @@
 // The issue opened on a newly listed project's own repository once the site lists it: that it was listed and where, the post on X about it, the README badge's Markdown so the project can link back, and where its score will show with what would raise it. Bilingual, English first, as the projects come from everywhere and many of their authors write Chinese.
 
+import { NSGO_REPO, NSGO_REPO_NAME } from '../../catalog/src/nsgo.ts';
 import { ACTIVITY_WEEKS, SCORE_WEIGHTS, opennessShare, releaseShare } from '../../catalog/src/score.ts';
 import { ENTRY_DIRS, type EntryKind, type Entry, SITE_REPO, SITE_URL, githubUrl, sitePage } from './tweet.ts';
 
 // The title every issue has, which is also how a later run finds that it was opened already.
 export const ISSUE_TITLE = 'Listed on Awesome NSGo';
 
-// NSGo's own repository, under its organization.
-export const NSGO_REPO = 'nsgo-dev/nsgo';
-
 // The GitHub owners of NSGo's author, ONEO, and of its organization.
-const NSGO_OWNERS = new Set(['oneo-me', NSGO_REPO.split('/')[0]]);
+const NSGO_OWNERS = new Set(['oneo-me', NSGO_REPO_NAME.split('/')[0]]);
 
 // Why a repository is not told, or undefined when it is: one of this site's own owner, or one of NSGo's author, whose projects (NSGo's companions, such as nsgo-flow or nsgo-icons-kubai) are listed without telling them, as NSGo's maintainer knows the site.
 export function notTold(repo: string, siteOwner?: string): string | undefined {
@@ -171,7 +169,7 @@ export function composeIssue({ kind, entry, postUrl, tips = [], measured = false
 	const scored = isScored(kind, entry);
 	const where = scorePage(kind, entry);
 	const body = [
-		`${name} is now listed ${KIND_EN[kind]} on ${site}, the community directory of projects built with [NSGo](https://github.com/${NSGO_REPO}): ${page}`,
+		`${name} is now listed ${KIND_EN[kind]} on ${site}, the community directory of projects built with [NSGo](${NSGO_REPO}): ${page}`,
 		...(postUrl ? [`It was announced on X: ${postUrl}`] : []),
 		"If you'd like to link back, here is a badge for your README:",
 		`\`\`\`markdown\n${badge}\n\`\`\``,

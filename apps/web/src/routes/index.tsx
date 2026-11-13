@@ -1,4 +1,4 @@
-import { AI_TOOLS, APP_PLATFORMS, APPS, type AppPlatform, DOCS, INSTALL_CMDS, INSTALL_TABS, type InstallTab, LANGS, NSGO_SITE, PLUGINS, SITE_REPO, STATE_SOLUTIONS, TEMPLATES, UI_LIBS, fill, pick } from '@awesome-nsgo/catalog';
+import { AI_TOOLS, APP_PLATFORMS, APPS, type AppPlatform, DOCS, INSTALL_CMDS, INSTALL_TABS, type InstallTab, LANGS, NSGO_MODULE, NSGO_REPO_NAME, NSGO_SITE, PLUGINS, SITE_REPO, STATE_SOLUTIONS, TEMPLATES, UI_LIBS, fill, hostOf, pick } from '@awesome-nsgo/catalog';
 import { Link, createFileRoute, useNavigate } from '@tanstack/react-router';
 import { Fragment, useMemo, useState } from 'react';
 import { AppCard } from '../components/EntryCard';
@@ -297,7 +297,7 @@ function PluginRows() {
 					</h2>
 				</div>
 				<div className='flex max-w-[420px] flex-col items-start gap-3'>
-					<p className='m-0 text-[16px] leading-[1.7] text-fg-2'>{t.hm_plug_p}</p>
+					<p className='m-0 text-[16px] leading-[1.7] text-fg-2'>{fill(t.hm_plug_p, { x: NSGO_MODULE })}</p>
 					<Link to='/plugins' className='btn-g inline-flex min-h-12 items-center gap-2 border border-line-2 bg-panel px-5 text-[15px] font-semibold text-fg no-underline'>
 						{t.hm_plug_all} <span className='arrow'>→</span>
 					</Link>
@@ -343,7 +343,7 @@ function Categories() {
 					<h2 id='cats' className={H2}>
 						{t.cats_h}
 					</h2>
-					<p className='m-0 text-[15px] text-fg-3'>{t.cats_src}</p>
+					<p className='m-0 text-[15px] text-fg-3'>{fill(t.cats_src, { x: NSGO_REPO_NAME })}</p>
 				</div>
 				<div className='grid grid-cols-3 gap-4 max-split:grid-cols-2 max-tab:grid-cols-1'>
 					{cats.map((c, k) => (
@@ -373,7 +373,7 @@ function Faq() {
 	const t = useT();
 	const qa = [
 		[t.hm_q1, t.hm_a1],
-		[t.hm_q2, t.hm_a2],
+		[t.hm_q2, fill(t.hm_a2, { x: hostOf(NSGO_SITE) })],
 		[t.hm_q3, t.hm_a3],
 		[t.hm_q4, t.hm_a4],
 		[t.hm_q5, t.hm_a5],

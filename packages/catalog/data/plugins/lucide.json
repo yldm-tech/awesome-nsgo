@@ -5,12 +5,12 @@
 	"mark": "Lu",
 	"official": true,
 	"surface": "both",
-	"import": "github.com/nsgo-dev/nsgo/icons/lucide",
+	"package": "icons/lucide",
 	"tags": [
 		"icons",
 		"svg"
 	],
-	"docs": "https://nsgo.dev/docs/images/#icons",
+	"doc": "images#icons",
 	"summary": {
 		"en": "Lucide icons, one accessor per icon, drawn by core.Icon in the text color they inherit. TSX apps name the ones they use for nsgo/ui.",
 		"zh-CN": "Lucide 图标，每个图标一个访问函数，由 core.Icon 以继承的文字颜色绘制。TSX 应用登记用到的图标后即可在 nsgo/ui 中使用。",

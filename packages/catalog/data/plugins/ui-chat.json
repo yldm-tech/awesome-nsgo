@@ -5,12 +5,11 @@
 	"mark": "Ch",
 	"official": true,
 	"surface": "both",
-	"import": "github.com/nsgo-dev/nsgo/ui/chat",
+	"package": "ui/chat",
 	"tags": [
 		"ai",
 		"chat"
 	],
-	"docs": "https://pkg.go.dev/github.com/nsgo-dev/nsgo/ui/chat",
 	"summary": {
 		"en": "Onevra's AI conversation UI: turns, the activities of each step such as reading a file or running a command, and a composer. TSX apps get it as nsgo/ui/chat.",
 		"zh-CN": "Onevra 风格的 AI 对话界面：对话轮次、每一步的活动（例如读取文件、运行命令）以及输入框。TSX 应用通过 nsgo/ui/chat 使用。",

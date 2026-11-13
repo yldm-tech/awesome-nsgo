@@ -1,28 +1,25 @@
 import type { Text } from './lang';
 import type { StringKey } from './strings';
+import { DOCS_BASE, NSGO_MODULE, NSGO_REPO, NSGO_SITE } from './nsgo';
 import { CatalogError, Reader, unique } from './validate';
 
-// The entries live in packages/catalog/data, one file each in their category's directory (apps/, ui/, state/, templates/, ai/, plugins/, articles/, docs/), named after the entry's slug, so submissions that arrive together never touch the same file. data/schema/ describes their fields. Data sources: nsgo-dev/nsgo (its docs, docs/public/en/, its packages and examples/) and each project's own README.
+export * from './nsgo';
+
+// The entries live in packages/catalog/data, one file each in their category's directory (apps/, ui/, state/, templates/, ai/, plugins/, articles/, docs/), named after the entry's slug, so submissions that arrive together never touch the same file. data/schema/ describes their fields. Data sources: NSGo's repository (NSGO_REPO_NAME: its docs, docs/public/en/, its packages and examples/) and each project's own README.
 
 export const SITE_URL = 'https://awesomensgo.dev';
-// NSGo itself, by ONEO: its site, its showcases page, its repository and the Go module every NSGo app requires. This site is a community catalog, not NSGo's own.
-export const NSGO_SITE = 'https://nsgo.dev/';
-export const NSGO_SHOWCASE = 'https://nsgo.dev/showcases/';
-export const NSGO_REPO = 'https://github.com/nsgo-dev/nsgo';
-export const NSGO_MODULE = 'github.com/nsgo-dev/nsgo';
 // This site's own repository, where submissions arrive.
 export const SITE_REPO = 'https://github.com/yldm-tech/awesome-nsgo';
 export const DATA_DIR = 'packages/catalog/data';
 export const SPONSOR_URL = 'https://github.com/sponsors/oneo-me';
-// NSGo's docs on its site, each page at DOCS_BASE + its path + '/' (docUrl).
-export const DOCS_BASE = 'https://nsgo.dev/docs/';
 export const STATE_DOC = `${DOCS_BASE}components/`;
 export const PLUGINS_DOC = `${DOCS_BASE}authoring/`;
 export const NATIVE_UI_DOCS = `${DOCS_BASE}ui/`;
 
-// A docs page's link from its path under DOCS_BASE, as a guide's file gives it: the empty path is the docs' introduction.
+// A docs page's link from its path under DOCS_BASE, as a guide's file gives it: the empty path is the docs' introduction. A path may end in an #anchor on its page, as an official plugin's doc does (lists#tables).
 export function docUrl(doc: { file: string }): string {
-	return `${DOCS_BASE}${doc.file}${doc.file ? '/' : ''}`;
+	const [file, anchor] = doc.file.split('#');
+	return `${DOCS_BASE}${file}${file ? '/' : ''}${anchor ? `#${anchor}` : ''}`;
 }
 
 export const RESOURCES = [
@@ -493,7 +490,7 @@ export interface Plugin {
 	official: boolean;
 	// Which kind of app the package serves: Go apps, TSX apps, or both.
 	surface: PluginSurface;
-	// The Go package the app imports (an official one's starts with NSGO_MODULE/), and an npm package when the plugin comes with one; NSGo's own have none.
+	// The Go package the app imports (an official one's is NSGO_MODULE/ and its package), and an npm package when the plugin comes with one; NSGo's own have none.
 	goImport?: string;
 	npm?: string;
 	tags: readonly string[];
@@ -503,19 +500,35 @@ export interface Plugin {
 
 const GO_IMPORT = /^[a-z0-9.-]+(\/[A-Za-z0-9._~-]+)+$/;
 const NPM_NAME = /^(@[a-z0-9-]+\/)?[a-z0-9][a-z0-9._-]*$/;
+// An official package's folder in NSGo's module, such as base/datatable.
+const PACKAGE_PATH = /^[a-z0-9_-]+(\/[a-z0-9_-]+)*$/;
+// A page of NSGo's docs, as a path under DOCS_BASE with an optional #anchor, such as lists#tables.
+const DOC_LINK = /^[a-z0-9-]+(\/[a-z0-9-]+)*(#[a-z0-9-]+)?$/;
+
+// Where a plugin is imported from and documented. An official package names only its folder in NSGo's module (package) and its page of NSGo's docs (doc), or no doc when pkg.go.dev documents it, so that NSGO_MODULE and DOCS_BASE alone say where NSGo lives. A community plugin gives its own import path and docs link in full.
+function pluginSource(r: Reader, official: boolean): { goImport?: string; url: string } {
+	const [own, other] = official ? [['package', 'doc'], ['import', 'docs']] : [['import', 'docs'], ['package', 'doc']];
+	for (const k of other) if (r.raw[k] !== undefined) r.fail(k, `is for ${official ? 'a community' : 'an official'} plugin; ${official ? 'an official' : 'a community'} one gives ${own.join(' and ')}`);
+	if (!official) return { goImport: r.raw.import === undefined ? undefined : r.match('import', GO_IMPORT, 'a Go import path'), url: r.url('docs') };
+	const goImport = `${NSGO_MODULE}/${r.match('package', PACKAGE_PATH, "a folder of NSGo's module such as base/datatable")}`;
+	const doc = r.raw.doc === undefined ? undefined : r.match('doc', DOC_LINK, 'a page of NSGo\'s docs such as lists#tables');
+	return { goImport, url: doc === undefined ? `https://pkg.go.dev/${goImport}` : docUrl({ file: doc }) };
+}
 
 const readPlugin = (r: Reader): Plugin => {
-	r.only(['$schema', 'slug', 'name', 'mark', 'official', 'surface', 'import', 'npm', 'tags', 'docs', 'summary', 'added']);
+	r.only(['$schema', 'slug', 'name', 'mark', 'official', 'surface', 'package', 'doc', 'import', 'npm', 'tags', 'docs', 'summary', 'added']);
+	const official = r.bool('official');
+	const { goImport, url } = pluginSource(r, official);
 	return {
 		slug: readSlug(r),
 		name: r.str('name'),
 		mark: r.match('mark', /^\S{1,2}$/, 'one or two characters'),
-		official: r.bool('official'),
+		official,
 		surface: r.oneOf('surface', SURFACES),
-		goImport: r.raw.import === undefined ? undefined : r.match('import', GO_IMPORT, 'a Go import path'),
+		goImport,
 		npm: r.raw.npm === undefined ? undefined : r.match('npm', NPM_NAME, 'an npm package name'),
 		tags: r.strings('tags'),
-		url: r.url('docs'),
+		url,
 		desc: r.text('summary'),
 		added: readAdded(r),
 	};

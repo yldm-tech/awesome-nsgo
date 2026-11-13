@@ -24,7 +24,7 @@
 		"file": {
 			"type": "string",
 			"pattern": "^([a-z0-9-]+(/[a-z0-9-]+)*)?$",
-			"description": "The page's path under the NSGo docs, https://nsgo.dev/docs/, with no leading or trailing slash, such as getting-started, tutorials/todo or ui/button; the introduction, the docs' own index, is the empty string."
+			"description": "The page's path under the NSGo docs (DOCS_BASE in packages/catalog/src/nsgo.ts), with no leading or trailing slash, such as getting-started, tutorials/todo or ui/button; the introduction, the docs' own index, is the empty string."
 		},
 		"summary": {
 			"$ref": "common.schema.json#/$defs/text"

@@ -60,7 +60,7 @@
 				"path": {
 					"type": "string",
 					"minLength": 1,
-					"description": "The folder of the repository the entry lives in (an official package inside nsgo-dev/nsgo): its activity is the folder's, and its stars are not recorded."
+					"description": "The folder of the repository the entry lives in (an official package inside NSGo's repository): its activity is the folder's, and its stars are not recorded."
 				},
 				"stars": {
 					"$ref": "#/$defs/count"

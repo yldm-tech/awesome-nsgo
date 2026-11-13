@@ -47,7 +47,7 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 // ---- what the site lists, and what was proposed before ----
 
-// What the site's entries list, with NSGo itself (nsgo-dev/nsgo, whose own packages are the official plugins) and this site among the repositories.
+// What the site's entries list, with NSGo itself (NSGO_REPOS, whose own packages are the official plugins) and this site among the repositories.
 async function listedOnSite(): Promise<Listed> {
 	const entries: Entry[] = [];
 	for (const dir of [...Object.values(ENTRY_DIRS), 'articles']) {

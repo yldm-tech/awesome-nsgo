@@ -72,8 +72,8 @@ describe('catalog data', () => {
 		}
 		for (const p of [...PLUGINS, ...COMMUNITY_PLUGINS]) if (p.npm) expect(p.surface, p.slug).not.toBe('go');
 		for (const p of COMMUNITY_PLUGINS) expect(pluginPath(p), p.slug).toBe(`plugins/${p.slug}`);
-		expect(pluginPath({ slug: 'ui-chat', official: true, goImport: 'github.com/nsgo-dev/nsgo/ui/chat' })).toBe('nsgo/ui/chat');
-		expect(pluginPath({ slug: 'kit', official: false, goImport: 'github.com/nsgo-dev/nsgo/kit' })).toBe('plugins/kit');
+		expect(pluginPath({ slug: 'ui-chat', official: true, goImport: `${NSGO_MODULE}/ui/chat` })).toBe('nsgo/ui/chat');
+		expect(pluginPath({ slug: 'kit', official: false, goImport: `${NSGO_MODULE}/kit` })).toBe('plugins/kit');
 	});
 
 	it('installs with the nsgo CLI of the module the catalog lists', () => {
@@ -88,6 +88,28 @@ describe('catalog data', () => {
 		expect(() => readPlugins({ 'kit.json': { ...plugin, import: 'github.com/you/kit', npm: '@you/kit' } })).not.toThrow();
 		expect(() => readPlugins({ 'kit.json': { ...plugin, import: 'go get github.com/you/kit' } })).toThrow(/plugins\/kit.json \(Kit\): import must be a Go import path/);
 		expect(() => readPlugins({ 'kit.json': { ...plugin, npm: 'bun add @you/kit' } })).toThrow(/npm must be an npm package name/);
+	});
+
+	// An official package names only its folder in NSGo's module and its page of NSGo's docs, so that NSGo moving its repository or site changes nsgo.ts alone.
+	it("completes an official package's import path and docs link from NSGo's module and docs", () => {
+		const official = { $schema: '../schema/plugin.schema.json', slug: 'datatable', name: 'Data table', mark: 'Dt', official: true, surface: 'both', tags: [], package: 'base/datatable', summary: { en: 'A table.' }, added: '2026-11-04T12:00:00Z' };
+		const read = (extra: Record<string, unknown>) => readPlugins({ 'datatable.json': { ...official, ...extra } })[0];
+		expect(read({ doc: 'lists#tables' })).toMatchObject({ goImport: `${NSGO_MODULE}/base/datatable`, url: `${DOCS_BASE}lists/#tables` });
+		expect(read({ doc: 'testing' }).url).toBe(`${DOCS_BASE}testing/`);
+		expect(read({}).url).toBe(`https://pkg.go.dev/${NSGO_MODULE}/base/datatable`);
+		expect(pluginPath(read({}))).toBe('nsgo/base/datatable');
+		expect(() => read({ package: `${NSGO_MODULE}/base/datatable` })).toThrow(/package must be a folder of NSGo's module/);
+		expect(() => read({ doc: 'https://nsgo.dev/docs/lists/' })).toThrow(/doc must be a page of NSGo's docs/);
+		expect(() => read({ import: `${NSGO_MODULE}/base/datatable` })).toThrow(/import is for a community plugin; an official one gives package and doc/);
+		expect(() => read({ docs: 'https://x.dev' })).toThrow(/docs is for a community plugin/);
+		expect(() => read({ package: undefined })).toThrow(/package must be a non-empty string/);
+		const community = { ...official, official: false, package: undefined, docs: 'https://x.dev' };
+		expect(() => readPlugins({ 'kit.json': { ...community, package: 'kit' } })).toThrow(/package is for an official plugin; a community one gives import and docs/);
+		expect(() => readPlugins({ 'kit.json': { ...community, docs: undefined } })).toThrow(/docs must be a non-empty string/);
+	});
+
+	it('links every official package to pkg.go.dev or a page of the NSGo docs', () => {
+		for (const p of PLUGINS) expect(p.url === `https://pkg.go.dev/${p.goImport}` || p.url.startsWith(DOCS_BASE), p.slug).toBe(true);
 	});
 
 	it('falls back to English for a missing language', () => {
@@ -167,12 +189,12 @@ describe('catalog data', () => {
 		for (const list of [UI_LIBS, STATE_SOLUTIONS, TEMPLATES, AI_TOOLS, ARTICLES, COMMUNITY_PLUGINS]) for (let i = 1; i < list.length; i++) expect(byAdded(list[i - 1], list[i]), list[i].slug).toBeLessThan(0);
 		for (let i = 1; i < PLUGINS.length; i++) expect(byName(PLUGINS[i - 1], PLUGINS[i]), PLUGINS[i].slug).toBeLessThan(0);
 		for (let i = 1; i < DOCS.length; i++) expect(DOCS[i - 1].title.localeCompare(DOCS[i].title, 'en', { sensitivity: 'base' }), DOCS[i].slug).toBeLessThan(0);
-		const plugin = { $schema: '../schema/plugin.schema.json', mark: 'Kt', surface: 'go', tags: [], docs: 'https://x.dev', summary: { en: 'A kit.' } };
+		const plugin = { $schema: '../schema/plugin.schema.json', mark: 'Kt', surface: 'go', tags: [], summary: { en: 'A kit.' } };
 		const files = {
-			'b.json': { ...plugin, slug: 'b', name: 'Beta', official: true, added: '2026-11-05T00:00:00Z' },
-			'a.json': { ...plugin, slug: 'a', name: 'Alpha', official: true, added: '2026-11-06T00:00:00Z' },
-			'new.json': { ...plugin, slug: 'new', name: 'Aardvark', official: false, added: '2026-11-07T00:00:00Z' },
-			'old.json': { ...plugin, slug: 'old', name: 'Zebra', official: false, added: '2026-11-01T00:00:00Z' },
+			'b.json': { ...plugin, slug: 'b', name: 'Beta', official: true, package: 'b', added: '2026-11-05T00:00:00Z' },
+			'a.json': { ...plugin, slug: 'a', name: 'Alpha', official: true, package: 'a', added: '2026-11-06T00:00:00Z' },
+			'new.json': { ...plugin, slug: 'new', name: 'Aardvark', official: false, docs: 'https://x.dev', added: '2026-11-07T00:00:00Z' },
+			'old.json': { ...plugin, slug: 'old', name: 'Zebra', official: false, docs: 'https://x.dev', added: '2026-11-01T00:00:00Z' },
 		};
 		expect(readPlugins(files).map((p) => p.slug)).toEqual(['a', 'b', 'old', 'new']);
 	});

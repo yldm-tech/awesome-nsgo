@@ -5,12 +5,12 @@
 	"mark": "Tr",
 	"official": true,
 	"surface": "go",
-	"import": "github.com/nsgo-dev/nsgo/i18n",
+	"package": "i18n",
 	"tags": [
 		"localization",
 		"icu"
 	],
-	"docs": "https://nsgo.dev/docs/localization/",
+	"doc": "localization",
 	"summary": {
 		"en": "Says an app's messages in the language it shows: the runtime of the Go functions nsgo writes from locales/*.yaml catalogs in ICU MessageFormat.",
 		"zh-CN": "用应用当前显示的语言说出它的文案：nsgo 根据 locales/*.yaml（ICU MessageFormat）生成的 Go 函数就运行在它之上。",

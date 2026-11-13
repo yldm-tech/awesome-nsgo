@@ -1,4 +1,4 @@
-import { CLI_CMDS, COMMUNITY_PLUGINS, HAS_SCORES, PLUGINS, PLUGINS_DOC, type Plugin, type PluginSurface, compareByScore, fill, likeKey, pick, pluginPath } from '@awesome-nsgo/catalog';
+import { CLI_CMDS, COMMUNITY_PLUGINS, HAS_SCORES, NSGO_MODULE, PLUGINS, PLUGINS_DOC, type Plugin, type PluginSurface, compareByScore, fill, likeKey, pick, pluginPath } from '@awesome-nsgo/catalog';
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
 import { Fragment } from 'react';
 import { CopyButton, SetupLine, cmdRow } from '../components/CopyCmd';
@@ -20,7 +20,7 @@ const SURF_TONE: Record<PluginSurface, string> = { tsx: 'kind-tsx', go: 'kind-go
 // A CLI command's row: the command row of an entry card, on the panel colour, as it sits on the soft band of the command line's box.
 const cliRow = cmdRow.replace('bg-soft', 'bg-panel');
 
-// `import "github.com/nsgo-dev/nsgo/base/datatable"`, split before its last two segments.
+// An import path such as NSGo's base/datatable package, split before its last two segments.
 function goLine(path: string): { head: string; tail: string } {
 	const parts = path.split('/');
 	const cut = Math.max(parts.length - 2, 1);
@@ -107,7 +107,7 @@ function PluginsPage() {
 				<span className='kicker'>{`${sourceLabel} · ${sourcePlugins.length}`}</span>
 				<h1 className='page-h1'>{t.nav_plugins}</h1>
 				{/* Below sm, and on a screen under 560px tall (a phone held sideways), the lead paragraph is left out: on a phone it took four lines ahead of the list, whose heading and cards already say what the page holds. */}
-				<p className='page-p max-sm:hidden [@media(max-height:560px)]:hidden'>{t.plug_p}</p>
+				<p className='page-p max-sm:hidden [@media(max-height:560px)]:hidden'>{fill(t.plug_p, { x: NSGO_MODULE })}</p>
 			</div>
 			<FilterBar>
 				<FilterChips label={t.a_filter}>

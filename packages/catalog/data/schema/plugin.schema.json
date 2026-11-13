@@ -11,7 +11,6 @@
 		"official",
 		"surface",
 		"tags",
-		"docs",
 		"summary",
 		"added"
 	],
@@ -34,7 +33,7 @@
 		},
 		"official": {
 			"type": "boolean",
-			"description": "true for a package inside NSGo's own module, github.com/nsgo-dev/nsgo, whose import then starts with github.com/nsgo-dev/nsgo/; community packages are false."
+			"description": "true for a package inside NSGo's own module, which gives package and doc; community packages are false and give import and docs."
 		},
 		"surface": {
 			"enum": [
@@ -44,10 +43,20 @@
 			],
 			"description": "The kind of app it serves: Go apps, TSX apps, or both."
 		},
+		"package": {
+			"type": "string",
+			"pattern": "^[a-z0-9_-]+(/[a-z0-9_-]+)*$",
+			"description": "An official package's folder in NSGo's module, such as base/datatable; the site puts the module path (NSGO_MODULE in packages/catalog/src/nsgo.ts) before it."
+		},
+		"doc": {
+			"type": "string",
+			"pattern": "^[a-z0-9-]+(/[a-z0-9-]+)*(#[a-z0-9-]+)?$",
+			"description": "An official package's page in NSGo's docs, as a path with an optional #anchor such as lists#tables; the site puts the docs' address (DOCS_BASE) before it. Left out when pkg.go.dev documents the package."
+		},
 		"import": {
 			"type": "string",
 			"pattern": "^[a-z0-9.-]+(/[A-Za-z0-9._~-]+)+$",
-			"description": "The Go package the app imports, such as github.com/nsgo-dev/nsgo/base/datatable."
+			"description": "A community plugin's Go package, as the app imports it, such as github.com/someone/kit."
 		},
 		"npm": {
 			"type": "string",
@@ -61,13 +70,59 @@
 			}
 		},
 		"docs": {
-			"$ref": "common.schema.json#/$defs/url"
+			"$ref": "common.schema.json#/$defs/url",
+			"description": "A community plugin's docs or repository link."
 		},
 		"summary": {
 			"$ref": "common.schema.json#/$defs/text"
 		},
 		"added": {
 			"$ref": "common.schema.json#/$defs/added"
+		}
+	},
+	"if": {
+		"properties": {
+			"official": {
+				"const": true
+			}
+		}
+	},
+	"then": {
+		"required": [
+			"package"
+		],
+		"not": {
+			"anyOf": [
+				{
+					"required": [
+						"import"
+					]
+				},
+				{
+					"required": [
+						"docs"
+					]
+				}
+			]
+		}
+	},
+	"else": {
+		"required": [
+			"docs"
+		],
+		"not": {
+			"anyOf": [
+				{
+					"required": [
+						"package"
+					]
+				},
+				{
+					"required": [
+						"doc"
+					]
+				}
+			]
 		}
 	}
 }

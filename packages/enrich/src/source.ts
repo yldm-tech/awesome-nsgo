@@ -83,7 +83,7 @@ export function iconOf(configPath: string, nsgo: unknown, paths: readonly string
 	return undefined;
 }
 
-// The app's kind, from the files beside its nsgo.yaml: tsx when a TSX file other than a test sits there, as App.tsx does in an app `nsgo init -template tsx` or `-template mixed` makes, whose main package compiles it (github.com/nsgo-dev/nsgo/tsx/compiler); go otherwise.
+// The app's kind, from the files beside its nsgo.yaml: tsx when a TSX file other than a test sits there, as App.tsx does in an app `nsgo init -template tsx` or `-template mixed` makes, whose main package compiles it (NSGo's tsx/compiler package); go otherwise.
 export function appKindOf(configPath: string, paths: readonly string[]): 'go' | 'tsx' {
 	const dir = configPath.includes('/') ? configPath.slice(0, configPath.lastIndexOf('/') + 1) : '';
 	const tsx = paths.some((p) => p.startsWith(dir) && !p.slice(dir.length).includes('/') && /\.tsx$/i.test(p) && !/\.test\.tsx$/i.test(p));

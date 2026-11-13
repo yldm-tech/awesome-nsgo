@@ -1,12 +1,10 @@
 // What the discover script decides about the projects it finds on GitHub, without touching the network: pure functions, so they are tested on their own.
 
+import { NSGO_MODULE, NSGO_MODULES } from '../../catalog/src/nsgo.ts';
 import type { Entry, EntryKind } from './source.ts';
 
-// A project is built with NSGo when one of its go.mod files requires this module: the same value as NSGO_MODULE in packages/catalog, which this package cannot import, as the catalog loads its data through Vite.
-export const NSGO_MODULE = 'github.com/nsgo-dev/nsgo';
-
-// NSGo's module paths, the current first: before NSGo moved to nsgo-dev it was github.com/oneo-me/nsgo, which projects made then still require until they update.
-export const NSGO_MODULES = [NSGO_MODULE, 'github.com/oneo-me/nsgo'] as const;
+// A project is built with NSGo when one of its go.mod files requires one of NSGo's module paths, the current one or the one it had before it moved.
+export { NSGO_MODULE, NSGO_MODULES };
 
 // NSGo's own repositories, as lowercase owner/name: the current one and the one GitHub redirects from.
 export const NSGO_REPOS: ReadonlySet<string> = new Set(NSGO_MODULES.map((m) => m.replace('github.com/', '')));

@@ -216,7 +216,7 @@ p {
 	background: currentColor;
 }
 
-/* The home headline's second phrase, underlined by a lane rather than filled with the blue gradient nsgo.dev puts on its own headline: a band in the text's lower edge whose ends lean like the skewed pill (the hard stops of a 100deg gradient slant 10deg from upright), drawn behind the glyphs and repeated on every line the phrase wraps to. Forced colours drop it, as the text alone carries the words. */
+/* The home headline's second phrase, underlined by a lane rather than filled with the blue gradient NSGo's own site puts on its headline: a band in the text's lower edge whose ends lean like the skewed pill (the hard stops of a 100deg gradient slant 10deg from upright), drawn behind the glyphs and repeated on every line the phrase wraps to. Forced colours drop it, as the text alone carries the words. */
 .lane-under {
 	background: linear-gradient(100deg, transparent 0.12em, color-mix(in srgb, currentColor 18%, transparent) 0.12em, color-mix(in srgb, currentColor 18%, transparent) calc(100% - 0.12em), transparent calc(100% - 0.12em)) left bottom 0.1em / 100% 0.2em no-repeat;
 	animation: lane-draw 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.55s both;

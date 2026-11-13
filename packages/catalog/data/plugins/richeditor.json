@@ -5,12 +5,11 @@
 	"mark": "Re",
 	"official": true,
 	"surface": "both",
-	"import": "github.com/nsgo-dev/nsgo/base/richeditor",
+	"package": "base/richeditor",
 	"tags": [
 		"rich-text",
 		"prosemirror"
 	],
-	"docs": "https://pkg.go.dev/github.com/nsgo-dev/nsgo/base/richeditor",
 	"summary": {
 		"en": "A rich text editor after ProseMirror's architecture, with Tiptap-style extensions; ui/richeditor gives it ui's colors.",
 		"zh-CN": "按 ProseMirror 架构实现的富文本编辑器，扩展层沿用 Tiptap 的方式；ui/richeditor 为它加上 ui 的配色。",

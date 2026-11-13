@@ -5,12 +5,11 @@
 	"mark": "Ed",
 	"official": true,
 	"surface": "both",
-	"import": "github.com/nsgo-dev/nsgo/base/editor",
+	"package": "base/editor",
 	"tags": [
 		"code",
 		"highlighting"
 	],
-	"docs": "https://pkg.go.dev/github.com/nsgo-dev/nsgo/base/editor",
 	"summary": {
 		"en": "A code editor: syntax highlighting, line numbers, several carets, folding, soft wrap, find and replace, diagnostics, completion and go to definition.",
 		"zh-CN": "代码编辑器：语法高亮、行号、多光标、折叠、软换行、查找替换、诊断信息、补全和跳转到定义。",

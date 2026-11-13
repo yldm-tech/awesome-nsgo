@@ -1,4 +1,4 @@
-import { CLI_CMDS, COMMUNITY_PLUGINS, PLUGINS, PLUGINS_DOC, type PluginSurface, fill, likeKey, pick, pluginPath } from '@awesome-nsgo/catalog';
+import { CLI_CMDS, COMMUNITY_PLUGINS, NSGO_MODULE, PLUGINS, PLUGINS_DOC, type PluginSurface, fill, likeKey, pick, pluginPath } from '@awesome-nsgo/catalog';
 import { useNavigate, useSearch } from '@tanstack/react-router';
 import { LikeButton } from '../../components/Like';
 import { ScoreButton } from '../../components/Score';
@@ -61,7 +61,7 @@ function Explorer() {
 					~/plugins/
 				</span>
 			</div>
-			<p className='m-0 px-1.5 pb-1.5 text-muted'>{t.plug_p}</p>
+			<p className='m-0 px-1.5 pb-1.5 text-muted'>{fill(t.plug_p, { x: NSGO_MODULE })}</p>
 			<ul className={`${well} relative m-0 list-none p-1.5 desk:min-h-0 desk:flex-1 desk:overflow-y-auto`}>
 				{shown.map((p) => (
 					<li key={p.slug} className='flex items-center gap-2 border-b border-line pr-2 last:border-b-0'>

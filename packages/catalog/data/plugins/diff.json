@@ -5,12 +5,11 @@
 	"mark": "Df",
 	"official": true,
 	"surface": "both",
-	"import": "github.com/nsgo-dev/nsgo/base/diff",
+	"package": "base/diff",
 	"tags": [
 		"diff",
 		"code"
 	],
-	"docs": "https://pkg.go.dev/github.com/nsgo-dev/nsgo/base/diff",
 	"summary": {
 		"en": "Shows the changes between two texts or the files of a patch, side by side or unified, with word-level marks and the editor's highlighting; ui/diff adds ui's colors.",
 		"zh-CN": "显示两段文本或补丁中各文件的差异，可并排或合并显示，标出行内改动的词语，并使用代码编辑器的高亮；ui/diff 加上 ui 的配色。",

@@ -5,12 +5,12 @@
 	"mark": "Dt",
 	"official": true,
 	"surface": "both",
-	"import": "github.com/nsgo-dev/nsgo/base/datatable",
+	"package": "base/datatable",
 	"tags": [
 		"table",
 		"virtualized"
 	],
-	"docs": "https://nsgo.dev/docs/lists/#tables",
+	"doc": "lists#tables",
 	"summary": {
 		"en": "A spreadsheet-like table of a million rows: virtualized rows and columns, a sticky header, sorting, selection, and columns that resize and move.",
 		"zh-CN": "类似电子表格的表格，可容纳百万行：行和列都虚拟化，表头固定，支持排序、选择，列可调整宽度和拖动换位。",

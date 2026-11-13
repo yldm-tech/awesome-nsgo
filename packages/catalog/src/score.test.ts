@@ -244,13 +244,13 @@ describe('scoreTarget', () => {
 });
 
 describe('scoreKey', () => {
-	it('keys an entry as its like is keyed', () => {
-		expect(scoreKey('app', { slug: 'app', repo: 'someone/app' })).toBe('app:app');
+	// By slug for every kind: a repository moves when its owner renames or transfers it, and the entry's record and likes would stay behind under the old key.
+	it('keys an entry as its like is keyed, by its slug', () => {
+		expect(scoreKey('app', { slug: 'app' })).toBe('app:app');
 		expect(scoreKey('plugin', { slug: 'sqlite' })).toBe('plugin:sqlite');
-		expect(scoreKey('ui', { slug: 'kit', repo: 'someone/kit' })).toBe('ui:someone/kit');
-		expect(scoreKey('state', { slug: 'store', repo: 'someone/store' })).toBe('state:someone/store');
-		expect(scoreKey('template', { slug: 'starter', repo: 'someone/starter' })).toBe('template:someone/starter');
-		// Several AI tools may share a repository, so theirs is by slug.
-		expect(scoreKey('ai', { slug: 'nsgo-usage', repo: 'someone/skills' })).toBe('ai:nsgo-usage');
+		expect(scoreKey('ui', { slug: 'kit' })).toBe('ui:kit');
+		expect(scoreKey('state', { slug: 'store' })).toBe('state:store');
+		expect(scoreKey('template', { slug: 'starter' })).toBe('template:starter');
+		expect(scoreKey('ai', { slug: 'nsgo-usage' })).toBe('ai:nsgo-usage');
 	});
 });

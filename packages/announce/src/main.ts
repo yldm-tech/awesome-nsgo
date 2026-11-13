@@ -37,7 +37,7 @@ async function counts(): Promise<Counts> {
 
 // Whether data/scores.json has a record of the entry under the key the site reads its score by (scoreKey), so the site shows its score already. A file that cannot be read gives false, with a warning: the issue then says the score shows from the next measurement, which is not worth holding it back.
 async function hasScore(kind: EntryKind, entry: Entry): Promise<boolean> {
-	const key = scoreKey(kind, { slug: String(entry.slug), repo: typeof entry.repo === 'string' ? entry.repo : undefined });
+	const key = scoreKey(kind, { slug: String(entry.slug) });
 	try {
 		const file = JSON.parse(await readFile(join(DATA_DIR, 'scores.json'), 'utf8')) as { entries?: unknown };
 		return typeof file.entries === 'object' && file.entries !== null && Object.hasOwn(file.entries, key);

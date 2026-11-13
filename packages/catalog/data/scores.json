@@ -12,8 +12,8 @@
 		"app:nsgo-orbit": { "activeWeeks": 1, "license": "NOASSERTION", "likes": 0, "osi": false, "path": "examples/orbit", "releaseDays": 0, "repo": "nsgo-dev/nsgo", "weeks": 1 },
 		"app:ocr-manager": { "activeWeeks": 2, "license": "MIT", "likes": 0, "osi": true, "releaseDays": 0, "repo": "freewu/ocr-manager", "stars": 0, "weeks": 2 },
 		"app:tts-manager": { "activeWeeks": 1, "license": "Apache-2.0", "likes": 0, "osi": true, "releaseDays": 0, "repo": "freewu/tts-demo", "stars": 0, "weeks": 12 },
-		"template:nsgo-dev/nsgo": { "activeWeeks": 3, "license": "NOASSERTION", "likes": 1, "osi": false, "releaseDays": 0, "repo": "nsgo-dev/nsgo", "stars": 409, "weeks": 3 },
-		"ui:nsgo-dev/nsgo": { "activeWeeks": 3, "license": "NOASSERTION", "likes": 0, "osi": false, "releaseDays": 0, "repo": "nsgo-dev/nsgo", "stars": 409, "weeks": 3 },
-		"ui:oneo-me/nsgo-icons-kubai": { "activeWeeks": 0, "license": "MIT", "likes": 0, "osi": true, "releaseDays": 0, "repo": "oneo-me/nsgo-icons-kubai", "stars": 3, "weeks": 0 }
+		"template:nsgo-init": { "activeWeeks": 3, "license": "NOASSERTION", "likes": 1, "osi": false, "releaseDays": 0, "repo": "nsgo-dev/nsgo", "stars": 409, "weeks": 3 },
+		"ui:nsgo-kubai-icons": { "activeWeeks": 0, "license": "MIT", "likes": 0, "osi": true, "releaseDays": 0, "repo": "oneo-me/nsgo-icons-kubai", "stars": 3, "weeks": 0 },
+		"ui:nsgo-ui": { "activeWeeks": 3, "license": "NOASSERTION", "likes": 0, "osi": false, "releaseDays": 0, "repo": "nsgo-dev/nsgo", "stars": 409, "weeks": 3 }
 	}
 }

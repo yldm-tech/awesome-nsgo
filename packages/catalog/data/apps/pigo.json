@@ -4,7 +4,7 @@
 	"name": "pigo",
 	"author": "greenfriends6688",
 	"kind": "go",
-	"group": "dev",
+	"group": "agents",
 	"platforms": [
 		"mac",
 		"win",

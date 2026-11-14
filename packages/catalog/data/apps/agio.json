@@ -4,7 +4,7 @@
 	"name": "Agio",
 	"author": "oneo-me",
 	"kind": "go",
-	"group": "dev",
+	"group": "agents",
 	"platforms": [
 		"mac",
 		"win",

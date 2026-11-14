@@ -10,7 +10,7 @@
 		"linux",
 		"web"
 	],
-	"group": "dev",
+	"group": "agents",
 	"url": "https://github.com/tk103331/t3go",
 	"repo": "tk103331/t3go",
 	"summary": {

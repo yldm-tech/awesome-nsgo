@@ -14,7 +14,7 @@
 		"app:pideck-lite": { "activeWeeks": 0, "license": null, "likes": 0, "releaseDays": 0, "repo": "ayuayue/PiDeck-Lite", "stars": 0, "weeks": 0 },
 		"app:tts-manager": { "activeWeeks": 1, "license": "Apache-2.0", "likes": 0, "osi": true, "releaseDays": 0, "repo": "freewu/tts-demo", "stars": 0, "weeks": 12 },
 		"template:nsgo-init": { "activeWeeks": 3, "license": "NOASSERTION", "likes": 1, "osi": false, "releaseDays": 0, "repo": "nsgo-dev/nsgo", "stars": 432, "weeks": 3 },
-		"ui:nsgo-kubai-icons": { "activeWeeks": 0, "license": "MIT", "likes": 0, "osi": true, "releaseDays": 0, "repo": "oneo-me/nsgo-icons-kubai", "stars": 3, "weeks": 0 },
+		"ui:nsgo-kubai-icons": { "activeWeeks": 0, "license": "MIT", "likes": 0, "osi": true, "releaseDays": 0, "repo": "nsgo-dev/nsgo-icons-kubai", "stars": 3, "weeks": 0 },
 		"ui:nsgo-ui": { "activeWeeks": 3, "license": "NOASSERTION", "likes": 0, "osi": false, "releaseDays": 0, "repo": "nsgo-dev/nsgo", "stars": 432, "weeks": 3 }
 	}
 }

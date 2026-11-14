@@ -1,0 +1,20 @@
+{
+	"$schema": "../schema/ui.schema.json",
+	"slug": "ai-logo",
+	"name": "AI Logo",
+	"author": "yldm-tech",
+	"tag": "icons",
+	"surface": "go",
+	"summary": {
+		"en": "1,318 brand logos for Go apps on NSGo: AI providers, models and apps plus mainstream services, in mono, color, wordmark and lockup variants that core.Icon draws, with optional WebP avatars, all embedded for offline use.",
+		"zh-CN": "面向 NSGo Go 应用的 1,318 个品牌标志：AI 服务商、模型与应用，以及主流服务，提供单色、彩色、文字标与组合标，由 core.Icon 绘制，另有可选的 WebP 头像，全部内嵌，离线可用。",
+		"zh-TW": "供 NSGo Go 應用程式使用的 1,318 個品牌標誌：AI 服務商、模型與應用，以及主流服務，提供單色、彩色、文字標與組合標，由 core.Icon 繪製，另有可選的 WebP 頭像，全部內嵌，離線可用。",
+		"ja": "NSGo の Go アプリ向けのブランドロゴ 1,318 個。AI プロバイダー、モデル、アプリと主要サービスを、モノクロ、カラー、ワードマーク、ロックアップで収録し、core.Icon で描画します。WebP アバターも任意で使え、すべて埋め込み済みでオフラインで動きます。",
+		"ko": "NSGo의 Go 앱을 위한 브랜드 로고 1,318개. AI 제공업체·모델·앱과 주요 서비스를 단색, 컬러, 워드마크, 락업으로 담아 core.Icon으로 그리며, 선택 사항인 WebP 아바타도 있고 모두 내장되어 오프라인에서 동작합니다."
+	},
+	"repo": "yldm-tech/ai-logo",
+	"url": "https://github.com/yldm-tech/ai-logo/tree/main/nsgo",
+	"homepage": "https://ailogo.yldm.ai",
+	"screenshot": "ai-logo.webp",
+	"added": "2026-11-14T13:30:00Z"
+}

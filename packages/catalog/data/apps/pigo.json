@@ -6,7 +6,9 @@
 	"kind": "go",
 	"group": "dev",
 	"platforms": [
-		"mac"
+		"mac",
+		"win",
+		"linux"
 	],
 	"url": "https://github.com/greenfriends6688/pigo",
 	"repo": "greenfriends6688/pigo",

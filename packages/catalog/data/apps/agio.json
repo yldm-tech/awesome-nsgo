@@ -1,0 +1,34 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "agio",
+	"name": "Agio",
+	"author": "oneo-me",
+	"kind": "go",
+	"group": "dev",
+	"platforms": [
+		"mac",
+		"win",
+		"linux"
+	],
+	"url": "https://oneo-me.github.io/nsgo-agio/",
+	"repo": "oneo-me/nsgo-agio",
+	"summary": {
+		"en": "Desktop app that runs coding agents such as Codex, Claude Code and pi in tasks grouped by project.",
+		"zh-CN": "按项目分任务运行 Codex、Claude Code、pi 等编程智能体的桌面应用。",
+		"zh-TW": "按專案分任務執行 Codex、Claude Code、pi 等程式設計代理的桌面應用程式。",
+		"ja": "Codex、Claude Code、pi などのコーディングエージェントを、プロジェクトごとのタスクで動かすアプリ。",
+		"ko": "Codex, Claude Code, pi 등 코딩 에이전트를 프로젝트별 작업으로 실행하는 데스크톱 앱."
+	},
+	"description": {
+		"en": "Runs the agent CLIs on your login shell's PATH, such as pi, Codex, Claude Code and CodeBuddy Code, with your own sign-ins, in tasks grouped by project, with agent and model settings and notifications. It is the app of a library that other NSGo apps build agent tools on, written in Go with NSGo for macOS, Windows and Linux, and it updates itself from GitHub releases.",
+		"zh-CN": "沿用你自己的登录状态，运行登录 shell 的 PATH 中的 pi、Codex、Claude Code、CodeBuddy Code 等智能体 CLI，按项目分任务管理，可设置智能体与模型，并有通知提醒。它是一个供其他 NSGo 应用构建智能体工具的库所附带的应用，用 NSGo 以 Go 编写，运行于 macOS、Windows 和 Linux，并从 GitHub 发布自动更新。",
+		"zh-TW": "沿用你自己的登入狀態，執行登入 shell 的 PATH 中的 pi、Codex、Claude Code、CodeBuddy Code 等智慧代理 CLI，按專案分任務管理，可設定代理與模型，並有通知提醒。它是一個供其他 NSGo 應用程式打造代理工具的函式庫所附帶的應用程式，以 NSGo 用 Go 撰寫，執行於 macOS、Windows 和 Linux，並從 GitHub 發行版自動更新。",
+		"ja": "ログインシェルの PATH にある pi、Codex、Claude Code、CodeBuddy Code などのエージェント CLI を自分のサインインのまま動かし、プロジェクトごとのタスクにまとめます。エージェントとモデルの設定や通知も備えます。ほかの NSGo アプリがエージェントツールを作るためのライブラリに付属するアプリで、NSGo を使って Go で書かれ、macOS、Windows、Linux で動き、GitHub のリリースから自動で更新されます。",
+		"ko": "로그인 셸의 PATH에 있는 pi, Codex, Claude Code, CodeBuddy Code 등 에이전트 CLI를 본인 로그인 그대로 실행하고, 프로젝트별 작업으로 묶어 관리합니다. 에이전트와 모델 설정, 알림도 갖췄습니다. 다른 NSGo 앱이 에이전트 도구를 만드는 데 쓰는 라이브러리에 딸린 앱으로, NSGo로 Go에서 작성했으며 macOS, Windows, Linux에서 실행되고 GitHub 릴리스에서 자동 업데이트됩니다."
+	},
+	"icon": {
+		"file": "agio.webp"
+	},
+	"screenshot": "agio.webp",
+	"added": "2026-11-14T02:26:35Z"
+}

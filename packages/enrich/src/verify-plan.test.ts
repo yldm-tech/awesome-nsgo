@@ -22,6 +22,15 @@ describe('the check of listed entries', () => {
 		expect(other.url).toBe('https://github.com/ELY-Open-Source/MujicaUI-extra');
 		expect(other.author).toBe('ELY Open Source');
 
+		// The Pages site moves with the repository and its old address is not redirected, so it follows too; one on a custom domain, or another repository's of the same owner, stays.
+		const kubai = { author: 'oneo-me', repo: 'oneo-me/nsgo-icons-kubai', url: 'https://github.com/oneo-me/nsgo-icons-kubai', homepage: 'https://oneo-me.github.io/nsgo-icons-kubai/' };
+		expect(movedRepo(kubai, 'oneo-me/nsgo-icons-kubai', 'nsgo-dev/nsgo-icons-kubai')).toEqual(['repo', 'url', 'homepage', 'author']);
+		expect(kubai).toMatchObject({ url: 'https://github.com/nsgo-dev/nsgo-icons-kubai', homepage: 'https://nsgo-dev.github.io/nsgo-icons-kubai/' });
+		expect(movedRepo({ homepage: 'https://Oneo-Me.github.io/nsgo-icons-kubai' }, 'oneo-me/nsgo-icons-kubai', 'NSGo-Dev/kubai')).toEqual(['homepage']);
+		const sibling = { homepage: 'https://oneo-me.github.io/nsgo-icons-kubai-extra/' };
+		expect(movedRepo(sibling, 'oneo-me/nsgo-icons-kubai', 'nsgo-dev/nsgo-icons-kubai')).toEqual([]);
+		expect(movedRepo({ homepage: 'https://kubai.dev/' }, 'oneo-me/nsgo-icons-kubai', 'nsgo-dev/nsgo-icons-kubai')).toEqual([]);
+
 		// The dot in a name is matched as a dot.
 		const dotted = { url: 'https://github.com/a/b.c' };
 		expect(movedRepo({ url: 'https://github.com/a/bxc' }, 'a/b.c', 'a/d')).toEqual([]);

@@ -5,7 +5,7 @@
 	"author": "ayuayue",
 	"kind": "go",
 	"platforms": ["mac", "win"],
-	"group": "dev",
+	"group": "agents",
 	"url": "https://github.com/ayuayue/PiDeck-Lite",
 	"repo": "ayuayue/PiDeck-Lite",
 	"summary": {

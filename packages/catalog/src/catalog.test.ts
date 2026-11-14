@@ -287,7 +287,7 @@ describe('catalog data', () => {
 });
 
 describe('showcase groups', () => {
-	it("puts every app in a group of its own choosing, or its category's, and every group with others", () => {
+	it("puts every app in a group of its own choosing, or its category's", () => {
 		for (const c of APP_CATEGORIES) expect(APP_GROUPS).toContain(appGroup({ category: c }));
 		expect(appGroup({})).toBe('other');
 		expect(appGroup({ group: 'network', category: 'UtilitiesApplication' })).toBe('network');
@@ -298,9 +298,7 @@ describe('showcase groups', () => {
 		expect(APP_SCHEMA.properties.group.enum).toEqual([...ENTRY_GROUPS]);
 		// Every app has a group of its own, so a new category or a renamed group never sends a listed app elsewhere.
 		for (const a of APPS) expect([a.slug, a.group !== undefined]).toEqual([a.slug, true]);
-		// A group with a single app reads as a mistake on the page: merge it into a neighbour instead.
-		const sizes = APPS.reduce<Record<string, number>>((n, a) => ({ ...n, [appGroup(a)]: (n[appGroup(a)] ?? 0) + 1 }), {});
-		for (const [g, n] of Object.entries(sizes)) expect([g, n >= 2]).toEqual([g, true]);
+		// A group may hold a single app: the first music player is listed under media rather than in a neighbour it does not belong to, and the group fills as others arrive.
 	});
 });
 

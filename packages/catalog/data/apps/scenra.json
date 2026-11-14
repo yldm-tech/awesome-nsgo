@@ -1,0 +1,34 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "scenra",
+	"name": "Scenra",
+	"author": "oneo-me",
+	"kind": "go",
+	"group": "ai",
+	"platforms": [
+		"mac",
+		"win",
+		"linux"
+	],
+	"url": "https://oneo-me.github.io/nsgo-scenra/",
+	"repo": "oneo-me/nsgo-scenra",
+	"summary": {
+		"en": "Designs an app's screens and flow charts by chatting with an AI assistant, saved as plain-text .scenra files.",
+		"zh-CN": "与 AI 助手对话来设计应用界面和流程图，保存为纯文本 .scenra 文件。",
+		"zh-TW": "與 AI 助理對話來設計應用程式介面和流程圖，儲存為純文字 .scenra 檔案。",
+		"ja": "AI アシスタントと対話してアプリの画面とフローチャートを設計し、プレーンテキストの .scenra ファイルに保存。",
+		"ko": "AI 어시스턴트와 대화하며 앱 화면과 흐름도를 설계하고 일반 텍스트 .scenra 파일로 저장합니다."
+	},
+	"description": {
+		"en": "Describe an app or a process and an AI assistant asks what it needs, then draws phone, tablet and desktop screens and their flow charts, and can chart the code in the folder a file is saved in. It works with any OpenAI-compatible provider that supports tool calls, local ones included, and saves plain-text .scenra files. Written in Go with NSGo for macOS, Windows and Linux.",
+		"zh-CN": "描述一个应用或流程，AI 助手会先问清需求，再画出手机、平板和桌面界面及流程图；文件保存在项目文件夹中时，它还能读取那里的代码，画出其运作方式。支持任何可调用工具的 OpenAI 兼容服务，包括本地服务器，设计保存为纯文本 .scenra 文件。用 NSGo 以 Go 编写，运行于 macOS、Windows 和 Linux。",
+		"zh-TW": "描述一個應用程式或流程，AI 助理會先問清需求，再畫出手機、平板和桌面介面及流程圖；檔案存放在專案資料夾時，它還能讀取那裡的程式碼，畫出其運作方式。支援任何可呼叫工具的 OpenAI 相容服務，包括本機伺服器，設計儲存為純文字 .scenra 檔案。以 NSGo 用 Go 撰寫，執行於 macOS、Windows 和 Linux。",
+		"ja": "アプリや業務の流れを説明すると、AI アシスタントが必要なことを質問したうえで、スマートフォン、タブレット、デスクトップの画面とフローチャートを描きます。ファイルをプロジェクトのフォルダに保存すれば、そこにあるコードの動きも図にします。ツール呼び出しに対応した OpenAI 互換のプロバイダならローカルサーバーも含めて使え、設計はプレーンテキストの .scenra ファイルに保存されます。NSGo を使って Go で書かれ、macOS、Windows、Linux で動きます。",
+		"ko": "앱이나 프로세스를 설명하면 AI 어시스턴트가 필요한 것을 묻고 휴대폰, 태블릿, 데스크톱 화면과 흐름도를 그립니다. 파일을 프로젝트 폴더에 저장하면 그 안의 코드가 어떻게 동작하는지도 차트로 그립니다. 도구 호출을 지원하는 OpenAI 호환 공급자라면 로컬 서버까지 쓸 수 있고, 설계는 일반 텍스트 .scenra 파일로 저장됩니다. NSGo로 Go에서 작성했으며 macOS, Windows, Linux에서 실행됩니다."
+	},
+	"icon": {
+		"file": "scenra.webp"
+	},
+	"screenshot": "scenra.webp",
+	"added": "2026-11-14T02:26:35Z"
+}

@@ -123,9 +123,8 @@ function unpicked(field: ChoiceField | 'tags' | 'platforms', entry: Entry, why: 
 	return `- ${FIELD_NAMES[field]}: left at the form's default, ${JSON.stringify(entry[field])}, ${why}. Check it before merging.`;
 }
 
-// The copy, and with it what the form fills in with a default rather than asking (formDefaults): an app needs a category, as without one it is the only app in the showcase's other group, which the catalog checks reject; a UI library's tag and surface, a plugin's surface and the tags pass the checks at their defaults but put the entry under the wrong filter. An app's category is picked from the ones the apps on the site already have: a group of a single app reads as a mistake, and the checks reject that too (godraw's Design was such a group).
-// used: the categories of the apps on the site.
-async function addCopy(cfg: LlmConfig | undefined, kind: EntryKind, entry: Entry, facts: RepoFacts | undefined, examples: Entry[], used: ReadonlySet<string>): Promise<void> {
+// The copy, and with it what the form fills in with a default rather than asking (formDefaults): an app needs a category, as without one it is the only app in the showcase's other group, which the catalog checks reject; a UI library's tag and surface, a plugin's surface and the tags pass the checks at their defaults but put the entry under the wrong filter. An app's group is picked from all the showcase's groups, a new one included: a group may hold a single app, which is better than an app filed under a neighbour it does not belong to.
+async function addCopy(cfg: LlmConfig | undefined, kind: EntryKind, entry: Entry, facts: RepoFacts | undefined, examples: Entry[]): Promise<void> {
 	const picks = formDefaults(kind, entry);
 	// The build targets in nsgo.yaml say what the app builds for, which settles its platforms without asking the model.
 	const targeted = picks.platforms && facts?.nsgo ? platformsFromConfig(facts.nsgo.config) : undefined;
@@ -149,7 +148,7 @@ async function addCopy(cfg: LlmConfig | undefined, kind: EntryKind, entry: Entry
 		const schema: unknown = picks.choices.length ? JSON.parse(await readFile(join(ROOT, DATA_DIR, `schema/${kind}.schema.json`), 'utf8')) : undefined;
 		const choices = picks.choices.map((field) => {
 			const allowed = schemaEnum(schema, field);
-			return { field, values: field === 'group' ? allowed.filter((g) => used.has(g)) : allowed };
+			return { field, values: allowed };
 		});
 		// The release's file names say which platforms the app ships for; a failed request only leaves the model with the README and nsgo.yaml.
 		const releaseAssets = picks.platforms && facts ? await latestReleaseAssets(facts.repo).catch(() => undefined) : undefined;
@@ -187,8 +186,8 @@ async function addCopy(cfg: LlmConfig | undefined, kind: EntryKind, entry: Entry
 }
 
 // Fills in one added entry, in place: for an app its name, icon and screenshot from its repository, for a UI library, state management library, template or AI tool its homepage and screenshot, and for every kind the copy.
-// used: the categories of the apps on the site. submitted: the screenshot link from the site's form, for an app, a UI library, state management, a template or an AI tool.
-async function complete(cfg: LlmConfig | undefined, kind: EntryKind, where: string, entry: Entry, examples: Entry[], used: ReadonlySet<string>, submitted?: string): Promise<void> {
+// submitted: the screenshot link from the site's form, for an app, a UI library, state management, a template or an AI tool.
+async function complete(cfg: LlmConfig | undefined, kind: EntryKind, where: string, entry: Entry, examples: Entry[], submitted?: string): Promise<void> {
 	const staged = stagedShotOf(await listDir(join(ROOT, STAGED_SHOTS)), String(entry.slug));
 	say(`### ${String(entry.name ?? entry.slug ?? '?')} (\`${where}\`)`);
 	const repo = repoOfEntry(entry);
@@ -208,7 +207,7 @@ async function complete(cfg: LlmConfig | undefined, kind: EntryKind, where: stri
 		if (facts) addHomepage(entry, facts);
 		await addScreenshot(entry, String(entry.slug), kind === 'template' ? 'the template' : kind === 'ai' ? 'the tool' : 'the library', facts, undefined, submitted, staged);
 	}
-	await addCopy(cfg, kind, entry, facts, examples, used);
+	await addCopy(cfg, kind, entry, facts, examples);
 }
 
 // The entry's file, with added last as in the files written by hand, after the fields completed here.
@@ -246,22 +245,13 @@ async function main(): Promise<void> {
 	const single = added.reduce((n, a) => n + a.names.length, 0) === 1;
 	const pr = single && env.PR && env.GITHUB_REPOSITORY ? await github<{ body: string | null }>(`/repos/${env.GITHUB_REPOSITORY}/pulls/${env.PR}`) : undefined;
 	const submitted = single ? submittedScreenshot(pr?.body) : undefined;
-	// The showcase groups that have apps already: a new app picks its own from them, as a group of a single app fails the catalog checks.
-	const used = new Set<string>();
-	const appsDir = `${DATA_DIR}/${ENTRY_DIRS.app}`;
-	const listedApps = await lsTree(appsDir);
-	for (const name of listedApps.split('\n').filter((n) => n.endsWith('.json'))) {
-		const { stdout } = await run('git', ['show', `${BASE_REF}:${appsDir}/${name}`], { cwd: ROOT, maxBuffer: 4 * 1024 * 1024 });
-		const group = (JSON.parse(stdout) as Entry).group;
-		if (typeof group === 'string') used.add(group);
-	}
 	for (const { kind, dir, known, names } of added) {
 		const read = async (name: string) => JSON.parse(await readFile(join(ROOT, dir, name), 'utf8')) as Entry;
 		// The voice to match: the two entries of the kind added last before this branch, none for the first of its kind.
 		const examples = (await Promise.all(known.map(read))).sort((a, b) => String(a.added ?? '').localeCompare(String(b.added ?? ''))).slice(-2);
 		for (const name of names) {
 			const entry = await read(name);
-			await complete(cfg, kind, `${dir}/${name}`, entry, examples, used, kind === 'plugin' ? undefined : submitted);
+			await complete(cfg, kind, `${dir}/${name}`, entry, examples, kind === 'plugin' ? undefined : submitted);
 			await writeFile(join(ROOT, dir, name), json(entry));
 		}
 	}

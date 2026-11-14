@@ -1,0 +1,39 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "t3go",
+	"name": "T3Go",
+	"author": "tk103331",
+	"kind": "go",
+	"platforms": [
+		"mac",
+		"win",
+		"linux",
+		"web"
+	],
+	"group": "dev",
+	"url": "https://github.com/tk103331/t3go",
+	"repo": "tk103331/t3go",
+	"summary": {
+		"en": "Native client for T3Go, a Go rewrite of the T3 Code server, for running Claude Code, Codex and OpenCode.",
+		"zh-CN": "T3Go 原生客户端，用于运行 Claude Code、Codex、OpenCode。",
+		"zh-TW": "T3Go 原生用戶端，用來執行 Claude Code、Codex、OpenCode。",
+		"ja": "T3Go のネイティブクライアント。Claude Code、Codex、OpenCode を動かします。",
+		"ko": "T3Go 서버로 Claude Code, Codex, OpenCode를 실행하는 네이티브 클라이언트."
+	},
+	"description": {
+		"en": "Client for T3Go, a Go rewrite of the T3 Code server that runs Claude Code, Codex CLI and OpenCode as local agents. It shows project threads with streamed replies and per-run diffs with checkpoint rollback, has a terminal and Git pull requests, and lets you approve Claude Code tool calls. Written in Go with NSGo, which also builds the web version; the server is a separate CLI.",
+		"zh-CN": "T3Go 是用 Go 重写的 T3 Code 服务端，把 Claude Code、Codex CLI 和 OpenCode 作为本地 agent 运行，这是它的客户端。可查看项目线程与流式回复、每次 run 的 diff 并回滚到 checkpoint，内置终端和 PR 操作，还能审批 Claude Code 的工具调用。客户端用 NSGo 以 Go 编写，网页版也由它构建；服务端是单独的 CLI。",
+		"zh-TW": "T3Go 是以 Go 重寫的 T3 Code 伺服器，把 Claude Code、Codex CLI 和 OpenCode 當作本機 agent 執行，這是它的用戶端。可檢視專案執行緒與串流回覆、每次 run 的 diff 並還原到 checkpoint，內建終端機和 PR 操作，還能核准 Claude Code 的工具呼叫。用戶端以 NSGo 用 Go 撰寫，網頁版也由它建置；伺服器是獨立的 CLI。",
+		"ja": "T3Go は T3 Code サーバーを Go で書き直したもので、Claude Code、Codex CLI、OpenCode をローカルのエージェントとして動かします。このアプリはそのクライアントで、プロジェクトごとのスレッドとストリーミング応答、実行ごとの diff とチェックポイントへの巻き戻し、ターミナル、Git のプルリクエスト操作を備え、Claude Code のツール呼び出しを承認できます。クライアントは NSGo を使って Go で書かれ、Web 版も同じコードから作ります。サーバーは別の CLI です。",
+		"ko": "T3Go는 T3 Code 서버를 Go로 다시 작성한 것으로, Claude Code, Codex CLI, OpenCode를 로컬 에이전트로 실행합니다. 이 앱은 그 클라이언트로, 프로젝트별 스레드와 스트리밍 응답, 실행마다의 diff와 체크포인트 롤백, 터미널과 Git 풀 리퀘스트를 제공하고 Claude Code의 도구 호출을 승인할 수 있습니다. 클라이언트는 NSGo로 Go에서 작성했고 웹 버전도 같은 코드로 빌드하며, 서버는 별도의 CLI입니다."
+	},
+	"icon": {
+		"file": "t3go.webp"
+	},
+	"provisional": [
+		"icon",
+		"screenshot"
+	],
+	"screenshot": "t3go.webp",
+	"added": "2026-11-13T02:25:48Z"
+}

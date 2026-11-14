@@ -1,0 +1,37 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "pigo",
+	"name": "pigo",
+	"author": "greenfriends6688",
+	"kind": "go",
+	"group": "dev",
+	"platforms": [
+		"mac",
+		"win",
+		"linux"
+	],
+	"url": "https://github.com/greenfriends6688/pigo",
+	"repo": "greenfriends6688/pigo",
+	"summary": {
+		"en": "A desktop window for the pi coding agent: sessions, chat, file tree, Git review and a terminal in one place.",
+		"zh-CN": "pi 编码 agent 的桌面窗口：会话、对话、文件树、Git 审阅和终端集于一处。",
+		"zh-TW": "pi 編碼 agent 的桌面視窗：會話、對話、檔案樹、Git 審閱和終端機集於一處。",
+		"ja": "pi コーディングエージェント用のデスクトップアプリ。会話、ファイル、Git、ターミナルを 1 画面に。",
+		"ko": "pi 코딩 에이전트용 데스크톱 앱. 세션, 채팅, 파일 트리, Git 리뷰, 터미널을 한 창에 담았습니다."
+	},
+	"description": {
+		"en": "pigo puts the pi coding agent in a native desktop window: sessions grouped by project, streaming chat with cards for tool calls, a file tree, Git review of diffs and history, and a tabbed terminal. It drives the pi you already have installed (1.4 or later) over its RPC mode, or a bundled copy that needs Node 22. Written in Go with NSGo, with an English and Chinese interface.",
+		"zh-CN": "把命令行编码 agent pi 装进原生桌面窗口：按项目分组的会话、用卡片展示工具调用的流式对话、文件树、查看 diff 与提交历史的 Git 审阅，以及多标签终端。优先驱动你已安装的 pi（1.4 以上）的 RPC 模式，也可改用内置的 RPC bundle，需要 Node 22 以上。用 NSGo 以 Go 编写，界面支持中英文。",
+		"zh-TW": "把命令列編碼 agent pi 裝進原生桌面視窗：依專案分組的會話、以卡片呈現工具呼叫的串流對話、檔案樹、檢視 diff 與提交歷史的 Git 審閱，以及多分頁終端機。優先驅動你已安裝的 pi（1.4 以上）的 RPC 模式，也可改用內建的 RPC bundle，需要 Node 22 以上。以 NSGo 用 Go 撰寫，介面支援中英文。",
+		"ja": "pi コーディングエージェントをネイティブのデスクトップウィンドウに収めたアプリです。プロジェクトごとのセッション、ツール呼び出しをカードで見せるストリーミングチャット、ファイルツリー、差分と履歴を確認する Git レビュー、タブ式ターミナルを備えます。インストール済みの pi（1.4 以降）を RPC モードで動かし、同梱版を使う場合は Node 22 以上が必要です。NSGo を使って Go で書かれ、UI は英語と中国語です。",
+		"ko": "pi 코딩 에이전트를 네이티브 데스크톱 창에 담은 앱입니다. 프로젝트별 세션, 도구 호출을 카드로 보여 주는 스트리밍 채팅, 파일 트리, diff와 커밋 기록을 보는 Git 리뷰, 탭 터미널을 갖췄습니다. 이미 설치된 pi(1.4 이상)를 RPC 모드로 구동하며, 내장 번들을 쓸 때는 Node 22 이상이 필요합니다. NSGo로 Go에서 작성했고 인터페이스는 영어와 중국어입니다."
+	},
+	"icon": {
+		"file": "pigo.webp"
+	},
+	"screenshot": "pigo.webp",
+	"provisional": [
+		"screenshot"
+	],
+	"added": "2026-11-14T02:26:35Z"
+}

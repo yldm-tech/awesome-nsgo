@@ -1,0 +1,37 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "kanju",
+	"name": "Kanju",
+	"author": "ciwam",
+	"kind": "go",
+	"group": "media",
+	"platforms": [
+		"mac",
+		"android"
+	],
+	"url": "https://github.com/ciwam/kanju-client",
+	"repo": "ciwam/kanju-client",
+	"summary": {
+		"en": "Native client for the Kanju video aggregator, with search, playback, history, favorites and live channels.",
+		"zh-CN": "Kanju 视频聚合客户端，支持搜索、播放、历史、收藏和直播。",
+		"zh-TW": "Kanju 影音聚合用戶端，支援搜尋、播放、紀錄、收藏與直播。",
+		"ja": "動画アグリゲーター Kanju のクライアント。検索、再生、履歴、お気に入り、ライブに対応。",
+		"ko": "동영상 애그리게이터 Kanju 클라이언트. 검색, 재생, 기록, 즐겨찾기, 라이브 지원."
+	},
+	"description": {
+		"en": "A native client for Kanju, a video aggregator. It connects to a Kanju backend, by default at http://127.0.0.1:28088 and changeable on the login or settings page, and offers search with results streamed in source by source, playback, history, favorites and live channels. It replaces Kanju's web client and is written in Go with NSGo; the backend is a separate project. The README says macOS comes first.",
+		"zh-CN": "视频聚合服务 Kanju 的原生客户端。连接 Kanju 后端（默认 http://127.0.0.1:28088，可在登录页或设置页修改），提供按站源逐步追加结果的搜索、播放、历史、收藏和直播。由 Kanju 的 Web 版用 NSGo 以 Go 重写而来，后端是另外的项目。README 说明 macOS 版先行。",
+		"zh-TW": "影音聚合服務 Kanju 的原生用戶端。連線至 Kanju 後端（預設 http://127.0.0.1:28088，可在登入頁或設定頁修改），提供依站源逐步追加結果的搜尋、播放、觀看紀錄、收藏與直播。由 Kanju 的 Web 版以 NSGo 用 Go 重寫而成，後端則是另外的專案。README 說明 macOS 版先行。",
+		"ja": "動画アグリゲーター Kanju のネイティブクライアント。Kanju のバックエンドに接続し（既定は http://127.0.0.1:28088、ログイン画面や設定で変更可能）、ソースごとに結果が順に届く検索、再生、履歴、お気に入り、ライブチャンネルを利用できます。Kanju の Web 版を NSGo を使って Go で書き直したもので、バックエンドは別のプロジェクトです。README によると macOS 版が先行しています。",
+		"ko": "동영상 애그리게이터 Kanju의 네이티브 클라이언트입니다. Kanju 백엔드(기본값 http://127.0.0.1:28088, 로그인 화면이나 설정에서 변경 가능)에 연결해 소스별로 결과가 차례로 붙는 검색, 재생, 시청 기록, 즐겨찾기, 라이브 채널을 제공합니다. Kanju 웹 버전을 NSGo로 Go에서 다시 작성했으며, 백엔드는 별도 프로젝트입니다. README에 따르면 macOS 버전이 먼저 나옵니다."
+	},
+	"icon": {
+		"file": "kanju.webp"
+	},
+	"provisional": [
+		"icon",
+		"screenshot"
+	],
+	"screenshot": "kanju.webp",
+	"added": "2026-11-16T02:29:55Z"
+}

@@ -1,0 +1,35 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "bowerbird",
+	"name": "Bowerbird",
+	"author": "owocc",
+	"kind": "go",
+	"group": "media",
+	"platforms": [
+		"android"
+	],
+	"url": "https://github.com/owocc/bowerbird",
+	"repo": "owocc/bowerbird",
+	"summary": {
+		"en": "Android app of Bowerbird, a local-first manager for image and video asset libraries.",
+		"zh-CN": "Bowerbird 的 Android 版：在本机管理图片和视频素材库",
+		"zh-TW": "Bowerbird 的 Android 版：在本機管理圖片和影片素材庫",
+		"ja": "画像・動画素材ライブラリを手元で管理する Bowerbird の Android 版。",
+		"ko": "이미지·영상 소재 라이브러리를 로컬에서 관리하는 Bowerbird의 Android 앱."
+	},
+	"description": {
+		"en": "Bowerbird turns a folder of images and video into a library on your own disk: files are hashed, thumbnailed and indexed on import, color palettes are extracted so you can filter by color, and the library is a portable .library package with no account or cloud. This entry is its Android app, written in Go with NSGo. The desktop app for macOS, Windows and Linux is built with mygo's GPU-native UI, and the browser extension and marketplace are made separately.",
+		"zh-CN": "Bowerbird 把装满图片和视频的文件夹变成本机上的素材库：导入时计算哈希、生成缩略图并建立索引，还会提取配色以便按颜色筛选。资料库是可随意迁移的 .library 包，无需账号，也不经过云端。本条目是它的 Android 应用，用 NSGo 以 Go 编写；macOS、Windows 和 Linux 桌面版基于 mygo 的 GPU 原生界面构建，浏览器扩展和插件市场另行开发。",
+		"zh-TW": "Bowerbird 把裝滿圖片和影片的資料夾變成本機上的素材庫：匯入時計算雜湊、產生縮圖並建立索引，還會擷取配色以便依顏色篩選。資料庫是可自由搬移的 .library 套件，不需要帳號，也不經過雲端。本條目是它的 Android 應用程式，以 NSGo 用 Go 撰寫；macOS、Windows 和 Linux 桌面版以 mygo 的 GPU 原生介面打造，瀏覽器擴充功能和外掛市集另行開發。",
+		"ja": "Bowerbird は、画像や動画の入ったフォルダーを手元のディスク上のライブラリに変えます。取り込み時にファイルのハッシュ計算、サムネイル生成、インデックス作成を行い、配色を抽出して色での絞り込みにも使えます。ライブラリは持ち運べる .library パッケージで、アカウントもクラウドも不要です。このエントリーはその Android 版で、NSGo を使って Go で書かれています。macOS、Windows、Linux 向けのデスクトップ版は mygo の GPU ネイティブ UI で作られ、ブラウザ拡張とマーケットプレイスは別に開発されています。",
+		"ko": "Bowerbird는 이미지와 영상이 든 폴더를 내 디스크의 라이브러리로 바꿉니다. 가져올 때 파일 해시 계산, 썸네일 생성, 인덱싱을 하고 색상 팔레트를 추출해 색으로 필터링할 수 있습니다. 라이브러리는 옮겨 다닐 수 있는 .library 패키지이며 계정이나 클라우드가 필요 없습니다. 이 항목은 그 Android 앱으로, NSGo로 Go에서 작성했습니다. macOS, Windows, Linux용 데스크톱 앱은 mygo의 GPU 네이티브 UI로 만들었고, 브라우저 확장과 마켓플레이스는 따로 개발합니다."
+	},
+	"icon": {
+		"file": "bowerbird.webp"
+	},
+	"screenshot": "bowerbird.webp",
+	"provisional": [
+		"screenshot"
+	],
+	"added": "2026-11-17T02:28:32Z"
+}

@@ -1,0 +1,33 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "bowerbird",
+	"name": "Bowerbird",
+	"author": "bowerbird-lab",
+	"kind": "go",
+	"group": "media",
+	"platforms": [
+		"android"
+	],
+	"url": "https://github.com/bowerbird-lab/bowerbird",
+	"repo": "bowerbird-lab/bowerbird",
+	"summary": {
+		"en": "Android app of Bowerbird, a local-first image and video library you can filter by color and tags.",
+		"zh-CN": "本地图片视频素材库 Bowerbird 安卓版，可按颜色和标签筛选。",
+		"zh-TW": "本機圖片影片素材庫 Bowerbird Android 版，依顏色與標籤篩選。",
+		"ja": "画像と動画のローカルファーストなライブラリ Bowerbird の Android 版。色やタグで絞り込み。",
+		"ko": "이미지와 동영상을 로컬에서 관리하는 Bowerbird의 Android 앱. 색상과 태그로 필터링."
+	},
+	"description": {
+		"en": "The Android app of Bowerbird, a local-first library manager for images and video. Bowerbird hashes, thumbnails and indexes each file into a portable .library package with no upload or account, extracts color palettes, and filters by file type, color, tags, virtual folders and orientation. NSGo builds only this Android app, written in Go; the desktop app for macOS, Windows and Linux is built separately with mygo's GPU-native UI.",
+		"zh-CN": "Bowerbird 的 Android 版。Bowerbird 是本地优先的图片与视频素材库管理工具，为每个文件计算哈希、生成缩略图并建立索引，存成可随处携带的 .library 包，无需上传或账号；还会提取配色，可按文件类型、颜色、标签、虚拟文件夹和方向筛选。只有这个 Android 版由 NSGo 以 Go 构建；macOS、Windows 和 Linux 桌面版另用 mygo 的 GPU 原生界面开发。",
+		"zh-TW": "Bowerbird 的 Android 版。Bowerbird 是本機優先的圖片與影片素材庫管理工具，為每個檔案計算雜湊、產生縮圖並建立索引，存成可隨身攜帶的 .library 套件，不需上傳或帳號；還會擷取配色，可依檔案類型、顏色、標籤、虛擬資料夾和方向篩選。只有這個 Android 版由 NSGo 以 Go 建置；macOS、Windows 和 Linux 桌面版另以 mygo 的 GPU 原生介面開發。",
+		"ja": "画像と動画をローカルファーストで管理するライブラリアプリ Bowerbird の Android 版です。Bowerbird はファイルごとにハッシュ、サムネイル、インデックスを作って持ち運べる .library パッケージにまとめ、アップロードもアカウントも不要です。カラーパレットを抽出し、ファイル形式、色、タグ、仮想フォルダー、向きで絞り込めます。NSGo でビルドされるのはこの Android 版だけで、Go で書かれています。macOS、Windows、Linux 向けのデスクトップ版は mygo の GPU ネイティブ UI で別に作られています。",
+		"ko": "로컬 우선 이미지·동영상 라이브러리 관리 앱 Bowerbird의 Android 버전입니다. Bowerbird는 파일마다 해시, 썸네일, 인덱스를 만들어 옮길 수 있는 .library 패키지로 묶으며 업로드나 계정이 필요 없습니다. 색상 팔레트를 추출하고 파일 형식, 색상, 태그, 가상 폴더, 방향으로 걸러 볼 수 있습니다. NSGo로 빌드하는 것은 Go로 작성한 이 Android 앱뿐이고, macOS, Windows, Linux 데스크톱 앱은 mygo의 GPU 네이티브 UI로 따로 만듭니다."
+	},
+	"icon": {
+		"file": "bowerbird.webp"
+	},
+	"screenshot": "bowerbird.webp",
+	"provisional": ["icon"],
+	"added": "2026-11-19T02:28:16Z"
+}

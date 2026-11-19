@@ -2,8 +2,8 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { type ScoreTarget, scoreOf } from '../../catalog/src/score.ts';
 import { listDir } from './files.ts';
-import { github } from './github.ts';
-import { type BatchResult, type GraphqlAnswer, type Scored, type ScoresFile, anomalies, assemble, batches, buildQuery, commitMessage, isIdle, parseBatch, planRun, readLikes, scoredEntry, serializeScores, totalOf, weekStart, weekWindows } from './signals.ts';
+import { github, rawFile } from './github.ts';
+import { type BatchResult, type GraphqlAnswer, type RepoInfo, type Scored, type ScoresFile, anomalies, assemble, batches, buildQuery, commitMessage, isIdle, licenseFromText, parseBatch, planRun, readLikes, scoredEntry, serializeScores, totalOf, weekStart, weekWindows } from './signals.ts';
 import { ENTRY_DIRS, type Entry, type EntryKind } from './source.ts';
 
 // Run by .github/workflows/score.yml once a day. It records in packages/catalog/data/scores.json the raw signals each entry's score is computed from when the site is built (packages/catalog/src/score.ts): for every app, UI library, state management library and community plugin, its repository's stars, license, latest release or tag and whether it is archived, in how many of the 12 full weeks before the latest complete Monday (activityAsOf) it had commits, on how many days in the rolling 12-week release window through the current UTC day it had a release or tag, and its likes on the site. A closed-source app has only its likes; a plugin in a folder of a repository has its commits counted in that folder, and its stars are not recorded, as the repository's are not the plugin's own.
@@ -33,6 +33,26 @@ const say = (line: string): void => {
 	console.log(line);
 };
 const cell = (s: string) => s.replace(/\|/g, '\\|');
+
+async function licenseFallback(repo: string): Promise<string | undefined> {
+	for (const branch of ['main', 'master']) {
+		for (const path of ['LICENSE', 'LICENSE.md', 'COPYING']) {
+			const text = await rawFile(repo, branch, path);
+			const license = text && licenseFromText(text);
+			if (license) return license;
+		}
+	}
+	return undefined;
+}
+
+async function resolveUnassertedLicenses(repos: Map<string, RepoInfo>): Promise<void> {
+	await Promise.all(
+		[...repos.entries()].filter(([, info]) => info.license === 'NOASSERTION').map(async ([repo, info]) => {
+			const license = await licenseFallback(repo);
+			if (license) info.license = license;
+		}),
+	);
+}
 
 // Every entry the site scores, from data/{apps,ui,state,templates,ai,plugins}/*.json as the catalog reads them, with community plugins only (a subset of LIKE_KEYS).
 async function scoredEntries(): Promise<Scored[]> {
@@ -104,6 +124,7 @@ async function main(): Promise<void> {
 			const answer = await github<GraphqlAnswer>('/graphql', { method: 'POST', body: { query: buildQuery(batch, activityWindows) } });
 			if (!answer) throw new Error('GitHub GraphQL answered 404');
 			const part = parseBatch(batch, answer, activityWindows, now.getTime(), releaseWindows);
+			await resolveUnassertedLicenses(part.repos);
 			for (const [k, v] of part.repos) found.repos.set(k, v);
 			for (const [k, v] of part.activity) found.activity.set(k, v);
 			found.notFound.push(...part.notFound);

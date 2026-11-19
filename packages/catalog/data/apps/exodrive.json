@@ -4,9 +4,7 @@
 	"name": "Exodrive",
 	"author": "Jungley8",
 	"kind": "go",
-	"platforms": [
-		"mac"
-	],
+	"platforms": ["mac"],
 	"category": "DeveloperApplication",
 	"group": "dev",
 	"url": "https://github.com/Jungley8/exodrive",

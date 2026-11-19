@@ -1,0 +1,34 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "onegit",
+	"name": "Onegit",
+	"author": "oneo-me",
+	"kind": "go",
+	"group": "dev",
+	"platforms": [
+		"mac",
+		"win",
+		"linux"
+	],
+	"url": "https://github.com/oneo-me/onegit",
+	"repo": "oneo-me/onegit",
+	"summary": {
+		"en": "A worktree-centered Git client that gathers many repositories in one window.",
+		"zh-CN": "以工作树为中心的 Git 客户端，在一个窗口中管理多个仓库。",
+		"zh-TW": "以工作樹為中心的 Git 用戶端，在一個視窗中管理多個儲存庫。",
+		"ja": "ワークツリー中心の Git クライアント。多数のリポジトリを一つのウィンドウにまとめて扱えます。",
+		"ko": "워크트리 중심의 Git 클라이언트로, 여러 저장소를 한 창에 모아 다룹니다."
+	},
+	"description": {
+		"en": "A macOS Git client built around worktrees that scans a parent folder and gathers its repositories in one window, made for everyday browsing rather than every Git feature. It covers staging files or lines and committing, the commit graph, history search and blame, and branches, tags, remotes and stashes with rebase, merge and cherry-pick, and it writes to Git only when you click. It is written in Go with NSGo and needs Git on PATH; it is not released yet, so you build it from source.",
+		"zh-CN": "以工作树为中心的 macOS Git 客户端，扫描上级目录后把其中的仓库集中到一个窗口，侧重日常浏览和工作树切换，而非通用 Git 客户端的全部功能。支持按文件或按行暂存并提交、提交图、历史搜索、blame，以及分支、标签、远程和 stash 管理与 rebase、merge、cherry-pick，所有 Git 写操作只在点击时执行。用 NSGo 以 Go 编写，运行需 PATH 中有 Git；尚未发布，需从源码构建。",
+		"zh-TW": "以工作樹為中心的 macOS Git 用戶端，掃描上層資料夾後把其中的儲存庫集中到一個視窗，著重日常瀏覽與工作樹切換，而非通用 Git 用戶端的全部功能。支援依檔案或依行暫存並提交、提交圖、歷史搜尋、blame，以及分支、標籤、遠端和 stash 管理與 rebase、merge、cherry-pick，所有 Git 寫入操作只在點選時執行。以 NSGo 用 Go 撰寫，執行需 PATH 中有 Git；尚未發布，需從原始碼建置。",
+		"ja": "ワークツリーを中心にした macOS 向けの Git クライアントで、親フォルダーをスキャンしてリポジトリを一つのウィンドウにまとめます。汎用 Git クライアントの全機能ではなく、日常的な閲覧とワークツリーの切り替えに絞っています。ファイルや行単位のステージとコミット、コミットグラフ、履歴検索、blame、ブランチ・タグ・リモート・stash の管理、rebase、merge、cherry-pick に対応し、Git への書き込みはクリックしたときだけ行います。NSGo を使って Go で書かれ、実行には PATH 上の Git が必要です。まだリリースされておらず、ソースからビルドします。",
+		"ko": "워크트리를 중심에 둔 macOS용 Git 클라이언트로, 상위 폴더를 스캔해 저장소를 한 창에 모읍니다. 범용 Git 클라이언트의 모든 기능보다 일상적인 탐색과 워크트리 전환에 집중합니다. 파일이나 줄 단위 스테이징과 커밋, 커밋 그래프, 기록 검색, blame, 브랜치·태그·리모트·stash 관리와 rebase, merge, cherry-pick을 지원하며, Git 쓰기 작업은 클릭할 때만 실행합니다. NSGo로 Go에서 작성했고 PATH에 Git이 있어야 합니다. 아직 출시되지 않아 소스에서 빌드합니다."
+	},
+	"icon": {
+		"file": "onegit.webp"
+	},
+	"screenshot": "onegit.webp",
+	"added": "2026-11-19T02:28:16Z"
+}

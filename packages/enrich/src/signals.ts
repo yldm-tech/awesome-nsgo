@@ -72,6 +72,18 @@ export function isOsi(id: string | null | undefined): boolean {
 	return Boolean(id) && Object.hasOwn(spdx, id as string) && spdx[id as string].osiApproved === true;
 }
 
+// GitHub sometimes returns NOASSERTION even when a repository carries a standard LICENSE file. Keep the fallback conservative so a score never claims a license from an ambiguous README mention.
+export function licenseFromText(text: string): string | undefined {
+	if (/apache license, version 2\.0/i.test(text)) return 'Apache-2.0';
+	if (/^\s*mit license\b/im.test(text) && /permission is hereby granted, free of charge/i.test(text)) return 'MIT';
+	if (/gnu general public license/i.test(text) && /version 3/i.test(text)) return 'GPL-3.0-only';
+	if (/gnu general public license/i.test(text) && /version 2/i.test(text)) return 'GPL-2.0-only';
+	if (/gnu lesser general public license/i.test(text) && /version 3/i.test(text)) return 'LGPL-3.0-only';
+	if (/the unlicense/i.test(text) && /free and unrestricted/i.test(text)) return 'Unlicense';
+	if (/functional source license, version 1\.1/i.test(text) && /ALv2 Future License/i.test(text)) return 'FSL-1.1-ALv2';
+	return undefined;
+}
+
 // ---- what the site lists ----
 
 // An entry the site gives a score: its key (its like key) and what is measured for it, the same as the catalog derives them (SCORE_TARGETS in packages/catalog/src/scores.ts), so that a recorded entry's repository and folder match the site's. urlOnly is an app that names its repository only by its link, with no repo field.

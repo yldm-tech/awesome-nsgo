@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { scoreOf } from '../../catalog/src/score.ts';
 import type { ScoreSignals, ScoreTarget } from '../../catalog/src/score.ts';
-import { type Batch, type BatchResult, type ScoresFile, anomalies, assemble, batches, buildQuery, commitMessage, eligibleWeeks, isIdle, isOsi, latestRelease, parseBatch, planRun, readLikes, releaseDays, scoredEntry, serializeScores, signalsOf, weekStart, weekWindows } from './signals.ts';
+import { type Batch, type BatchResult, type ScoresFile, anomalies, assemble, batches, buildQuery, commitMessage, eligibleWeeks, isIdle, isOsi, latestRelease, licenseFromText, parseBatch, planRun, readLikes, releaseDays, scoredEntry, serializeScores, signalsOf, weekStart, weekWindows } from './signals.ts';
 
 const DAY = 86_400_000;
 const ASOF = '2026-11-02';
@@ -101,6 +101,13 @@ describe('the release and the license', () => {
 		expect(isOsi('NOASSERTION')).toBe(false);
 		expect(isOsi(null)).toBe(false);
 		expect(isOsi('toString')).toBe(false);
+	});
+
+	it('recognizes standard license text when GitHub returns no assertion', () => {
+		expect(licenseFromText('Licensed under the Apache License, Version 2.0 (the "License");')).toBe('Apache-2.0');
+		expect(licenseFromText('MIT License\n\nPermission is hereby granted, free of charge, to any person')).toBe('MIT');
+		expect(licenseFromText('# Functional Source License, Version 1.1, ALv2 Future License')).toBe('FSL-1.1-ALv2');
+		expect(licenseFromText('Copyright only')).toBeUndefined();
 	});
 });
 

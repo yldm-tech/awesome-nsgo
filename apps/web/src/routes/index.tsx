@@ -351,7 +351,7 @@ function Categories() {
 						<div key={c.to} className={`rv d${k} flex`}>
 							<Link to={c.to} className='tile spot group relative flex min-h-[200px] flex-1 flex-col gap-3.5 rounded-card border border-line-2 bg-panel p-7 text-fg no-underline hover:border-line-3 hover:[box-shadow:var(--sh-2)] max-sm:min-h-0 max-sm:p-5'>
 								<span className='flex items-start justify-between gap-3'>
-									<span className='ichip flex size-11 items-center justify-center rounded-box bg-soft text-fg'>
+									<span className='ichip flex size-11 items-center justify-center rounded-box bg-soft text-fg group-hover:text-bg'>
 										<NavIcon to={c.to} />
 									</span>
 									<span className={`inline-flex h-6 items-center rounded-full px-2.5 font-mono text-[12px] font-semibold ${c.wanted ? 'bg-fg text-bg' : 'border border-line-2 text-fg-2'}`}>{c.badge}</span>

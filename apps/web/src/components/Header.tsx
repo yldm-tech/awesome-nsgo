@@ -10,12 +10,11 @@ import { SiteMark } from './marks';
 // Every section, in the order of the home page's tiles: the header's row, the retro look's menu bar and both footers show them all.
 export const NAV = [
 	{ to: '/', key: 'nav_home' },
+	{ to: '/showcase', key: 'nav_showcase' },
 	{ to: '/ui', key: 'nav_ui' },
-	{ to: '/state', key: 'nav_state' },
 	{ to: '/templates', key: 'nav_templates' },
 	{ to: '/ai', key: 'nav_ai' },
 	{ to: '/plugins', key: 'nav_plugins' },
-	{ to: '/showcase', key: 'nav_showcase' },
 	{ to: '/learn', key: 'nav_learn' },
 ] as const;
 

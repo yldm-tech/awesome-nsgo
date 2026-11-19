@@ -1,4 +1,4 @@
-import { AI_TOOLS, APP_PLATFORMS, APPS, type AppPlatform, DOCS, INSTALL_CMDS, INSTALL_TABS, type InstallTab, LANGS, NSGO_MODULE, NSGO_REPO_NAME, NSGO_SITE, PLUGINS, SITE_REPO, STATE_SOLUTIONS, TEMPLATES, UI_LIBS, fill, hostOf, pick } from '@awesome-nsgo/catalog';
+import { AI_TOOLS, APP_PLATFORMS, APPS, type AppPlatform, DOCS, INSTALL_CMDS, INSTALL_TABS, type InstallTab, LANGS, NSGO_MODULE, NSGO_REPO_NAME, NSGO_SITE, PLUGINS, SITE_REPO, TEMPLATES, UI_LIBS, fill, hostOf, pick } from '@awesome-nsgo/catalog';
 import { Link, createFileRoute, useNavigate } from '@tanstack/react-router';
 import { Fragment, useMemo, useState } from 'react';
 import { AppCard } from '../components/EntryCard';
@@ -323,7 +323,6 @@ function PluginRows() {
 
 function Categories() {
 	const t = useT();
-	const nState = STATE_SOLUTIONS.length;
 	const nTpl = TEMPLATES.length;
 	const nAi = AI_TOOLS.length;
 	// The categories still waiting for their first entries wear an inverted badge; showcase, plugins and ui always have entries.
@@ -331,7 +330,6 @@ function Categories() {
 		{ to: '/showcase', name: t.cat_show_name, badge: t.cat_show_badge, wanted: false, desc: t.cat_show_desc },
 		{ to: '/plugins', name: t.nav_plugins, badge: t.cat_plug_badge, wanted: false, desc: fill(t.cat_plug_desc, { n: PLUGINS.length }) },
 		{ to: '/ui', name: t.cat_ui_name, badge: fill(t.cat_ui_badge, { n: UI_LIBS.length }), wanted: false, desc: t.cat_ui_desc },
-		{ to: '/state', name: t.cat_state_name, badge: nState ? fill(t.cat_state_count, { n: nState }) : t.cat_state_badge, wanted: nState === 0, desc: t.cat_state_desc },
 		{ to: '/templates', name: t.cat_tpl_name, badge: nTpl ? fill(t.cat_tpl_count, { n: nTpl }) : t.cat_tpl_badge, wanted: nTpl === 0, desc: t.cat_tpl_desc },
 		{ to: '/ai', name: t.cat_ai_name, badge: nAi ? fill(t.cat_ai_count, { n: nAi }) : t.cat_ai_badge, wanted: nAi === 0, desc: t.cat_ai_desc },
 	] as const;

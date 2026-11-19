@@ -1,0 +1,36 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "rcmd-nsgo",
+	"name": "rcmd-nsgo",
+	"author": "zhuhaoxlj",
+	"kind": "go",
+	"group": "system",
+	"platforms": [
+		"mac"
+	],
+	"url": "https://github.com/zhuhaoxlj/rcmd-nsgo",
+	"repo": "zhuhaoxlj/rcmd-nsgo",
+	"summary": {
+		"en": "macOS menu bar app switcher modeled on rcmd: hold right Command, press a letter to switch apps.",
+		"zh-CN": "仿 rcmd 的 macOS 应用切换器：按住右 Command 按字母切换",
+		"zh-TW": "仿 rcmd 的 macOS 應用程式切換器：按住右 Command 按字母切換",
+		"ja": "rcmd を再現した macOS 用アプリ切り替え。右 Command を押しながら文字キーで切り替え。",
+		"ko": "rcmd를 본뜬 macOS 앱 전환기. 오른쪽 Command를 누른 채 글자 키로 전환."
+	},
+	"description": {
+		"en": "A macOS menu bar app that recreates rcmd's app switching: hold right Command to show a panel of apps and their letters, press a letter and release to bring that app to the front, launching it if it is not running. Letters can be set with Option plus a letter or in the settings window, and apps can be ignored. The interface is written in Go with NSGo, with a separate Swift helper for the keyboard and app activation, and the app builds from source.",
+		"zh-CN": "复刻 rcmd 应用切换的 macOS 菜单栏应用：按住右 Command 弹出应用与字母面板，按下字母再松开即把对应应用切到前台，未运行的应用会被启动。可用 Option + 字母或在设置窗口中分配字母，也能忽略指定应用。界面用 NSGo 以 Go 编写，键盘监听与应用激活由另行实现的 Swift helper 完成，需从源码构建。",
+		"zh-TW": "復刻 rcmd 應用程式切換的 macOS 選單列應用程式：按住右 Command 會出現應用程式與字母面板，按下字母再放開即把對應的應用程式切到前景，未執行的會自動啟動。可用 Option + 字母或在設定視窗中指定字母，也能忽略特定應用程式。介面以 NSGo 用 Go 撰寫，鍵盤監聽與應用程式啟用由另行實作的 Swift helper 負責，需從原始碼建置。",
+		"ja": "rcmd のアプリ切り替えを再現した macOS のメニューバーアプリです。右 Command を押し続けるとアプリと割り当て文字のパネルが表示され、文字キーを押して離すとそのアプリが前面に来ます。起動していないアプリは起動します。文字は Option + 文字キーか設定ウィンドウで割り当てられ、アプリを無視リストに入れることもできます。画面は NSGo を使って Go で書かれ、キーボードの監視とアプリのアクティブ化は別の Swift ヘルパーが担います。ソースからビルドして使います。",
+		"ko": "rcmd의 앱 전환을 재현한 macOS 메뉴 막대 앱입니다. 오른쪽 Command를 누르고 있으면 앱과 할당된 글자가 담긴 패널이 뜨고, 글자 키를 누른 뒤 떼면 그 앱이 앞으로 나오며 실행 중이 아니면 실행합니다. 글자는 Option + 글자 키나 설정 창에서 할당할 수 있고, 앱을 무시 목록에 넣을 수도 있습니다. 화면은 NSGo로 Go에서 작성했고, 키보드 감시와 앱 활성화는 별도의 Swift 헬퍼가 맡으며, 소스에서 빌드합니다."
+	},
+	"icon": {
+		"file": "rcmd-nsgo.webp"
+	},
+	"provisional": [
+		"icon",
+		"screenshot"
+	],
+	"screenshot": "rcmd-nsgo.webp",
+	"added": "2026-11-19T02:28:16Z"
+}

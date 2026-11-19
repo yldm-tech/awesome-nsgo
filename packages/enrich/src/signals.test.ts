@@ -106,6 +106,7 @@ describe('the release and the license', () => {
 	it('recognizes standard license text when GitHub returns no assertion', () => {
 		expect(licenseFromText('Licensed under the Apache License, Version 2.0 (the "License");')).toBe('Apache-2.0');
 		expect(licenseFromText('MIT License\n\nPermission is hereby granted, free of charge, to any person')).toBe('MIT');
+		expect(licenseFromText('# Functional Source License, Version 1.1, ALv2 Future License')).toBe('FSL-1.1-ALv2');
 		expect(licenseFromText('Copyright only')).toBeUndefined();
 	});
 });

@@ -80,6 +80,7 @@ export function licenseFromText(text: string): string | undefined {
 	if (/gnu general public license/i.test(text) && /version 2/i.test(text)) return 'GPL-2.0-only';
 	if (/gnu lesser general public license/i.test(text) && /version 3/i.test(text)) return 'LGPL-3.0-only';
 	if (/the unlicense/i.test(text) && /free and unrestricted/i.test(text)) return 'Unlicense';
+	if (/functional source license, version 1\.1/i.test(text) && /ALv2 Future License/i.test(text)) return 'FSL-1.1-ALv2';
 	return undefined;
 }
 

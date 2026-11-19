@@ -10,7 +10,6 @@
 		"ja": "NSGo 付属のスターター。既定は nsgo.yaml と nsgotest のテスト付きの Go カウンターアプリ、-template tsx なら App.tsx のアプリ、-template mixed なら自前の Go を呼ぶ TSX エントリーを作ります。",
 		"ko": "NSGo에 들어 있는 스타터. 기본은 nsgo.yaml과 nsgotest 테스트가 딸린 Go 카운터 앱이고, -template tsx는 App.tsx 앱을, -template mixed는 직접 등록한 Go를 쓰는 TSX 진입점을 만듭니다."
 	},
-	"screenshot": "nsgo-init.webp",
 	"repo": "nsgo-dev/nsgo",
 	"url": "https://nsgo.dev/docs/getting-started/#create-an-app",
 	"homepage": "https://github.com/nsgo-dev/nsgo/tree/main/cmd/nsgo",
@@ -22,5 +21,6 @@
 		"tsx",
 		"nsgotest"
 	],
+	"screenshot": "nsgo-init.webp",
 	"added": "2026-11-10T13:57:58Z"
 }

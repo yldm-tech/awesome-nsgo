@@ -28,8 +28,6 @@
 		"file": "bowerbird.webp"
 	},
 	"screenshot": "bowerbird.webp",
-	"provisional": [
-		"screenshot"
-	],
+	"provisional": ["icon"],
 	"added": "2026-11-19T02:28:16Z"
 }

@@ -9,7 +9,7 @@
 		"app:claude-desktop-profiles": { "activeWeeks": 1, "license": "MIT", "likes": 0, "osi": true, "releaseDays": 2, "released": "2026-11-16", "repo": "gopkg-dev/claude-desktop-profiles", "stars": 5, "weeks": 1 },
 		"app:exodrive": { "activeWeeks": 1, "license": "Apache-2.0", "likes": 0, "osi": true, "releaseDays": 4, "released": "2026-11-14", "repo": "Jungley8/exodrive", "stars": 0, "weeks": 1 },
 		"app:hando": { "activeWeeks": 1, "license": "MIT", "likes": 1, "osi": true, "releaseDays": 2, "released": "2026-11-12", "repo": "oneo-me/nsgo-hando", "stars": 22, "weeks": 1 },
-		"app:kando": { "activeWeeks": 2, "license": "NOASSERTION", "likes": 1, "osi": false, "releaseDays": 8, "released": "2026-11-18", "repo": "yldm-tech/Kando", "stars": 121, "weeks": 2 },
+		"app:kando": { "activeWeeks": 2, "license": "FSL-1.1-ALv2", "likes": 1, "osi": false, "releaseDays": 8, "released": "2026-11-18", "repo": "yldm-tech/Kando", "stars": 121, "weeks": 2 },
 		"app:nsgo-gallery": { "activeWeeks": 4, "license": "Apache-2.0", "likes": 1, "osi": true, "releaseDays": 2, "released": "2026-11-19", "repo": "nsgo-dev/nsgo", "stars": 541, "weeks": 4 },
 		"app:nsgo-gallery-tsx": { "activeWeeks": 2, "license": "Apache-2.0", "likes": 0, "osi": true, "path": "examples/gallery-tsx", "releaseDays": 2, "released": "2026-11-19", "repo": "nsgo-dev/nsgo", "weeks": 2 },
 		"app:nsgo-orbit": { "activeWeeks": 2, "license": "Apache-2.0", "likes": 0, "osi": true, "path": "examples/orbit", "releaseDays": 2, "released": "2026-11-19", "repo": "nsgo-dev/nsgo", "weeks": 2 },

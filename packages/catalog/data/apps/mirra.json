@@ -1,0 +1,35 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "mirra",
+	"name": "Mirra",
+	"author": "yldm-ai",
+	"kind": "go",
+	"platforms": [
+		"mac",
+		"win",
+		"android",
+		"web"
+	],
+	"group": "media",
+	"url": "https://yldm-ai.github.io/mirra/",
+	"repo": "yldm-ai/mirra",
+	"summary": {
+		"en": "Turns a chosen face, outfit and pose into one photo with cloud or self-hosted image models.",
+		"zh-CN": "选择脸、服装与姿势，用云端或自建图像模型生成人物照片。",
+		"zh-TW": "選擇臉孔、服裝與姿勢，用雲端或自架影像模型生成人物照片。",
+		"ja": "顔・服・ポーズを選び、クラウドや自前の画像モデルで人物写真を生成します。",
+		"ko": "얼굴·옷·포즈를 골라 클라우드나 자체 호스팅 이미지 모델로 인물 사진을 만듭니다."
+	},
+	"description": {
+		"en": "Picks a face, an outfit and a pose from three online reference galleries, or photos of your own clothes, and asks an image model to draw one person with them, in a phone layout or a desktop studio. It has presets for OpenAI, Google Gemini, xAI, OpenRouter and other cloud services, and also works with stable-diffusion.cpp or any OpenAI-compatible server, keeping keys in the system keychain. It is written in Go with NSGo.",
+		"zh-CN": "从三个在线参考图库中挑选脸、服装和姿势，也可加入自己衣服的照片，再让图像模型据此画出一个人物，提供手机和桌面两种布局。预设 OpenAI、Google Gemini、xAI、OpenRouter 等云服务，也支持 stable-diffusion.cpp 或任何 OpenAI 兼容的服务器，密钥保存在系统钥匙串中。用 NSGo 以 Go 编写。",
+		"zh-TW": "從三個線上參考圖庫挑選臉孔、服裝和姿勢，也可加入自己衣服的照片，再讓影像模型據此畫出一個人物，提供手機與桌面兩種版面。預設 OpenAI、Google Gemini、xAI、OpenRouter 等雲端服務，也支援 stable-diffusion.cpp 或任何 OpenAI 相容的伺服器，金鑰存放在系統鑰匙圈中。以 NSGo 用 Go 撰寫。",
+		"ja": "3つのオンライン参照ギャラリーから顔・服・ポーズを選び（自分の服の写真も使えます）、画像モデルにその組み合わせで一人の人物を描かせます。画面はスマートフォン向けとデスクトップ向けの2種類です。OpenAI、Google Gemini、xAI、OpenRouter などのクラウドサービスがプリセットされ、stable-diffusion.cpp や OpenAI 互換のサーバーも使えます。キーはシステムのキーチェーンに保存します。NSGo を使って Go で書かれています。",
+		"ko": "세 곳의 온라인 참고 갤러리에서 얼굴, 옷, 포즈를 고르거나 내 옷 사진을 더해, 이미지 모델이 그 조합으로 한 사람을 그리게 합니다. 화면은 휴대폰 레이아웃과 데스크톱 스튜디오 두 가지입니다. OpenAI, Google Gemini, xAI, OpenRouter 등 클라우드 서비스가 미리 설정되어 있고 stable-diffusion.cpp나 OpenAI 호환 서버도 쓸 수 있으며, 키는 시스템 키체인에 보관합니다. NSGo로 Go에서 작성했습니다."
+	},
+	"icon": {
+		"file": "mirra.webp"
+	},
+	"screenshot": "mirra.webp",
+	"added": "2026-11-20T02:27:52Z"
+}

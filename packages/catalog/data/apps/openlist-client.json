@@ -1,0 +1,39 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "openlist-client",
+	"name": "OpenList Client",
+	"author": "HW618",
+	"kind": "go",
+	"platforms": [
+		"mac",
+		"win",
+		"linux",
+		"android",
+		"web"
+	],
+	"group": "dev",
+	"url": "https://github.com/HW618/openlist-client",
+	"repo": "HW618/openlist-client",
+	"summary": {
+		"en": "Unofficial OpenList client to browse, search, upload, download and preview server files.",
+		"zh-CN": "非官方 OpenList 客户端：浏览、搜索、上传、下载和预览文件",
+		"zh-TW": "非官方 OpenList 用戶端：瀏覽、搜尋、上傳、下載與預覽檔案",
+		"ja": "非公式の OpenList クライアント。ファイルを閲覧、検索、アップロード、ダウンロード、プレビュー。",
+		"ko": "비공식 OpenList 클라이언트. 파일 탐색, 검색, 업로드, 다운로드, 미리 보기."
+	},
+	"description": {
+		"en": "An unofficial client for OpenList servers that signs in to several servers, browses folders in list or grid views, searches a folder or the whole server, previews files, and queues uploads, downloads and offline downloads. Logins are kept in each platform's secure store, and the interface is in English and Simplified Chinese. It is written in Go with NSGo; it is at an early version and the packages are unsigned, so macOS and Windows may warn on first start.",
+		"zh-CN": "OpenList 服务器的非官方客户端，可同时登录多个服务器，以列表或网格浏览文件夹，在当前文件夹或整个服务器中搜索，预览文件，并管理上传、下载与离线下载队列。登录凭据保存在各平台的安全存储中，界面支持简体中文和英文。用 NSGo 以 Go 编写；目前处于早期版本，安装包未签名，macOS 和 Windows 首次启动时可能出现警告。",
+		"zh-TW": "OpenList 伺服器的非官方用戶端，可同時登入多個伺服器，以清單或格狀檢視瀏覽資料夾，在目前資料夾或整個伺服器中搜尋，預覽檔案，並管理上傳、下載與離線下載佇列。登入資訊保存在各平台的安全儲存區，介面支援簡體中文和英文。以 NSGo 用 Go 撰寫；目前仍是早期版本，安裝檔未簽署，macOS 和 Windows 首次啟動時可能出現警告。",
+		"ja": "OpenList サーバー向けの非公式クライアントで、複数のサーバーにログインし、フォルダーをリストやグリッドで閲覧できます。フォルダー内やサーバー全体の検索、ファイルのプレビュー、アップロードとダウンロード、オフラインダウンロードのキュー管理に対応します。ログイン情報は各プラットフォームの安全な保管場所に保存され、表示言語は英語と簡体字中国語です。NSGo を使って Go で書かれています。まだ初期段階でパッケージは署名されておらず、macOS と Windows では初回起動時に警告が出ることがあります。",
+		"ko": "OpenList 서버용 비공식 클라이언트로, 여러 서버에 로그인해 폴더를 목록이나 그리드로 탐색할 수 있습니다. 폴더 안이나 서버 전체 검색, 파일 미리 보기, 업로드와 다운로드, 오프라인 다운로드 대기열을 지원합니다. 로그인 정보는 각 플랫폼의 보안 저장소에 보관되며, 화면은 영어와 간체 중국어로 제공됩니다. NSGo로 Go에서 작성했고, 아직 초기 버전이며 패키지가 서명되지 않아 macOS와 Windows에서는 처음 실행할 때 경고가 뜰 수 있습니다."
+	},
+	"icon": {
+		"file": "openlist-client.webp"
+	},
+	"screenshot": "openlist-client.webp",
+	"provisional": [
+		"screenshot"
+	],
+	"added": "2026-11-20T02:27:52Z"
+}

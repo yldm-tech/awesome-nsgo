@@ -1,0 +1,36 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "jisu",
+	"name": "jisu",
+	"author": "jellli",
+	"kind": "go",
+	"group": "system",
+	"platforms": [
+		"mac",
+		"win"
+	],
+	"url": "https://github.com/jellli/jisu",
+	"repo": "jellli/jisu",
+	"summary": {
+		"en": "Download manager with multi-connection downloads, queues, proxies and Chrome and Edge takeover.",
+		"zh-CN": "支持多连接、队列、代理和 Chrome、Edge 接管的下载管理器",
+		"zh-TW": "支援多連線、佇列、代理與 Chrome、Edge 接管的下載管理工具",
+		"ja": "多接続・キュー・プロキシ、Chrome と Edge の引き継ぎに対応したダウンロード管理アプリ",
+		"ko": "다중 연결, 대기열, 프록시와 Chrome·Edge 연동을 지원하는 다운로드 관리자"
+	},
+	"description": {
+		"en": "A download manager for Windows and macOS that splits a file over up to 32 connections, eight by default, when the server allows it, with queues, pause and resume, and system, direct or custom HTTP and SOCKS proxies. A Chrome and Edge extension hands larger files, archives, videos and installers over to it. It is written in Go with NSGo, and the installers are not yet signed or notarized.",
+		"zh-CN": "面向 Windows 和 macOS 的下载管理器：服务器支持时可用最多 32 个连接下载同一文件（默认 8 个），支持队列、暂停与续传，代理可选系统、直连或自定义 HTTP 与 SOCKS。配套的 Chrome、Edge 扩展会把较大的文件、压缩包、视频和安装程序交给它下载。用 NSGo 以 Go 编写，安装包尚未签名或公证。",
+		"zh-TW": "適用於 Windows 與 macOS 的下載管理工具：伺服器支援時可用最多 32 條連線下載同一個檔案（預設 8 條），支援佇列、暫停與續傳，代理可選系統、直連或自訂 HTTP 與 SOCKS。搭配的 Chrome、Edge 擴充功能會把較大的檔案、壓縮檔、影片和安裝程式交給它下載。以 NSGo 用 Go 撰寫，安裝檔尚未簽署或公證。",
+		"ja": "Windows と macOS 向けのダウンロードマネージャーです。サーバーが対応していれば1つのファイルを最大32本（既定は8本）の接続で取得し、キュー、一時停止と再開、システム・直接・カスタムの HTTP／SOCKS プロキシに対応します。Chrome と Edge の拡張機能を入れると、大きめのファイルや圧縮ファイル、動画、インストーラーのダウンロードを jisu が引き継ぎます。NSGo を使って Go で書かれており、インストーラーはまだ署名や公証がされていません。",
+		"ko": "Windows와 macOS용 다운로드 관리자입니다. 서버가 지원하면 파일 하나를 최대 32개(기본 8개) 연결로 받고, 대기열, 일시 정지와 이어받기, 시스템·직접·사용자 지정 HTTP와 SOCKS 프록시를 지원합니다. Chrome과 Edge 확장 프로그램을 설치하면 큰 파일, 압축 파일, 동영상, 설치 파일 다운로드를 jisu가 넘겨받습니다. NSGo로 Go에서 작성했으며, 설치 파일은 아직 서명이나 공증을 거치지 않았습니다."
+	},
+	"icon": {
+		"file": "jisu.webp"
+	},
+	"screenshot": "jisu.webp",
+	"provisional": [
+		"screenshot"
+	],
+	"added": "2026-11-21T02:28:03Z"
+}

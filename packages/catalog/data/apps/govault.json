@@ -1,0 +1,34 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "govault",
+	"name": "GoVault",
+	"author": "txchen",
+	"kind": "go",
+	"group": "system",
+	"platforms": [
+		"mac",
+		"win",
+		"linux"
+	],
+	"url": "https://github.com/txchen/govault",
+	"repo": "txchen/govault",
+	"summary": {
+		"en": "Native desktop password client for Vaultwarden and Bitwarden-compatible servers.",
+		"zh-CN": "Vaultwarden 与 Bitwarden 兼容服务器的桌面密码客户端",
+		"zh-TW": "Vaultwarden 與 Bitwarden 相容伺服器的桌面密碼用戶端",
+		"ja": "Vaultwarden や Bitwarden 互換サーバー向けのデスクトップパスワードクライアント",
+		"ko": "Vaultwarden 및 Bitwarden 호환 서버용 데스크톱 비밀번호 클라이언트"
+	},
+	"description": {
+		"en": "A desktop client for Vaultwarden and Bitwarden-compatible servers, for macOS on Apple silicon, Linux and Windows. It opens the vault from an encrypted local cache when offline, syncs changes in real time, unlocks with Touch ID on macOS and handles logins, cards, SSH keys and attachments. It cannot create or sign in with passkeys and has no Bitwarden Send. It is written in Go with NSGo.",
+		"zh-CN": "面向 Vaultwarden 及 Bitwarden 兼容服务器的桌面客户端，支持 Apple 芯片的 macOS、Linux 和 Windows。离线时可从加密的本地缓存打开密码库，实时同步更改，macOS 上可用 Touch ID 解锁，支持登录项、卡片、SSH 密钥和附件。不能创建或使用通行密钥登录，也没有 Bitwarden Send。用 NSGo 以 Go 编写。",
+		"zh-TW": "適用於 Vaultwarden 及 Bitwarden 相容伺服器的桌面用戶端，支援 Apple 晶片的 macOS、Linux 與 Windows。離線時可從加密的本機快取開啟密碼庫，即時同步變更，macOS 上可用 Touch ID 解鎖，支援登入項目、卡片、SSH 金鑰與附件。無法建立通行金鑰或以其登入，也沒有 Bitwarden Send。以 NSGo 用 Go 撰寫。",
+		"ja": "Vaultwarden と Bitwarden 互換サーバー向けのデスクトップクライアントで、Apple シリコンの macOS、Linux、Windows に対応します。オフライン時は暗号化されたローカルキャッシュから保管庫を開き、変更をリアルタイムで同期し、macOS では Touch ID でロックを解除できます。ログイン、カード、SSH キー、添付ファイルを扱えます。パスキーの作成やサインイン、Bitwarden Send には対応しません。NSGo を使って Go で書かれています。",
+		"ko": "Vaultwarden 및 Bitwarden 호환 서버용 데스크톱 클라이언트로, Apple 실리콘 macOS, Linux, Windows를 지원합니다. 오프라인일 때는 암호화된 로컬 캐시에서 보관함을 열고, 변경 사항을 실시간으로 동기화하며, macOS에서는 Touch ID로 잠금을 해제합니다. 로그인, 카드, SSH 키, 첨부 파일을 다룹니다. 패스키 생성과 패스키 로그인, Bitwarden Send는 지원하지 않습니다. NSGo로 Go에서 작성했습니다."
+	},
+	"icon": {
+		"file": "govault.webp"
+	},
+	"screenshot": "govault.webp",
+	"added": "2026-11-22T02:28:29Z"
+}

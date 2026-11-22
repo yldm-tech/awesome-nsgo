@@ -1,0 +1,20 @@
+{
+	"$schema": "../schema/ui.schema.json",
+	"slug": "nsgo-flag-icons",
+	"name": "NSGo Flag Icons",
+	"author": "nsgo-dev",
+	"tag": "icons",
+	"surface": "go",
+	"summary": {
+		"en": "271 country flags from flag-icons for Go apps on NSGo, in 4:3 and 1:1, drawn natively from SVG, with a catalog to look a flag up by code at run time.",
+		"zh-CN": "面向 NSGo Go 应用的 271 个 flag-icons 国旗，提供 4:3 与 1:1 两种比例，由 SVG 原生绘制，并附带可在运行时按代码查找国旗的目录。",
+		"zh-TW": "供 NSGo Go 應用程式使用的 271 個 flag-icons 國旗，提供 4:3 與 1:1 兩種比例，由 SVG 原生繪製，並附有可在執行時依代碼查詢國旗的目錄。",
+		"ja": "flag-icons の国旗 271 個を NSGo の Go アプリ向けに収録。4:3 と 1:1 の両方があり、SVG からネイティブに描画します。実行時にコードで国旗を探せるカタログ付きです。",
+		"ko": "NSGo의 Go 앱을 위한 flag-icons 국기 271개. 4:3과 1:1 비율로 제공되어 SVG에서 네이티브로 그려지며, 실행 중에 코드로 국기를 찾는 카탈로그도 있습니다."
+	},
+	"repo": "nsgo-dev/nsgo-icons-flags",
+	"url": "https://github.com/nsgo-dev/nsgo-icons-flags",
+	"homepage": "https://nsgo-dev.github.io/nsgo-icons-flags/",
+	"screenshot": "nsgo-flag-icons.webp",
+	"added": "2026-11-22T02:28:29Z"
+}

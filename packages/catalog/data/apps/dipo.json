@@ -1,0 +1,35 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "dipo",
+	"name": "Dipo",
+	"author": "hy-shine",
+	"kind": "go",
+	"group": "dev",
+	"platforms": [
+		"mac"
+	],
+	"url": "https://github.com/hy-shine/dipo",
+	"repo": "hy-shine/dipo",
+	"summary": {
+		"en": "macOS color picker with a magnified screen view, sRGB and P3 formats and WCAG contrast checks.",
+		"zh-CN": "macOS 取色器：放大屏幕取色，sRGB 与 P3 格式，检查 WCAG 对比度",
+		"zh-TW": "macOS 取色工具：放大螢幕取色，sRGB 與 P3 格式，檢查 WCAG 對比度",
+		"ja": "拡大表示で色を拾い、sRGB と P3 の形式や WCAG コントラストを確認できる macOS 用ピッカー。",
+		"ko": "화면을 확대해 색을 고르고 sRGB·P3 형식과 WCAG 대비를 확인하는 macOS 색상 피커."
+	},
+	"description": {
+		"en": "A macOS color picker that works without an account or cloud sync. It picks from a frozen, magnified view of the screen, moving one pixel at a time with the arrow keys, copies HEX, RGB or HSL in sRGB or P3 values in Display P3, checks text and background contrast against WCAG AA, and keeps recent and favorite colors. It is written in Go with NSGo, with a Swift helper for the screen picker, and needs macOS 14 or later.",
+		"zh-CN": "一款无需账号、不做云同步的 macOS 取色器。从冻结并放大的屏幕画面中取色，可用方向键逐像素移动，以 sRGB 的 HEX、RGB、HSL 或 Display P3 格式复制颜色，按 WCAG AA 检查文字与背景的对比度，并保存最近与收藏的颜色。用 NSGo 以 Go 编写，屏幕取色由 Swift helper 完成，需要 macOS 14 或更高版本。",
+		"zh-TW": "一款不需帳號、不做雲端同步的 macOS 取色工具。從凍結並放大的螢幕畫面中取色，可用方向鍵逐像素移動，以 sRGB 的 HEX、RGB、HSL 或 Display P3 格式複製顏色，依 WCAG AA 檢查文字與背景的對比度，並保存最近與收藏的顏色。以 NSGo 用 Go 撰寫，螢幕取色由 Swift helper 負責，需要 macOS 14 以上版本。",
+		"ja": "アカウントもクラウド同期も使わない macOS 用カラーピッカーです。静止させて拡大した画面から色を拾い、矢印キーで1ピクセルずつ動かせます。sRGB の HEX・RGB・HSL や Display P3 の値でコピーでき、文字と背景のコントラストを WCAG AA で確認し、最近の色とお気に入りを保存します。NSGo を使って Go で書かれ、画面の取得は Swift のヘルパーが担います。macOS 14 以降が必要です。",
+		"ko": "계정도 클라우드 동기화도 없는 macOS 색상 피커입니다. 멈춘 채 확대한 화면에서 색을 고르고 방향키로 한 픽셀씩 옮길 수 있습니다. sRGB의 HEX, RGB, HSL이나 Display P3 값으로 복사하고, 글자와 배경의 대비를 WCAG AA 기준으로 확인하며, 최근 색과 즐겨찾기를 보관합니다. NSGo로 Go에서 작성했고 화면 캡처는 Swift 헬퍼가 맡으며, macOS 14 이상이 필요합니다."
+	},
+	"icon": {
+		"file": "dipo.webp"
+	},
+	"screenshot": "dipo.webp",
+	"provisional": [
+		"screenshot"
+	],
+	"added": "2026-11-22T02:28:29Z"
+}

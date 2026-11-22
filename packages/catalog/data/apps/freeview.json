@@ -1,0 +1,32 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "freeview",
+	"name": "FreeView",
+	"author": "OUBIGFA",
+	"kind": "go",
+	"group": "media",
+	"platforms": [
+		"win"
+	],
+	"url": "https://github.com/OUBIGFA/FreeView",
+	"repo": "OUBIGFA/FreeView",
+	"summary": {
+		"en": "Windows image viewer for pictures, folders and ZIP, 7z, RAR or TAR archives without unpacking.",
+		"zh-CN": "Windows 看图应用，支持文件夹浏览，压缩包内图片免解压查看",
+		"zh-TW": "Windows 看圖應用程式，可瀏覽資料夾，壓縮檔內的圖片免解壓縮即可檢視",
+		"ja": "Windows 用の画像ビューアー。フォルダーや ZIP・7z・RAR 書庫の画像を展開せずに表示。",
+		"ko": "Windows용 이미지 뷰어. 폴더와 ZIP·7z·RAR 압축 파일을 풀지 않고 봅니다."
+	},
+	"description": {
+		"en": "An image viewer for 64-bit Windows 10 and 11 that opens JPEG, PNG, GIF, WebP, BMP and TIFF pictures and shows the pictures inside ZIP, 7z, RAR and TAR archives without extracting them. It browses folders with a slideshow, zooms, rotates and goes full screen, and its mouse actions and keyboard shortcuts can be changed. It is written in Go with NSGo, and does not open HEIC, AVIF and some other formats.",
+		"zh-CN": "适用于 64 位 Windows 10 和 11 的看图应用，可打开 JPEG、PNG、GIF、WebP、BMP 和 TIFF 图片，并能直接查看 ZIP、7z、RAR 和 TAR 压缩包中的图片。支持文件夹浏览与幻灯片、缩放、旋转和全屏，鼠标操作和快捷键都可自定义。用 NSGo 以 Go 编写，不支持 HEIC、AVIF 等格式。",
+		"zh-TW": "適用於 64 位元 Windows 10 和 11 的看圖應用程式，可開啟 JPEG、PNG、GIF、WebP、BMP 和 TIFF 圖片，並能直接檢視 ZIP、7z、RAR 和 TAR 壓縮檔中的圖片。支援資料夾瀏覽與投影片、縮放、旋轉和全螢幕，滑鼠操作和快速鍵都可自訂。以 NSGo 用 Go 撰寫，不支援 HEIC、AVIF 等格式。",
+		"ja": "64 ビット版 Windows 10・11 用の画像ビューアーです。JPEG、PNG、GIF、WebP、BMP、TIFF の画像を開き、ZIP・7z・RAR・TAR 書庫内の画像も展開せずに表示します。フォルダー内の閲覧やスライドショー、拡大縮小、回転、全画面表示ができ、マウス操作とキーボードショートカットは変更できます。NSGo を使って Go で書かれています。HEIC や AVIF などには対応していません。",
+		"ko": "64비트 Windows 10과 11용 이미지 뷰어입니다. JPEG, PNG, GIF, WebP, BMP, TIFF 이미지를 열고, ZIP·7z·RAR·TAR 압축 파일 속 이미지도 풀지 않고 보여 줍니다. 폴더 탐색과 슬라이드쇼, 확대·축소, 회전, 전체 화면을 지원하며 마우스 동작과 단축키를 바꿀 수 있습니다. NSGo로 Go에서 작성했고, HEIC, AVIF 등은 열 수 없습니다."
+	},
+	"icon": {
+		"file": "freeview.webp"
+	},
+	"screenshot": "freeview.webp",
+	"added": "2026-11-22T02:28:29Z"
+}

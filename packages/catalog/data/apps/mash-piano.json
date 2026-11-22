@@ -1,0 +1,35 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "mash-piano",
+	"name": "Mash Piano",
+	"author": "HeroSizy",
+	"kind": "go",
+	"group": "media",
+	"platforms": [
+		"mac",
+		"win",
+		"ios",
+		"android"
+	],
+	"url": "https://github.com/HeroSizy/baby-piano",
+	"repo": "HeroSizy/baby-piano",
+	"summary": {
+		"en": "Baby piano that turns key mashing into pentatonic notes and blocks system shortcuts.",
+		"zh-CN": "给宝宝的钢琴：乱按键盘只弹出五声音阶琴音，并锁住系统快捷键",
+		"zh-TW": "給寶寶的鋼琴：亂按鍵盤只會彈出五聲音階琴音，並鎖住系統快捷鍵",
+		"ja": "赤ちゃん向けピアノ。どのキーを叩いても五音音階のピアノ音が鳴り、ショートカットは封じます。",
+		"ko": "아기용 피아노. 키를 마구 눌러도 5음 음계 피아노 소리만 나고 단축키는 막습니다."
+	},
+	"description": {
+		"en": "A piano for babies: on Mac or Windows every key plays a note of the C major pentatonic scale, using Salamander Grand Piano samples, so any mashing stays in harmony. In full screen it blocks quitting, app switching and system shortcuts, and caps the volume at 50%. On iPhone, iPad and Android it shows rows of big colored keys instead. It is written in Go with NSGo and never connects to the network.",
+		"zh-CN": "给宝宝的钢琴：在 Mac 和 Windows 上，键盘每个键都会用 Salamander Grand Piano 采样弹出 C 大调五声音阶中的一个音，怎么乱按都和谐；全屏演奏时屏蔽退出、切换应用和系统快捷键，音量上限为 50%。在 iPhone、iPad 和 Android 上则是一排排彩色大琴键。用 NSGo 以 Go 编写，不联网。",
+		"zh-TW": "給寶寶的鋼琴：在 Mac 和 Windows 上，鍵盤每個鍵都會用 Salamander Grand Piano 取樣彈出 C 大調五聲音階中的一個音，怎麼亂按都和諧；全螢幕演奏時封鎖結束、切換應用程式和系統快捷鍵，音量上限為 50%。在 iPhone、iPad 和 Android 上則是一排排彩色大琴鍵。以 NSGo 用 Go 撰寫，不連網。",
+		"ja": "赤ちゃん向けのピアノです。Mac と Windows ではキーボードのどのキーも C メジャーの五音音階の音を Salamander Grand Piano の音源で鳴らすので、どう叩いても調和します。全画面で演奏している間は終了やアプリの切り替え、システムのショートカットを封じ、音量は50%までに抑えます。iPhone、iPad、Android では大きなカラフルな鍵盤が並びます。NSGo を使って Go で書かれ、ネットワークには接続しません。",
+		"ko": "아기를 위한 피아노입니다. Mac과 Windows에서는 키보드의 모든 키가 Salamander Grand Piano 샘플로 C장조 5음 음계의 음을 내서 어떻게 눌러도 어울리고, 전체 화면으로 연주하는 동안 종료, 앱 전환, 시스템 단축키를 막고 음량을 50%로 제한합니다. iPhone, iPad, Android에서는 큼직한 색깔 건반이 줄지어 나옵니다. NSGo로 Go에서 작성했고 네트워크에 연결하지 않습니다."
+	},
+	"icon": {
+		"file": "mash-piano.webp"
+	},
+	"screenshot": "mash-piano.webp",
+	"added": "2026-11-22T02:28:29Z"
+}

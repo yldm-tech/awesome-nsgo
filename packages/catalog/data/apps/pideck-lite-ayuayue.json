@@ -1,0 +1,37 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "pideck-lite-ayuayue",
+	"name": "PiDeck Lite",
+	"author": "ayuayue",
+	"kind": "go",
+	"platforms": [
+		"mac",
+		"win",
+		"linux",
+		"ios",
+		"android",
+		"web"
+	],
+	"group": "agents",
+	"url": "https://github.com/ayuayue/PiDeck-V2",
+	"repo": "ayuayue/PiDeck-V2",
+	"summary": {
+		"en": "Desktop workbench for the pi coding agent and ACP CLIs, with phone and web clients.",
+		"zh-CN": "pi 与 ACP 编程智能体的桌面工作台，附手机和网页客户端",
+		"zh-TW": "pi 與 ACP 程式代理的桌面工作台，附手機與網頁用戶端",
+		"ja": "pi と ACP CLI 向けのデスクトップ作業台。スマホと Web からも接続できます。",
+		"ko": "pi 코딩 에이전트와 ACP CLI용 데스크톱 작업대. 휴대폰과 웹에서도 접속합니다."
+	},
+	"description": {
+		"en": "A native desktop workbench that drives the pi coding agent in RPC mode, and 16 ACP presets for other agent CLIs. Sessions sit beside a file editor, Git panel, terminal and pull request review, on local, WSL or SSH targets. Written in Go with NSGo; the same code builds Android, iOS and web clients that connect to the desktop, where pi, files and Git keep running.",
+		"zh-CN": "原生桌面工作台，以 RPC 模式驱动 pi 编程智能体，也可接入 16 个 ACP 预设。会话旁有文件编辑器、Git 面板、终端和拉取请求评审，目标可以是本机、WSL 或 SSH。用 NSGo 以 Go 编写；同一份代码还构建 Android、iOS 和网页客户端，它们连接桌面端使用，pi、文件与 Git 仍在电脑上运行。",
+		"zh-TW": "原生桌面工作台，以 RPC 模式驅動 pi 程式設計代理，也能接入 16 個 ACP 預設。工作階段旁有檔案編輯器、Git 面板、終端機與拉取請求審查，目標可為本機、WSL 或 SSH。以 NSGo 用 Go 撰寫；同一份程式碼也建置 Android、iOS 與網頁用戶端，連線到桌面端使用，pi、檔案與 Git 仍在電腦上執行。",
+		"ja": "pi コーディングエージェントを RPC モードで動かすネイティブのデスクトップ作業台で、16 種の ACP プリセットにも対応します。会話の横にファイルエディタ、Git パネル、ターミナル、プルリクエストのレビューが並び、ローカル、WSL、SSH の環境で使えます。NSGo を使って Go で書かれ、同じコードから Android、iOS、Web のクライアントも作られます。これらはデスクトップに接続し、pi やファイル、Git はパソコン側で動きます。",
+		"ko": "pi 코딩 에이전트를 RPC 모드로 구동하는 네이티브 데스크톱 작업대로, ACP 프리셋 16개도 지원합니다. 대화 옆에 파일 편집기, Git 패널, 터미널, 풀 리퀘스트 리뷰가 있고 로컬, WSL, SSH 대상에서 쓸 수 있습니다. NSGo로 Go에서 작성했으며, 같은 코드로 Android, iOS, 웹 클라이언트도 만듭니다. 클라이언트는 데스크톱에 접속하고 pi, 파일, Git은 컴퓨터에서 실행됩니다."
+	},
+	"icon": {
+		"file": "pideck-lite-ayuayue.webp"
+	},
+	"screenshot": "pideck-lite-ayuayue.webp",
+	"added": "2026-11-23T02:30:44Z"
+}

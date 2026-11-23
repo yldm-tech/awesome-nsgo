@@ -1,0 +1,35 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "tulai",
+	"name": "tulai",
+	"author": "xxww0098",
+	"kind": "go",
+	"group": "ai",
+	"platforms": [
+		"win"
+	],
+	"url": "https://github.com/xxww0098/tulai",
+	"repo": "xxww0098/tulai",
+	"summary": {
+		"en": "Batch AI image generation and editing with Doubao, Qianwen, ChatGPT and Antigravity.",
+		"zh-CN": "借助豆包、千问、ChatGPT 等批量 AI 生图和改图",
+		"zh-TW": "透過豆包、千問、ChatGPT 等批次以 AI 生成與修改圖片",
+		"ja": "豆包、千問、ChatGPT などで AI 画像を一括生成・編集するデスクトップアプリ。",
+		"ko": "Doubao, Qianwen, ChatGPT 등으로 AI 이미지 일괄 생성·편집"
+	},
+	"description": {
+		"en": "Generates images in batches from prompts or reference images through Doubao, Qianwen, ChatGPT and Antigravity, with a task queue, history and several accounts per service. It also batch downloads images from web pages and spreadsheets, and can deduplicate, rename, convert and resize images. Built with NSGo in Go and TSX; releases are for Windows, and macOS and Linux build from source.",
+		"zh-CN": "通过豆包、千问、ChatGPT 和 Antigravity，按提示词或参考图批量生图，支持任务队列、历史记录和每个服务商多账号。还能从网页和表格批量下载图片，并提供去重、批量重命名、格式转换和尺寸调整。用 NSGo 以 Go 和 TSX 编写；发布版仅提供 Windows，macOS 和 Linux 需从源码构建。",
+		"zh-TW": "透過豆包、千問、ChatGPT 和 Antigravity，依提示詞或參考圖批次生成圖片，支援任務佇列、歷史紀錄與每個服務商多帳號。也能從網頁和表格批次下載圖片，並提供去重、批次重新命名、格式轉換與尺寸調整。以 NSGo 用 Go 和 TSX 撰寫；發行版僅有 Windows，macOS 與 Linux 需從原始碼建置。",
+		"ja": "豆包、千問、ChatGPT、Antigravity を使い、プロンプトや参考画像から画像を一括生成します。タスクキュー、履歴、サービスごとの複数アカウントに対応。Web ページや表からの画像一括ダウンロード、重複除去、一括リネーム、形式変換、サイズ変更もできます。NSGo を使って Go と TSX で書かれ、配布版は Windows のみで、macOS と Linux はソースからビルドします。",
+		"ko": "Doubao, Qianwen, ChatGPT, Antigravity로 프롬프트나 참고 이미지에서 이미지를 일괄 생성하며, 작업 대기열, 기록, 서비스별 여러 계정을 지원합니다. 웹 페이지나 표에서 이미지를 일괄 내려받고 중복 제거, 일괄 이름 변경, 형식 변환, 크기 조정도 합니다. NSGo로 Go와 TSX에서 작성했고, 배포판은 Windows용뿐이며 macOS와 Linux는 소스에서 빌드합니다."
+	},
+	"icon": {
+		"file": "tulai.webp"
+	},
+	"screenshot": "tulai.webp",
+	"provisional": [
+		"screenshot"
+	],
+	"added": "2026-11-23T02:30:44Z"
+}

@@ -1,0 +1,36 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "godrive",
+	"name": "GoDrive",
+	"author": "david88558855",
+	"kind": "go",
+	"group": "dev",
+	"platforms": [
+		"android"
+	],
+	"url": "https://github.com/david88558855/godrive",
+	"repo": "david88558855/godrive",
+	"summary": {
+		"en": "Android client for WebDAV and S3 storage, with direct copying between remotes.",
+		"zh-CN": "WebDAV/S3 存储的 Android 客户端，可在远程间互拷",
+		"zh-TW": "WebDAV/S3 儲存的 Android 用戶端，遠端間直接複製",
+		"ja": "WebDAV/S3 ストレージの Android クライアント。リモート間で直接コピー可能。",
+		"ko": "WebDAV·S3 스토리지용 Android 클라이언트. 원격 간 직접 복사 지원."
+	},
+	"description": {
+		"en": "An Android client for WebDAV and S3-compatible storage such as MinIO, B2, R2, OSS and COS. There is no account: remotes are added directly, as many as needed, and their settings stay on the device in SQLite. Files can be copied directly between any two remotes, and within the same S3 service the copy runs on the server. It is written in Go with NSGo.",
+		"zh-CN": "WebDAV 与 S3 兼容存储（MinIO、B2、R2、OSS、COS 等）的 Android 客户端。无需账户，远程直接添加，数量不限，配置以 SQLite 保存在本机。任意两个远程之间可直接复制文件，同一 S3 服务内由服务端完成复制。用 NSGo 以 Go 编写。",
+		"zh-TW": "WebDAV 與 S3 相容儲存（MinIO、B2、R2、OSS、COS 等）的 Android 用戶端。不需帳號，遠端直接新增、數量不限，設定以 SQLite 存在本機。任兩個遠端之間可直接複製檔案，同一 S3 服務內由伺服器端完成複製。以 NSGo 用 Go 撰寫。",
+		"ja": "WebDAV と S3 互換ストレージ（MinIO、B2、R2、OSS、COS など）の Android クライアントです。アカウントは不要で、リモートはいくつでも直接追加でき、設定は端末内の SQLite に保存されます。任意の二つのリモート間でファイルを直接コピーでき、同じ S3 サービス内ではサーバー側でコピーします。NSGo を使って Go で書かれています。",
+		"ko": "WebDAV와 S3 호환 스토리지(MinIO, B2, R2, OSS, COS 등)용 Android 클라이언트입니다. 계정 없이 원격 저장소를 개수 제한 없이 바로 추가하며, 설정은 기기의 SQLite에 저장됩니다. 두 원격 저장소 간에 파일을 직접 복사할 수 있고, 같은 S3 서비스 안에서는 서버 측에서 복사합니다. NSGo로 Go에서 작성했습니다."
+	},
+	"icon": {
+		"file": "godrive.webp"
+	},
+	"provisional": [
+		"icon",
+		"screenshot"
+	],
+	"screenshot": "godrive.webp",
+	"added": "2026-11-24T02:29:12Z"
+}

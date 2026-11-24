@@ -1,0 +1,24 @@
+{
+	"$schema": "../schema/plugin.schema.json",
+	"slug": "nsgo-media",
+	"name": "NSGo Media",
+	"mark": "NS",
+	"official": false,
+	"surface": "go",
+	"import": "github.com/oneo-me/nsgo-media",
+	"tags": [
+		"video",
+		"media",
+		"ffmpeg",
+		"player"
+	],
+	"docs": "https://media.nsgo.dev/",
+	"summary": {
+		"en": "Video player core for NSGo apps: decodes with FFmpeg, keeps audio and video in sync, shows subtitles, and uses hardware decoding on desktop and iOS.",
+		"zh-CN": "面向 NSGo 应用的视频播放器核心：用 FFmpeg 解码，保持音画同步，显示字幕，并在桌面和 iOS 上使用硬件解码。",
+		"zh-TW": "供 NSGo 應用程式使用的影片播放器核心：以 FFmpeg 解碼，保持影音同步，顯示字幕，並在桌面和 iOS 上使用硬體解碼。",
+		"ja": "NSGo アプリ向けの動画プレーヤーの中核です。FFmpeg でデコードし、音声と映像を同期させ、字幕を表示します。デスクトップと iOS ではハードウェアデコードを使います。",
+		"ko": "NSGo 앱을 위한 동영상 플레이어 코어입니다. FFmpeg로 디코딩하고 오디오와 비디오를 동기화하며 자막을 표시하고, 데스크톱과 iOS에서는 하드웨어 디코딩을 사용합니다."
+	},
+	"added": "2026-11-24T02:29:12Z"
+}

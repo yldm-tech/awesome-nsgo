@@ -7,16 +7,30 @@
 	"platforms": [
 		"mac",
 		"win",
-		"linux"
+		"linux",
+		"android",
+		"web"
 	],
 	"group": "system",
 	"url": "https://github.com/HW618/openlist-client",
 	"repo": "HW618/openlist-client",
 	"summary": {
-		"en": "基于nsgo开发的轻量、跨平台的openlist客户端，支持多实例管理，在任意终端上管理文件、添加离线下载任务"
+		"en": "OpenList client for several servers: manage files and add offline downloads.",
+		"zh-CN": "OpenList 客户端，可管理多个服务器的文件并添加离线下载",
+		"zh-TW": "OpenList 用戶端，可管理多台伺服器的檔案並新增離線下載",
+		"ja": "複数サーバー対応の OpenList クライアント。ファイル管理とオフラインダウンロード。",
+		"ko": "여러 서버를 지원하는 OpenList 클라이언트. 파일 관리와 오프라인 다운로드 추가."
 	},
 	"description": {
-		"en": "基于nsgo开发的轻量、跨平台的openlist客户端，支持多实例管理，在任意终端上管理文件、添加离线下载任务"
+		"en": "An unofficial client for OpenList file list servers that keeps several servers, each with its own folders and download settings. It browses and searches files, moves and deletes them in batches, queues uploads and downloads and adds offline download tasks; logins are kept in the platform's secure store. Written in Go with NSGo, still at an early v0.1.0.",
+		"zh-CN": "非官方的 OpenList 文件列表服务客户端，可管理多个服务器，每个服务器有各自的文件夹和下载设置。支持浏览和搜索文件、批量移动与删除、上传下载队列及添加离线下载任务，登录凭据保存在系统的安全存储中。用 NSGo 以 Go 编写，目前处于早期的 v0.1.0 版本。",
+		"zh-TW": "非官方的 OpenList 檔案列表服務用戶端，可管理多台伺服器，每台各有自己的資料夾與下載設定。支援瀏覽與搜尋檔案、批次移動與刪除、上傳下載佇列及新增離線下載任務，登入憑證保存在系統的安全儲存區。以 NSGo 用 Go 撰寫，目前為早期的 v0.1.0 版。",
+		"ja": "OpenList のファイルリストサーバー向けの非公式クライアントで、サーバーごとにフォルダーやダウンロード設定を分けて複数登録できます。ファイルの閲覧と検索、一括での移動と削除、アップロードとダウンロードのキュー、オフラインダウンロードの追加に対応し、ログイン情報は各プラットフォームの安全な保管領域に保存されます。NSGo を使って Go で書かれ、まだ初期の v0.1.0 です。",
+		"ko": "OpenList 파일 목록 서버용 비공식 클라이언트로, 서버마다 폴더와 다운로드 설정을 따로 두고 여러 서버를 관리합니다. 파일 탐색과 검색, 일괄 이동과 삭제, 업로드·다운로드 대기열, 오프라인 다운로드 추가를 지원하며 로그인 정보는 플랫폼의 보안 저장소에 보관합니다. NSGo로 Go에서 작성했고 아직 초기 버전인 v0.1.0입니다."
 	},
+	"icon": {
+		"file": "openlist-client.webp"
+	},
+	"screenshot": "openlist-client.webp",
 	"added": "2026-11-24T06:59:10Z"
 }

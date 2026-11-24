@@ -1,0 +1,33 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "pocketgo",
+	"name": "PocketGo",
+	"author": "frostyard",
+	"kind": "go",
+	"group": "agents",
+	"platforms": [
+		"linux",
+		"web"
+	],
+	"url": "https://github.com/frostyard/pocketgo",
+	"repo": "frostyard/pocketgo",
+	"summary": {
+		"en": "Client for a self-hosted team of AI coding agents, with an inbox and a work board.",
+		"zh-CN": "自建 AI 编程智能体团队的客户端，含收件箱和工作看板",
+		"zh-TW": "自架 AI 程式設計代理團隊的用戶端，含收件匣與工作看板",
+		"ja": "セルフホストの AI コーディングエージェント群のクライアント。受信箱と作業ボード付き。",
+		"ko": "자체 호스팅 AI 코딩 에이전트 팀용 클라이언트. 받은편지함과 작업 보드 포함."
+	},
+	"description": {
+		"en": "A self-hosted workspace for a team of AI coding agents: a supervisor delegates to named specialists, every command runs in a bubblewrap sandbox, and the pocketd service keeps working with no client connected. This Linux and web client, written in Go with NSGo, shows the Inbox, the work board and each session; the service and a MyGo client for other platforms are built separately.",
+		"zh-CN": "自建的 AI 编程智能体团队工作区：主管把任务委派给具名的专家智能体，每条命令都在 bubblewrap 沙箱中运行，没有客户端连接时 pocketd 服务也会持续工作。这个 Linux 和 Web 客户端用 NSGo 以 Go 编写，显示收件箱、工作看板和各个会话；服务端及面向其他平台的 MyGo 客户端另行构建。",
+		"zh-TW": "自架的 AI 程式設計代理團隊工作區：主管把任務委派給具名的專家代理，每條指令都在 bubblewrap 沙箱中執行，沒有用戶端連線時 pocketd 服務也會持續運作。這個 Linux 與 Web 用戶端以 NSGo 用 Go 撰寫，顯示收件匣、工作看板和各個工作階段；服務端及其他平台的 MyGo 用戶端另行建置。",
+		"ja": "AI コーディングエージェントのチームを動かすセルフホストのワークスペースです。スーパーバイザーが名前付きの専門エージェントに作業を任せ、コマンドは bubblewrap のサンドボックスで実行され、pocketd サービスはクライアント未接続でも動き続けます。この Linux・Web 向けクライアントは NSGo を使って Go で書かれ、受信箱、作業ボード、各セッションを表示します。サービスと他プラットフォーム向けの MyGo クライアントは別に作られています。",
+		"ko": "AI 코딩 에이전트 팀을 운영하는 자체 호스팅 작업 공간입니다. 감독 에이전트가 이름 붙은 전문 에이전트에게 일을 맡기고, 모든 명령은 bubblewrap 샌드박스에서 실행되며, 클라이언트가 연결되지 않아도 pocketd 서비스는 계속 일합니다. 이 Linux 및 웹 클라이언트는 NSGo로 Go에서 작성했고 받은편지함, 작업 보드, 각 세션을 보여 줍니다. 서비스와 다른 플랫폼용 MyGo 클라이언트는 따로 만들어집니다."
+	},
+	"icon": {
+		"file": "pocketgo.webp"
+	},
+	"screenshot": "pocketgo.webp",
+	"added": "2026-11-24T02:29:12Z"
+}

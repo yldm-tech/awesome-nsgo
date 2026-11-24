@@ -1,0 +1,22 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "openlist-client",
+	"name": "openlist-client",
+	"author": "HW618",
+	"kind": "go",
+	"platforms": [
+		"mac",
+		"win",
+		"linux"
+	],
+	"group": "system",
+	"url": "https://github.com/HW618/openlist-client",
+	"repo": "HW618/openlist-client",
+	"summary": {
+		"en": "基于nsgo开发的轻量、跨平台的openlist客户端，支持多实例管理，在任意终端上管理文件、添加离线下载任务"
+	},
+	"description": {
+		"en": "基于nsgo开发的轻量、跨平台的openlist客户端，支持多实例管理，在任意终端上管理文件、添加离线下载任务"
+	},
+	"added": "2026-11-24T06:59:10Z"
+}

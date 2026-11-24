@@ -1,0 +1,33 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "frostnotes",
+	"name": "FrostNotes",
+	"author": "frostyard",
+	"kind": "go",
+	"group": "notes",
+	"platforms": [
+		"linux",
+		"web"
+	],
+	"url": "https://github.com/frostyard/frostnotes",
+	"repo": "frostyard/frostnotes",
+	"summary": {
+		"en": "Plain-markdown notes app in the spirit of Obsidian, with self-hosted sync.",
+		"zh-CN": "纯 Markdown 笔记应用，类似 Obsidian，支持自建同步",
+		"zh-TW": "純 Markdown 筆記應用程式，類似 Obsidian，支援自架同步",
+		"ja": "Obsidian 風のプレーンな Markdown ノートアプリ。自前のハブで同期。",
+		"ko": "Obsidian 같은 순수 Markdown 노트 앱. 직접 호스팅한 허브로 동기화합니다."
+	},
+	"description": {
+		"en": "Keeps notes as plain markdown files in a folder you own and opens Obsidian vaults as they are. A daemon, notesd, indexes them in SQLite, keeps every write as a version for 30 days and syncs them through a hub you host. This entry is a preview build written in Go with NSGo for Linux and the web; the main desktop app is built on MyGo and frostui, and the web app in React.",
+		"zh-CN": "笔记以纯 Markdown 文件存放在你自己的文件夹中，Obsidian 仓库可直接打开。守护进程 notesd 用 SQLite 建立索引，每次写入都保留 30 天的版本，并通过自建的中心节点同步。本条目是用 NSGo 以 Go 编写的预览版，面向 Linux 和 Web；正式的桌面应用基于 MyGo 和 frostui，Web 应用则用 React 构建。",
+		"zh-TW": "筆記以純 Markdown 檔案存放在你自己的資料夾中，Obsidian 儲存庫可直接開啟。背景程式 notesd 以 SQLite 建立索引，每次寫入都保留 30 天的版本，並透過自架的中樞節點同步。本項目是以 NSGo 用 Go 撰寫的預覽版，支援 Linux 與 Web；正式的桌面應用程式以 MyGo 和 frostui 建置，Web 應用程式則用 React 建置。",
+		"ja": "ノートを自分のフォルダーにプレーンな Markdown ファイルとして保存し、Obsidian の Vault もそのまま開けます。デーモンの notesd が SQLite で索引を作り、書き込みごとに30日間バージョンを残し、自前でホストするハブを通じて同期します。このエントリーは NSGo を使って Go で書かれた Linux と Web 向けのプレビュー版で、正式なデスクトップアプリは MyGo と frostui、Web アプリは React で作られています。",
+		"ko": "노트를 내 폴더에 순수 Markdown 파일로 저장하고 Obsidian 보관함도 그대로 엽니다. 데몬 notesd가 SQLite로 색인을 만들고, 쓸 때마다 30일 동안 버전을 남기며, 직접 호스팅한 허브를 통해 동기화합니다. 이 항목은 NSGo로 Go에서 작성한 Linux와 웹용 미리 보기 빌드이고, 정식 데스크톱 앱은 MyGo와 frostui로, 웹 앱은 React로 만들어졌습니다."
+	},
+	"icon": {
+		"file": "frostnotes.webp"
+	},
+	"screenshot": "frostnotes.webp",
+	"added": "2026-11-24T02:29:12Z"
+}

@@ -2,7 +2,7 @@
 	"$schema": "../schema/app.schema.json",
 	"slug": "woodwind-music",
 	"name": "Wood & Wind Music",
-	"author": "HengWh",
+	"author": "henry-wm",
 	"kind": "go",
 	"group": "media",
 	"platforms": [
@@ -10,8 +10,8 @@
 		"win",
 		"android"
 	],
-	"url": "https://github.com/HengWh/woodwind-music",
-	"repo": "HengWh/woodwind-music",
+	"url": "https://github.com/henry-wm/woodwind-music",
+	"repo": "henry-wm/woodwind-music",
 	"summary": {
 		"en": "A native local music player with word-by-word lyrics and cover-colored backgrounds, ported from MyGo Music to NSGo.",
 		"zh-CN": "原生本地音乐播放器，逐字高亮歌词，背景随封面取色，由 MyGo Music 移植到 NSGo。",

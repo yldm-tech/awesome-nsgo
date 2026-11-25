@@ -4,10 +4,13 @@
 	"name": "PiDeck Lite",
 	"author": "ayuayue",
 	"kind": "go",
-	"platforms": ["mac", "win"],
+	"platforms": [
+		"mac",
+		"win"
+	],
 	"group": "agents",
-	"url": "https://github.com/ayuayue/PiDeck-Lite",
-	"repo": "ayuayue/PiDeck-Lite",
+	"url": "https://github.com/ayuayue/PiDeck-V2",
+	"repo": "ayuayue/PiDeck-V2",
 	"summary": {
 		"en": "A native pi workbench: projects and sessions, streaming chat, a PTY terminal and a Git panel in one Go binary.",
 		"zh-CN": "原生窗口的 pi 工作台：项目与会话、流式对话、PTY 终端和 Git 面板都在一个 Go 二进制里。",

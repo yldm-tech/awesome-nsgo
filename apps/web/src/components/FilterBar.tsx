@@ -1,8 +1,32 @@
-import { type ReactNode, useEffect, useRef } from 'react';
+import { type ReactNode, useEffect, useRef, useState } from 'react';
+
+// The header's height from md up, where the bar sticks (see the note on the header's row in Header.tsx).
+const HEADER_HEIGHT = 65;
 
 // The filter bar over a listing (the showcase, the UI libraries and the plugins): a row of chips and the selects beside them. From md up it is a panel that sticks under the header while the list scrolls. Below md it is neither a panel nor sticky, as a sticky bar of wrapped chips covered the cards on a phone: the chips become one row that scrolls sideways, out to the screen's edges, and the selects wrap two to a row under it (see FilterSelects). A screen under 560px tall (a phone held sideways, which is md wide) keeps the panel but does not stick it, as header and panel would leave a strip of the list.
+// It sticks flush against the header's bottom edge: a gap there showed the cards scrolling past between the two. Once stuck (data-stuck) it drops its top corners and top border and takes a more opaque fill, so it reads as a shelf hanging from the header and its rounded corners leave no slivers of the list showing; at rest it keeps the rounded panel. An observer whose root starts a pixel below the header sees the bar cut off at the top exactly when it is stuck there.
 export function FilterBar({ children }: { children: ReactNode }) {
-	return <div className='sticky top-[72px] z-5 flex [@media(max-height:560px)]:static flex-wrap items-center justify-start gap-3 rounded-card border border-line-2 bg-panel/86 p-2.5 backdrop-blur-[16px] [box-shadow:var(--sh-1)] max-md:static max-md:flex-col max-md:flex-nowrap max-md:items-stretch max-md:rounded-none max-md:border-0 max-md:bg-transparent max-md:p-0 max-md:[box-shadow:none] max-md:backdrop-blur-none'>{children}</div>;
+	const bar = useRef<HTMLDivElement>(null);
+	const [stuck, setStuck] = useState(false);
+	useEffect(() => {
+		const el = bar.current;
+		if (!el) return;
+		const io = new IntersectionObserver(
+			([entry]) => setStuck(entry.intersectionRatio < 1 && entry.boundingClientRect.top <= HEADER_HEIGHT + 0.5 && getComputedStyle(el).position === 'sticky'),
+			{ rootMargin: `-${HEADER_HEIGHT + 1}px 0px 0px 0px`, threshold: [1] },
+		);
+		io.observe(el);
+		return () => io.disconnect();
+	}, []);
+	return (
+		<div
+			ref={bar}
+			data-stuck={stuck}
+			className='sticky top-[65px] z-5 flex [@media(max-height:560px)]:static flex-wrap items-center justify-start gap-3 rounded-card border border-line-2 bg-panel/86 p-2.5 backdrop-blur-[16px] [box-shadow:var(--sh-1)] [transition:border-radius_0.15s,background-color_0.15s] data-[stuck=true]:rounded-t-none data-[stuck=true]:border-t-transparent data-[stuck=true]:bg-panel/96 max-md:static max-md:flex-col max-md:flex-nowrap max-md:items-stretch max-md:rounded-none max-md:border-0 max-md:bg-transparent max-md:p-0 max-md:[box-shadow:none] max-md:backdrop-blur-none'
+		>
+			{children}
+		</div>
+	);
 }
 
 // The chips' row. Below md it runs past the page's gutter (16px below sm, 24px up to md) to the screen's edges, with the gutter as its padding and scroll padding, so the first chip lines up with the page and the row scrolls under the edge; the scroll bar is hidden, and a few pixels above and below keep a focused chip's outline from being clipped.

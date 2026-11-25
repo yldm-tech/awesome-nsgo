@@ -1,0 +1,19 @@
+{
+	"$schema": "../schema/ui.schema.json",
+	"slug": "workspaceui",
+	"name": "workspaceui",
+	"author": "frostyard",
+	"tag": "theme",
+	"surface": "go",
+	"summary": {
+		"en": "Frostyard's UI kit for Go apps on NSGo: the Frostyard and Frostyard light themes set in Inter, a shell with a navigation sidebar and side panels, a file explorer, a conversation view and a notice.",
+		"zh-CN": "面向 NSGo Go 应用的 Frostyard 界面套件：采用 Inter 字体的 Frostyard 与 Frostyard light 主题、带导航侧栏和侧面板的外壳，以及文件浏览器、对话视图与通知。",
+		"zh-TW": "供 NSGo Go 應用程式使用的 Frostyard 介面套件：採用 Inter 字型的 Frostyard 與 Frostyard light 主題、含導覽側欄與側邊面板的外殼，以及檔案瀏覽器、對話檢視與通知。",
+		"ja": "NSGo の Go アプリ向けの Frostyard の UI キット。Inter で組んだ Frostyard と Frostyard light のテーマ、ナビゲーションサイドバーとサイドパネルを備えたシェル、ファイルエクスプローラー、会話ビュー、通知を収録。",
+		"ko": "NSGo의 Go 앱을 위한 Frostyard UI 키트. Inter 서체의 Frostyard·Frostyard light 테마, 내비게이션 사이드바와 사이드 패널이 있는 셸, 파일 탐색기, 대화 뷰, 알림을 담았습니다."
+	},
+	"repo": "frostyard/frostui",
+	"url": "https://github.com/frostyard/frostui",
+	"screenshot": "workspaceui.webp",
+	"added": "2026-11-25T02:29:54Z"
+}

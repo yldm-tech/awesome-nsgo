@@ -1,0 +1,32 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "vibe-time",
+	"name": "Vibe Time",
+	"author": "limengwei",
+	"kind": "go",
+	"group": "media",
+	"platforms": [
+		"win"
+	],
+	"url": "https://github.com/limengwei/VibeTime",
+	"repo": "limengwei/VibeTime",
+	"summary": {
+		"en": "Ambient sound mixer with 89 sounds, scene presets and a focus timer.",
+		"zh-CN": "环境音混音应用，内置 89 种音效、场景预设和专注计时",
+		"zh-TW": "環境音混音應用程式，內建 89 種音效、情境預設與專注計時",
+		"ja": "89種の音を重ねられる環境音ミキサー。シーンのプリセットと集中タイマー付き。",
+		"ko": "89가지 소리를 섞는 환경음 믹서. 장면 프리셋과 집중 타이머 포함."
+	},
+	"description": {
+		"en": "Mixes 89 ambient sounds, from rain and forests to cafés, trains and binaural beats, each at its own volume, and saves mixes as scene presets. A full-screen focus mode adds a countdown timer over a wallpaper, and playback continues in the system tray after the window is closed. Written in Go with NSGo for Windows, with every sound embedded in one file.",
+		"zh-CN": "可同时播放 89 种环境音，涵盖雨声、森林、咖啡厅、火车和双耳节拍等，每种音效可单独调节音量，混音可存为场景预设。全屏专注模式带倒计时和壁纸背景，关闭窗口后会在系统托盘继续播放。用 NSGo 以 Go 编写，面向 Windows，所有音效都内嵌在单个文件中。",
+		"zh-TW": "可同時播放 89 種環境音，涵蓋雨聲、森林、咖啡廳、火車和雙耳節拍等，每種音效可個別調整音量，混音可存成情境預設。全螢幕專注模式提供倒數計時與桌布背景，關閉視窗後會在系統匣繼續播放。以 NSGo 用 Go 撰寫，支援 Windows，所有音效都內嵌在單一檔案中。",
+		"ja": "雨音や森、カフェ、列車、バイノーラルビートなど89種の環境音を重ねて再生でき、音ごとに音量を調整し、組み合わせをシーンのプリセットとして保存できます。全画面の集中モードでは壁紙を背景にカウントダウンが使え、ウィンドウを閉じてもシステムトレイで再生が続きます。NSGo を使って Go で書かれた Windows 向けアプリで、すべての音が一つのファイルに埋め込まれています。",
+		"ko": "빗소리와 숲부터 카페, 기차, 바이노럴 비트까지 89가지 환경음을 겹쳐 재생하고, 소리마다 음량을 따로 조절하며, 조합을 장면 프리셋으로 저장할 수 있습니다. 전체 화면 집중 모드는 배경화면 위에 카운트다운 타이머를 띄우고, 창을 닫아도 시스템 트레이에서 계속 재생됩니다. NSGo로 Go에서 작성한 Windows용 앱이며 모든 소리가 하나의 파일에 내장되어 있습니다."
+	},
+	"icon": {
+		"file": "vibe-time.webp"
+	},
+	"screenshot": "vibe-time.webp",
+	"added": "2026-11-25T02:29:54Z"
+}

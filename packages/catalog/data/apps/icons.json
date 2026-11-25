@@ -1,0 +1,35 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "icons",
+	"name": "icons",
+	"author": "limengwei",
+	"kind": "go",
+	"group": "dev",
+	"platforms": [
+		"win"
+	],
+	"url": "https://github.com/limengwei/icons",
+	"repo": "limengwei/icons",
+	"summary": {
+		"en": "Browser for 50,934 react-icons with search, SVG and PNG export and an MCP server.",
+		"zh-CN": "react-icons 图标浏览器，可导出图片，内置 MCP 服务",
+		"zh-TW": "react-icons 圖示瀏覽器，可匯出圖片，內建 MCP 服務",
+		"ja": "react-icons のアイコンを検索・閲覧。画像書き出しと MCP 対応。",
+		"ko": "react-icons 아이콘 브라우저. SVG·PNG 내보내기와 MCP 서버 내장."
+	},
+	"description": {
+		"en": "Browses and searches all 50,934 icons from the 31 react-icons sets, every one embedded in a single executable. You can copy an icon's SVG or export it as a PNG at any size and color, and a built-in MCP server over stdio and HTTP lets AI tools search icons and fetch SVG or PNG, staying on in the system tray. Written in Go with NSGo, built for Windows.",
+		"zh-CN": "可浏览和搜索 react-icons 的 31 个图标集、共 50,934 个图标，全部内嵌在单个可执行文件中。可一键复制 SVG，或按任意尺寸和颜色导出 PNG；内置的 MCP 服务器支持 stdio 和 HTTP，供 AI 工具检索图标、获取 SVG 和 PNG，关闭窗口后仍在系统托盘运行。用 NSGo 以 Go 编写，面向 Windows。",
+		"zh-TW": "可瀏覽和搜尋 react-icons 的 31 個圖示集、共 50,934 個圖示，全部內嵌在單一執行檔中。可一鍵複製 SVG，或依任意尺寸與顏色匯出 PNG；內建的 MCP 伺服器支援 stdio 與 HTTP，供 AI 工具搜尋圖示、取得 SVG 與 PNG，關閉視窗後仍在系統匣執行。以 NSGo 用 Go 撰寫，支援 Windows。",
+		"ja": "react-icons の31セット、50,934個のアイコンを閲覧・検索でき、すべて単一の実行ファイルに埋め込まれています。SVG のコピーや、任意のサイズと色での PNG 書き出しができ、stdio と HTTP に対応した内蔵 MCP サーバーで AI ツールからアイコンの検索や SVG、PNG の取得ができます。MCP サーバーはウィンドウを閉じてもシステムトレイで動き続けます。NSGo を使って Go で書かれた Windows 向けアプリです。",
+		"ko": "react-icons의 31개 세트, 50,934개 아이콘을 둘러보고 검색할 수 있으며, 모든 아이콘이 하나의 실행 파일에 들어 있습니다. SVG를 복사하거나 원하는 크기와 색으로 PNG를 내보낼 수 있고, stdio와 HTTP를 지원하는 내장 MCP 서버로 AI 도구가 아이콘을 검색하고 SVG와 PNG를 받아 갑니다. 창을 닫아도 시스템 트레이에서 계속 실행됩니다. NSGo로 Go에서 작성한 Windows용 앱입니다."
+	},
+	"icon": {
+		"file": "icons.webp"
+	},
+	"screenshot": "icons.webp",
+	"provisional": [
+		"screenshot"
+	],
+	"added": "2026-11-25T02:29:54Z"
+}

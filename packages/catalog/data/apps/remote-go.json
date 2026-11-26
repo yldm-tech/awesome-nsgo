@@ -30,8 +30,5 @@
 		"file": "remote-go.webp"
 	},
 	"screenshot": "remote-go.webp",
-	"provisional": [
-		"screenshot"
-	],
 	"added": "2026-11-20T02:27:52Z"
 }

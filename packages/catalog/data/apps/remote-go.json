@@ -1,0 +1,34 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "remote-go",
+	"name": "Remote Go",
+	"author": "i5shuyi",
+	"kind": "go",
+	"platforms": [
+		"mac",
+		"win",
+		"android"
+	],
+	"group": "system",
+	"url": "https://github.com/i5shuyi/remote-go",
+	"repo": "i5shuyi/remote-go",
+	"summary": {
+		"en": "Remote desktop that connects with a device code and verification code, with no account needed.",
+		"zh-CN": "输入设备码和验证码即可连接的远程桌面，无需注册账号。",
+		"zh-TW": "輸入裝置碼與驗證碼即可連線的遠端桌面，無需註冊帳號。",
+		"ja": "デバイスコードと確認コードを入力するだけで接続できるリモートデスクトップ。アカウント不要。",
+		"ko": "기기 코드와 인증 코드만 입력하면 연결되는 원격 데스크톱으로, 계정이 필요 없습니다."
+	},
+	"description": {
+		"en": "A remote desktop prototype: enter the device and verification codes shown on the other computer to control it over an encrypted WireGuard tunnel from tailcat, through public or self-hosted DERP relays, with no account. macOS and Windows hosts stream hardware H.264, and sessions can share text, images and files through the clipboard. The desktop and Android clients are written in Go with NSGo; the Android one only controls other computers.",
+		"zh-CN": "远程桌面原型：输入对方电脑上显示的设备码和验证码即可控制它，连接经由 tailcat 提供的加密 WireGuard 隧道，可使用公共或自建 DERP 中继，无需账号。macOS 与 Windows 主机以硬件 H.264 推流，会话中可通过共享剪贴板互传文本、图片和文件。桌面端与 Android 客户端用 NSGo 以 Go 编写，Android 版只能控制其他电脑。",
+		"zh-TW": "遠端桌面原型：輸入對方電腦上顯示的裝置碼與驗證碼即可控制它，連線經由 tailcat 提供的加密 WireGuard 通道，可使用公共或自架 DERP 中繼，無需帳號。macOS 與 Windows 主機以硬體 H.264 串流畫面，工作階段中可透過共用剪貼簿互傳文字、圖片與檔案。桌面版與 Android 用戶端以 NSGo 用 Go 撰寫，Android 版只能控制其他電腦。",
+		"ja": "リモートデスクトップのプロトタイプで、相手のコンピューターに表示されたデバイスコードと確認コードを入力すると操作できます。接続は tailcat による暗号化された WireGuard トンネルを通り、公開または自前の DERP リレーを使え、アカウントは不要です。macOS と Windows のホストはハードウェア H.264 で画面を配信し、セッション中はクリップボード共有でテキスト、画像、ファイルをやり取りできます。デスクトップ版と Android 版は NSGo を使って Go で書かれ、Android 版は操作する側専用です。",
+		"ko": "원격 데스크톱 프로토타입으로, 상대 컴퓨터에 표시된 기기 코드와 인증 코드를 입력하면 그 컴퓨터를 제어할 수 있습니다. 연결은 tailcat이 제공하는 암호화된 WireGuard 터널을 거치며, 공개 또는 직접 운영하는 DERP 릴레이를 쓸 수 있고 계정은 필요 없습니다. macOS와 Windows 호스트는 하드웨어 H.264로 화면을 전송하고, 세션 중 공유 클립보드로 텍스트, 이미지, 파일을 주고받을 수 있습니다. 데스크톱과 Android 클라이언트는 NSGo로 Go에서 작성했고, Android 버전은 다른 컴퓨터를 제어하는 용도로만 쓰입니다."
+	},
+	"icon": {
+		"file": "remote-go.webp"
+	},
+	"screenshot": "remote-go.webp",
+	"added": "2026-11-20T02:27:52Z"
+}

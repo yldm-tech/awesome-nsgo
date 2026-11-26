@@ -69,6 +69,7 @@ const SECTION_LABELS: Record<string, keyof Translations> = {
 	'/plugins': 'nav_plugins',
 	'/showcase': 'nav_showcase',
 	'/learn': 'nav_learn',
+	'/compare': 'nav_compare',
 	'/metrics': 'metrics_title',
 };
 

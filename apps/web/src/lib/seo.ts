@@ -8,11 +8,11 @@ const OG_LOCALE: Record<LangCode, string> = { 'zh-CN': 'zh_CN', 'zh-TW': 'zh_TW'
 // The site as every page's JSON-LD names it. Google resolves an @id only within one page, so the other pages embed this node in isPartOf instead of pointing at the home page's. There is no publisher Organization: the owner, yldm-tech, has no site or logo of its own to describe it with, and the Awesome NSGo mark belongs to the site, not to an organization.
 const WEBSITE = { '@type': 'WebSite', '@id': `${SITE_URL}/#website`, name: SITE_NAME, url: `${SITE_URL}/` };
 
-export type SitePath = '/' | '/ui' | '/state' | '/templates' | '/ai' | '/plugins' | '/showcase' | '/learn';
-export const SITE_PATHS: readonly SitePath[] = ['/', '/ui', '/state', '/templates', '/ai', '/plugins', '/showcase', '/learn'];
+export type SitePath = '/' | '/ui' | '/state' | '/templates' | '/ai' | '/plugins' | '/showcase' | '/learn' | '/compare';
+export const SITE_PATHS: readonly SitePath[] = ['/', '/ui', '/state', '/templates', '/ai', '/plugins', '/showcase', '/learn', '/compare'];
 
 // Each page's <meta name="keywords">: the phrasings people search for Go cross-platform and native UI development in the page's language (golang gui 框架, golang gui framework, go gui アプリ, golang gui 추천…). Google ignores the tag; Baidu and Bing still read it a little. NSGo always comes with Go or Golang, as the name alone is a new word few search for yet and matches unrelated projects.
-const PAGE_KEYWORDS: Record<SitePath, StringKey> = { '/': 'kw_home', '/ui': 'kw_ui', '/state': 'kw_state', '/templates': 'kw_templates', '/ai': 'kw_ai', '/plugins': 'kw_plugins', '/showcase': 'kw_showcase', '/learn': 'kw_learn' };
+const PAGE_KEYWORDS: Record<SitePath, StringKey> = { '/': 'kw_home', '/ui': 'kw_ui', '/state': 'kw_state', '/templates': 'kw_templates', '/ai': 'kw_ai', '/plugins': 'kw_plugins', '/showcase': 'kw_showcase', '/learn': 'kw_learn', '/compare': 'kw_compare' };
 
 // An app's own page.
 export type AppPath = `/apps/${string}`;

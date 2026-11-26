@@ -60,6 +60,9 @@ function navGlyph(to: string) {
 			return <path d='M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z' />;
 		case '/learn':
 			return <path d='M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z' />;
+		case '/compare':
+			// A balance: two pans on one beam.
+			return <path d='M12 4v16M8 20h8M5 7h14M5 7l-2.5 6h5zM19 7l-2.5 6h5z' />;
 		case '/metrics':
 			return <path d='M4 20V10M10 20V4M16 20v-7M22 20H2' />;
 		default:

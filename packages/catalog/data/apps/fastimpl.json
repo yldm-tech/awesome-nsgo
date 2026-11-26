@@ -1,0 +1,35 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "fastimpl",
+	"name": "fastimpl",
+	"author": "yangjuncode",
+	"kind": "go",
+	"platforms": [
+		"linux"
+	],
+	"group": "agents",
+	"url": "https://github.com/yangjuncode/fastimpl",
+	"repo": "yangjuncode/fastimpl",
+	"summary": {
+		"en": "Runs AI coding agents in parallel git worktrees on a spec issue's subtasks.",
+		"zh-CN": "AI 编程智能体并行实现 spec issue 的全部子任务",
+		"zh-TW": "AI 程式設計代理並行實作 spec issue 的所有子任務",
+		"ja": "AI コーディングエージェントで spec issue の子タスクを並列実装",
+		"ko": "AI 코딩 에이전트로 spec issue의 하위 작업을 병렬 구현"
+	},
+	"description": {
+		"en": "Turns the subtasks of a GitLab or GitHub spec issue into a dependency graph, runs AI coding agents on them in parallel, each in its own git worktree, and merges their work into an integration branch. This entry is fastimpl-gui, the desktop front end written in Go with NSGo, showing the graph and each agent's terminal; the fastimpl CLI runs the same pipeline.",
+		"zh-CN": "把 GitLab 或 GitHub 上 spec issue 的子任务构建成依赖图，让 AI 编程智能体各自在独立的 git worktree 中并行实现，再合入集成分支。本条目是用 NSGo 以 Go 编写的桌面前端 fastimpl-gui，显示依赖图和每个智能体的终端；同一流程也可用命令行工具 fastimpl 运行。",
+		"zh-TW": "把 GitLab 或 GitHub 上 spec issue 的子任務建成相依圖，讓 AI 程式設計代理各自在獨立的 git worktree 中並行實作，再合併進整合分支。本項目是以 NSGo 用 Go 撰寫的桌面前端 fastimpl-gui，顯示相依圖與每個代理的終端機；同樣的流程也能用命令列工具 fastimpl 執行。",
+		"ja": "GitLab や GitHub の spec issue の子タスクを依存グラフにまとめ、AI コーディングエージェントにそれぞれ専用の git worktree で並列に実装させ、統合ブランチへマージします。このエントリーは NSGo を使って Go で書かれたデスクトップフロントエンド fastimpl-gui で、依存グラフと各エージェントのターミナルを表示します。同じ処理はコマンドラインツールの fastimpl でも実行できます。",
+		"ko": "GitLab이나 GitHub의 spec issue 하위 작업을 의존성 그래프로 만들고, AI 코딩 에이전트가 각자 별도의 git worktree에서 병렬로 구현한 뒤 통합 브랜치에 병합합니다. 이 항목은 NSGo로 Go에서 작성한 데스크톱 프런트엔드 fastimpl-gui로, 의존성 그래프와 각 에이전트의 터미널을 보여 줍니다. 같은 과정은 명령줄 도구 fastimpl로도 실행됩니다."
+	},
+	"icon": {
+		"file": "fastimpl.webp"
+	},
+	"provisional": [
+		"icon"
+	],
+	"screenshot": "fastimpl.webp",
+	"added": "2026-11-25T02:29:54Z"
+}

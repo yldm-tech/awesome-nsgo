@@ -78,12 +78,12 @@ export const AWESOME_MYGO = 'https://awesomemygo.dev';
 
 // ---- benchmarks ----
 
-// The runs that measure several of these frameworks on the same machine, all from NSGo's suite (benchmark/ in its repository): the same apps written for each framework, built as releases and measured. On macOS, a run of NSGo, MyGo, Fyne and Wails by this site's maintainers, published in the suite at results/go/darwin.json; on Windows and Linux, the suite's own runs, which measure NSGo and MyGo (beside NSH and GPUI) but not Fyne or Wails. The values are the results files as of the commits named, copied as they are (the same figures as Awesome MyGo's comparison page): startup in ms, memory in bytes, CPU and the compositor's CPU (less its CPU at rest) in percent of a core over the measured seconds, frames per second, binary size in bytes. On macOS the suite counts the XPC services a program starts with it, where a system webview (Wails) does its work. The suite's README says to read the process's and the compositor's CPU added, as native views leave drawing to the compositor where GPU renderers draw in their own process, and to read CPU with frames, as Fyne and the system webview change 60 frames a second where the others follow the display. MyGo's own suite measures it against GPUI and egui, not against these frameworks.
-export const BENCH_GO_SHA = '11629f6e3a3344bb98527d4139e4459436faaced';
+// The runs that measure several of these frameworks on the same machine, all from NSGo's suite (benchmark/ in its repository): the same apps written for each framework, built as releases and measured. On macOS, the suite's run of seven frameworks on an M4 Pro (results/darwin.json, which nsgo.dev shows too), of which the four Go frameworks are kept here; on Windows and Linux, the suite's own runs, which measure NSGo and MyGo (beside NSH and GPUI) but not Fyne or Wails. The values are the results files as of the commits named, copied as they are: startup in ms, memory in bytes, CPU and the compositor's CPU (less its CPU at rest) in percent of a core over the measured seconds, frames per second, binary size in bytes. On macOS the suite counts the XPC services a program starts with it, where a system webview (Wails) does its work. The suite's README says to read the process's and the compositor's CPU added, as native views leave drawing to the compositor where GPU renderers draw in their own process, and to read CPU with frames, as Fyne and the system webview change 60 frames a second where the others follow the display. MyGo's own suite measures it against GPUI and egui, not against these frameworks.
+export const BENCH_MAC_SHA = '3dabeeb135321aae4a5808bef1422ca0112227cb';
 export const BENCH_NSGO_SHA = '3398b0fb5ed6d61e5d4f307f3198799403b4c8a4';
-const BENCH_GO_BASE = `https://github.com/nsgo-dev/nsgo/blob/${BENCH_GO_SHA}`;
+const BENCH_MAC_BASE = `https://github.com/nsgo-dev/nsgo/blob/${BENCH_MAC_SHA}`;
 const BENCH_NSGO_BASE = `https://github.com/nsgo-dev/nsgo/blob/${BENCH_NSGO_SHA}`;
-export const BENCH_SUITE = `https://github.com/nsgo-dev/nsgo/tree/${BENCH_GO_SHA}/benchmark`;
+export const BENCH_SUITE = `https://github.com/nsgo-dev/nsgo/tree/${BENCH_MAC_SHA}/benchmark`;
 export const MYGO_BENCH = `${MYGO_SITE}/benchmarks`;
 
 export type BenchFramework = 'nsgo' | 'mygo' | 'fyne' | 'wails';
@@ -111,100 +111,100 @@ export const BENCH_RUNS: readonly BenchRun[] = [
 		os: 'macOS',
 		date: '2026-11-26',
 		cpu: 'Apple M4 Pro',
-		frameworks: ['nsgo', 'mygo', 'fyne', 'wails'],
+		frameworks: ['nsgo', 'fyne', 'mygo', 'wails'],
 		versions: {
-			nsgo: 'ff5e5ea',
-			mygo: 'v0.8.3',
+			nsgo: 'b0af50f',
 			fyne: 'v2.8.2',
+			mygo: 'v0.8.3',
 			wails: 'v3.1.0',
 		},
-		results: `${BENCH_GO_BASE}/benchmark/results/go/darwin.json`,
+		results: `${BENCH_MAC_BASE}/benchmark/results/darwin.json`,
 		size: {
 			nsgo: 12338322,
-			mygo: 10236386,
 			fyne: 22892482,
+			mygo: 10236386,
 			wails: 9021298,
 		},
 		cases: {
 			counter: {
 				nsgo: {
-					startup: 610.1,
-					memory: 31638704,
-					cpu: 0,
-				},
-				mygo: {
-					startup: 636.2,
-					memory: 33555656,
-					cpu: 0,
+					startup: 1060.3,
+					memory: 31311024,
+					cpu: 0.4,
 				},
 				fyne: {
-					startup: 1639.9,
-					memory: 105842368,
+					startup: 1707.8,
+					memory: 113067760,
 					cpu: 0.9,
 				},
+				mygo: {
+					startup: 827,
+					memory: 34161888,
+					cpu: 0,
+				},
 				wails: {
-					startup: 1971.1,
-					memory: 74665656,
-					cpu: 0.1,
+					startup: 1719.7,
+					memory: 72634112,
+					cpu: 0.3,
 				},
 			},
 			list: {
 				nsgo: {
-					startup: 487.7,
-					memory: 47891656,
-					cpu: 15.4,
-					compositor: 6.2,
-					fps: 120,
-				},
-				mygo: {
-					startup: 644.8,
-					memory: 180258040,
-					cpu: 14.4,
-					compositor: 6,
+					startup: 831.9,
+					memory: 48202976,
+					cpu: 16.2,
+					compositor: 10.2,
 					fps: 120,
 				},
 				fyne: {
-					startup: 878.1,
-					memory: 291014432,
-					cpu: 18.1,
-					compositor: 0.8,
+					startup: 747.4,
+					memory: 293963552,
+					cpu: 17.7,
+					compositor: 3.5,
 					fps: 60,
 				},
+				mygo: {
+					startup: 446,
+					memory: 178177272,
+					cpu: 14.4,
+					compositor: 10.6,
+					fps: 120,
+				},
 				wails: {
-					startup: 1177.8,
-					memory: 270274544,
-					cpu: 12.5,
-					compositor: 4.4,
+					startup: 602.2,
+					memory: 274452248,
+					cpu: 12.1,
+					compositor: 7.8,
 					fps: 60,
 				},
 			},
 			quotes: {
 				nsgo: {
-					startup: 493.4,
-					memory: 53298400,
-					cpu: 30.2,
-					compositor: 9,
-					fps: 120,
-				},
-				mygo: {
-					startup: 390,
-					memory: 192693520,
-					cpu: 17.2,
-					compositor: 6.2,
-					fps: 120,
+					startup: 952.7,
+					memory: 53871888,
+					cpu: 30.5,
+					compositor: 6.3,
+					fps: 119.4,
 				},
 				fyne: {
-					startup: 1067.4,
-					memory: 923437312,
-					cpu: 26.5,
-					compositor: 0,
+					startup: 1983.9,
+					memory: 919767248,
+					cpu: 26.7,
+					compositor: 3.4,
 					fps: 60,
 				},
+				mygo: {
+					startup: 489.2,
+					memory: 196969744,
+					cpu: 18.5,
+					compositor: 6.6,
+					fps: 120,
+				},
 				wails: {
-					startup: 826.8,
-					memory: 231067272,
-					cpu: 20.4,
-					compositor: 4.9,
+					startup: 2873.5,
+					memory: 242978656,
+					cpu: 23.5,
+					compositor: 5.3,
 					fps: 60,
 				},
 			},

@@ -1,0 +1,34 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "nsgo-pet",
+	"name": "nsgo-pet",
+	"author": "nsgo-dev",
+	"kind": "go",
+	"group": "game",
+	"platforms": [
+		"mac",
+		"win",
+		"linux"
+	],
+	"url": "https://pet.nsgo.dev/",
+	"repo": "nsgo-dev/nsgo-pet",
+	"summary": {
+		"en": "Animated desktop pet that floats above your windows, with eleven pets to pick from",
+		"zh-CN": "浮在窗口上方的动画桌面宠物，有十一只宠物可选",
+		"zh-TW": "浮在視窗上方的動畫桌面寵物，有十一隻寵物可選",
+		"ja": "ウィンドウの上に浮かぶアニメーションのデスクトップペット。11種類から選べます。",
+		"ko": "창 위에 떠 있는 애니메이션 데스크톱 펫. 11가지 펫 중에서 고를 수 있습니다."
+	},
+	"description": {
+		"en": "An animated pet that floats in a transparent window above your other windows, reacts to clicks, dangles when dragged and plays events chosen by time of day, season and the app in front. It switches between eleven pets from the tray icon and updates itself. Written in Go with NSGo; its pet engine is a Go module other NSGo apps can embed.",
+		"zh-CN": "在透明窗口中浮于其他窗口之上的动画宠物，会对点击作出反应，拖动时会晃荡，还会按时段、季节和前台应用播放不同的事件。可从托盘图标切换十一只宠物，并能自动更新。用 NSGo 以 Go 编写，其宠物引擎是一个 Go 模块，其他 NSGo 应用也可以嵌入。",
+		"zh-TW": "在透明視窗中浮於其他視窗之上的動畫寵物，會對點擊做出反應，拖曳時會晃動，還會依時段、季節和前景應用程式播放不同的事件。可從系統匣圖示切換十一隻寵物，並能自動更新。以 NSGo 用 Go 撰寫，其寵物引擎是一個 Go 模組，其他 NSGo 應用程式也能嵌入。",
+		"ja": "透明なウィンドウでほかのウィンドウの上に浮かぶアニメーションのペットで、クリックに反応し、ドラッグするとぶら下がり、時間帯や季節、前面のアプリに応じたイベントを演じます。トレイアイコンから11種類のペットを切り替えられ、自動でアップデートします。NSGo を使って Go で書かれており、ペットエンジンはほかの NSGo アプリにも組み込める Go モジュールです。",
+		"ko": "투명한 창에서 다른 창 위에 떠 있는 애니메이션 펫으로, 클릭에 반응하고 드래그하면 매달리며 시간대, 계절, 앞에 있는 앱에 따라 다른 이벤트를 보여 줍니다. 트레이 아이콘에서 11가지 펫을 바꿀 수 있고 스스로 업데이트합니다. NSGo로 Go에서 작성했으며, 펫 엔진은 다른 NSGo 앱에도 넣을 수 있는 Go 모듈입니다."
+	},
+	"icon": {
+		"file": "nsgo-pet.webp"
+	},
+	"screenshot": "nsgo-pet.webp",
+	"added": "2026-11-25T02:29:54Z"
+}

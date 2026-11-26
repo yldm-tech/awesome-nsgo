@@ -1,0 +1,33 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "sususongboard",
+	"name": "SUSUSongBoard",
+	"author": "fuyucn",
+	"kind": "tsx",
+	"group": "media",
+	"platforms": [
+		"mac",
+		"win"
+	],
+	"url": "https://github.com/fuyucn/douyin-singer-board",
+	"repo": "fuyucn/douyin-singer-board",
+	"summary": {
+		"en": "Collects Douyin live stream song requests and syncs them to KuGou or NetEase Cloud Music playlists.",
+		"zh-CN": "收集抖音直播点歌，同步到酷狗或网易云音乐歌单。",
+		"zh-TW": "收集抖音直播點歌，同步到酷狗或網易雲音樂歌單。",
+		"ja": "抖音ライブの曲リクエストを KuGou か NetEase Cloud Music の再生リストへ同期。",
+		"ko": "더우인 라이브 신청곡을 KuGou나 NetEase Cloud Music 목록에 동기화."
+	},
+	"description": {
+		"en": "A desktop app that collects song requests from Douyin live streams and syncs them to KuGou or NetEase Cloud Music playlists. It is written in TSX with NSGo and replaces the project's earlier implementations. Settings are kept in SQLite, and an existing database is backed up before it is adopted. Signed installers update through stable and preview channels.",
+		"zh-CN": "收集抖音直播间的点歌请求，并同步到酷狗或网易云音乐歌单的桌面应用。用 NSGo 以 TSX 编写，取代了项目此前的实现。设置保存在 SQLite 中，接管已有数据库前会先备份。签名安装包通过稳定版和预览版两个渠道更新。",
+		"zh-TW": "收集抖音直播間的點歌請求，並同步到酷狗或網易雲音樂歌單的桌面應用程式。以 NSGo 用 TSX 撰寫，取代了專案先前的實作。設定存放在 SQLite 中，接手既有資料庫前會先備份。簽章安裝檔透過穩定版與預覽版兩個管道更新。",
+		"ja": "抖音（Douyin）のライブ配信で届いたリクエスト曲を集め、KuGou や NetEase Cloud Music のプレイリストに同期するデスクトップアプリです。NSGo を使って TSX で書かれ、プロジェクトの以前の実装を置き換えるものです。設定は SQLite に保存し、既存のデータベースを引き継ぐ前にバックアップを取ります。署名付きインストーラーは安定版とプレビュー版のチャンネルで更新されます。",
+		"ko": "더우인(Douyin) 라이브 방송에서 들어온 신청곡을 모아 KuGou나 NetEase Cloud Music 재생목록에 동기화하는 데스크톱 앱입니다. NSGo로 TSX에서 작성했으며, 프로젝트의 이전 구현을 대체합니다. 설정은 SQLite에 저장하고, 기존 데이터베이스를 넘겨받기 전에 백업합니다. 서명된 설치 파일은 안정판과 미리보기 채널로 업데이트됩니다."
+	},
+	"icon": {
+		"file": "sususongboard.webp"
+	},
+	"screenshot": "sususongboard.webp",
+	"added": "2026-11-22T02:28:29Z"
+}

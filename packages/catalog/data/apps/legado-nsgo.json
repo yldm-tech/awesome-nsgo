@@ -1,0 +1,38 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "legado-nsgo",
+	"name": "阅读",
+	"author": "zjlovezxy",
+	"kind": "go",
+	"group": "notes",
+	"platforms": [
+		"mac",
+		"win",
+		"linux",
+		"android"
+	],
+	"url": "https://github.com/zjlovezxy/legado-nsgo",
+	"repo": "zjlovezxy/legado-nsgo",
+	"summary": {
+		"en": "E-book reader using Legado book sources, with RSS and local TXT import.",
+		"zh-CN": "可导入 Legado 书源的阅读器，支持 RSS 订阅",
+		"zh-TW": "可匯入 Legado 書源的閱讀器，支援 RSS 訂閱",
+		"ja": "Legado の書源を使える書籍リーダー。RSS とローカル TXT にも対応。",
+		"ko": "Legado 책 소스를 쓰는 전자책 리더. RSS와 로컬 TXT 지원."
+	},
+	"description": {
+		"en": "A Go rewrite of the Legado e-book reader that imports Legado 3.0 book sources, RSS sources and backups unchanged, searches all enabled sources at once and also opens local TXT files. It reads RSS and Atom feeds and backs up over WebDAV. Built with NSGo for Linux, Windows, macOS and Android; no book sources are included.",
+		"zh-CN": "用 Go 重写的「阅读」客户端，可直接导入 Legado 3.0 的书源、订阅源和备份，并发搜索所有启用的书源，也能读本地 TXT，并支持 RSS 订阅与 WebDAV 备份。用 NSGo 构建桌面版和 Android 版，不内置书源。",
+		"zh-TW": "以 Go 重寫的「阅读」用戶端，可直接匯入 Legado 3.0 的書源、訂閱源和備份，並行搜尋所有啟用的書源，也能讀取本機 TXT，並支援 RSS 訂閱與 WebDAV 備份。以 NSGo 建置 Linux、Windows、macOS 和 Android 版，不內建書源。",
+		"ja": "Go で書き直した「阅读」のクライアントで、Legado 3.0 の書源、購読ソース、バックアップをそのまま取り込めます。有効な書源をまとめて検索でき、ローカルの TXT も読めるほか、RSS と WebDAV へのバックアップにも対応します。NSGo で Linux、Windows、macOS、Android 向けに作られており、書源は同梱されていません。",
+		"ko": "「阅读」를 Go로 다시 작성한 클라이언트로, Legado 3.0의 책 소스, 구독 소스, 백업을 그대로 가져올 수 있습니다. 활성화한 책 소스를 한꺼번에 검색하고 로컬 TXT도 읽을 수 있으며, RSS 구독과 WebDAV 백업을 지원합니다. NSGo로 Linux, Windows, macOS, Android용으로 만들었고 책 소스는 포함되어 있지 않습니다."
+	},
+	"icon": {
+		"file": "legado-nsgo.webp"
+	},
+	"screenshot": "legado-nsgo.webp",
+	"provisional": [
+		"screenshot"
+	],
+	"added": "2026-11-27T02:30:02Z"
+}

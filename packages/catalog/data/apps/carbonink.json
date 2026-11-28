@@ -1,0 +1,33 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "carbonink",
+	"name": "CarbonInk",
+	"author": "lxzxl",
+	"kind": "go",
+	"group": "notes",
+	"platforms": [
+		"mac",
+		"win"
+	],
+	"url": "https://carbonink.xyz",
+	"repo": "lxzxl/carbonink",
+	"summary": {
+		"en": "Offline GHG accounting with AI bill extraction and ISO 14064-1 reports.",
+		"zh-CN": "本地离线的温室气体核算应用，可用 AI 从账单提取数据",
+		"zh-TW": "本機離線的溫室氣體盤查應用程式，可用 AI 從帳單擷取資料",
+		"ja": "オフラインで使える温室効果ガス算定アプリ。AI で請求書からデータを抽出。",
+		"ko": "오프라인 온실가스 산정 앱. AI로 청구서에서 데이터를 추출."
+	},
+	"description": {
+		"en": "Greenhouse gas accounting that runs fully offline, with no account: AI pulls activity data from bills and receipts using your own LLM API key, and the Scope 1 to 3 inventory produces ISO 14064-1 and TCFD reports as PDF. Version 2.0 is written in Go with NSGo for macOS and Windows; the earlier Electron 1.x is archived.",
+		"zh-CN": "离线运行、无需账号的温室气体核算工具：用自己的 LLM API 密钥让 AI 从账单中提取活动数据，并生成 ISO 14064-1 和 TCFD 报告（PDF）。2.0 版用 NSGo 以 Go 编写，面向 macOS 和 Windows。",
+		"zh-TW": "離線執行、無需帳號的溫室氣體盤查工具：用自己的 LLM API 金鑰讓 AI 從帳單擷取活動數據，並產生 ISO 14064-1 與 TCFD 報告（PDF）。2.0 版以 NSGo 用 Go 撰寫，支援 macOS 和 Windows；先前的 Electron 版已封存。",
+		"ja": "アカウント不要で完全にオフラインで動く温室効果ガス算定ツールです。自分の LLM API キーで AI が請求書や領収書から活動量データを抽出し、ISO 14064-1 と TCFD の報告書を PDF で作成します。2.0 は NSGo を使って Go で書かれた macOS・Windows 向けアプリで、Electron 製の 1.x はアーカイブされています。",
+		"ko": "계정 없이 완전히 오프라인으로 동작하는 온실가스 산정 도구입니다. 직접 준비한 LLM API 키로 AI가 청구서와 영수증에서 활동 데이터를 추출하고, ISO 14064-1과 TCFD 보고서를 PDF로 만듭니다. 2.0은 NSGo로 Go에서 작성한 macOS·Windows용 앱이며, Electron으로 만든 1.x는 보관되었습니다."
+	},
+	"icon": {
+		"file": "carbonink.webp"
+	},
+	"screenshot": "carbonink.webp",
+	"added": "2026-11-28T02:28:24Z"
+}

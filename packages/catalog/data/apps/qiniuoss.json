@@ -1,0 +1,40 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "qiniuoss",
+	"name": "七牛文件管理",
+	"author": "ma-guo",
+	"kind": "go",
+	"platforms": [
+		"mac",
+		"win",
+		"linux",
+		"ios",
+		"android",
+		"web"
+	],
+	"group": "dev",
+	"url": "https://github.com/ma-guo/qiniuoss",
+	"repo": "ma-guo/qiniuoss",
+	"summary": {
+		"en": "File manager for Qiniu Kodo object storage with upload, preview and search.",
+		"zh-CN": "七牛云 Kodo 文件管理工具，支持上传、预览和高级搜索",
+		"zh-TW": "七牛雲 Kodo 檔案管理工具，支援上傳、預覽與進階搜尋",
+		"ja": "七牛 Kodo のファイル管理ツール。アップロード、プレビュー、検索に対応。",
+		"ko": "Qiniu Kodo 스토리지 파일 관리 도구. 업로드, 미리보기, 검색 지원."
+	},
+	"description": {
+		"en": "Manages files in Qiniu Kodo object storage across several accounts: upload by drag and drop, batch download, copy, move and delete, and preview images, video and text. Advanced search filters by prefix, MIME type, storage class, size and time, and S3-compatible keys allow downloads from buckets without a bound domain. Written in Go with NSGo.",
+		"zh-CN": "管理七牛云 Kodo 对象存储中的文件，支持多账户、拖拽上传、批量下载、复制、移动、删除，以及图片、视频和文本预览。高级搜索可按前缀、MIME、存储类型、大小和时间过滤；配置 S3 密钥后，无绑定域名的空间也能下载。用 NSGo 以 Go 编写。",
+		"zh-TW": "管理七牛雲 Kodo 物件儲存中的檔案，支援多帳號、拖曳上傳、批次下載、複製、移動、刪除，以及圖片、影片和文字預覽。進階搜尋可依前綴、MIME、儲存類型、大小和時間篩選；設定 S3 金鑰後，未綁定網域的空間也能下載。以 NSGo 用 Go 撰寫。",
+		"ja": "複数のアカウントで七牛クラウド Kodo のファイルを管理でき、ドラッグでのアップロード、一括ダウンロード、コピー、移動、削除、画像や動画、テキストのプレビューに対応します。高度な検索ではプレフィックス、MIME、ストレージクラス、サイズ、日時で絞り込め、S3 キーを設定すればドメインを紐付けていないバケットからもダウンロードできます。NSGo を使って Go で書かれています。",
+		"ko": "여러 계정으로 Qiniu Kodo 오브젝트 스토리지의 파일을 관리하며, 드래그 업로드, 일괄 다운로드, 복사, 이동, 삭제와 이미지, 동영상, 텍스트 미리보기를 지원합니다. 고급 검색은 접두사, MIME, 스토리지 클래스, 크기, 시간으로 걸러 내고, S3 키를 설정하면 도메인이 연결되지 않은 버킷에서도 다운로드할 수 있습니다. NSGo로 Go에서 작성했습니다."
+	},
+	"icon": {
+		"file": "qiniuoss.webp"
+	},
+	"screenshot": "qiniuoss.webp",
+	"provisional": [
+		"screenshot"
+	],
+	"added": "2026-11-28T02:28:24Z"
+}

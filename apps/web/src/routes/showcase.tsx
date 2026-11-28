@@ -1,6 +1,6 @@
 import { APPS, APP_PLATFORMS, type AppKind, type AppPlatform, HAS_SCORES, fill } from '@awesome-nsgo/catalog';
 import { DEFAULT_SORT, groupChips, shownSort, sortApps, validateShowcaseSearch } from '../lib/showcase';
-import { createFileRoute, useNavigate } from '@tanstack/react-router';
+import { Link, createFileRoute, useNavigate } from '@tanstack/react-router';
 import { AppCard, showGrid } from '../components/EntryCard';
 import { FilterBar, FilterChip, FilterChips, FilterSelect, FilterSelects } from '../components/FilterBar';
 import { useT } from '../lib/lang';
@@ -40,6 +40,9 @@ function ShowcasePage() {
 				<h1 className='page-h1'>{t.cat_show_name}</h1>
 				{/* Below sm, and on a screen under 560px tall (a phone held sideways), the lead paragraph is left out, as on the other listings: the cards already say what the page holds. */}
 				<p className='page-p max-sm:hidden [@media(max-height:560px)]:hidden'>{t.cat_show_desc}</p>
+				<Link to='/compare' className='self-start text-[14px] font-semibold text-fg-2 no-underline hover:text-blue-ink max-md:inline-flex max-md:min-h-10 max-md:items-center pointer-coarse:inline-flex pointer-coarse:min-h-10 pointer-coarse:items-center'>
+					{t.compare_link} <span className='arrow'>→</span>
+				</Link>
 			</div>
 			<FilterBar>
 				<FilterChips label={t.a_cats}>

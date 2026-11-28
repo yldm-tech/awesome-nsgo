@@ -12,6 +12,7 @@ import { RetroSubmit } from './Submit';
 import { AppPage } from './pages/AppPage';
 import { Home } from './pages/Home';
 import { Learn } from './pages/Learn';
+import { Compare } from './pages/Compare';
 import { Metrics } from './pages/Metrics';
 import { NotFound } from './pages/NotFound';
 import { Plugins } from './pages/Plugins';
@@ -31,6 +32,7 @@ const PAGES: Record<string, ComponentType> = {
 	'/plugins': Plugins,
 	'/showcase': Showcase,
 	'/learn': Learn,
+	'/compare': Compare,
 	'/metrics': Metrics,
 	'/apps/$slug': AppPage,
 };

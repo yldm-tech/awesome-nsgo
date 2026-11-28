@@ -1,4 +1,4 @@
-import { NSGO_REPO, NSGO_SITE, SPONSOR_URL } from '@awesome-nsgo/catalog';
+import { AWESOME_MYGO, NSGO_REPO, NSGO_SITE, SPONSOR_URL } from '@awesome-nsgo/catalog';
 import { Link } from '@tanstack/react-router';
 import { Fragment } from 'react';
 import { useT } from '../lib/lang';
@@ -26,17 +26,20 @@ export function Footer() {
 							Awesome <span className='text-blue-ink'>NSGo</span>
 						</span>
 					</Link>
-					{/* The licence line's two sentences (split at its " · ") are each kept whole where they fit, so a narrow column breaks the line between them rather than inside "Apache-2.0" or before a lone 许可; a sentence wider than the column still wraps inside itself. */}
+					{/* The licence line's two sentences (split at its " · ") and the sister site's are each kept whole where they fit, so a narrow column breaks the line between them rather than inside "Apache-2.0" or before a lone 许可; a sentence wider than the column still wraps inside itself. */}
 					<p className='m-0 mt-3 max-w-[34em] text-[13.5px] leading-[1.65] text-fg-3'>
-						{t.footer_l.split(' · ').map((part, i, all) => (
+						{t.footer_l.split(' · ').map((part, i) => (
 							<Fragment key={i}>
-								<span className='inline-block'>
-									{part}
-									{i < all.length - 1 && ' ·'}
-								</span>
-								{i < all.length - 1 && ' '}
+								<span className='inline-block'>{part} ·</span>{' '}
 							</Fragment>
 						))}
+						<span className='inline-block'>
+							{t.footer_sibling.split('{x}')[0]}
+							<a href={AWESOME_MYGO} target='_blank' rel='noopener' className='text-fg-2 no-underline hover:text-blue-ink'>
+								Awesome MyGo
+							</a>
+							{t.footer_sibling.split('{x}')[1]}
+						</span>
 					</p>
 					<p className='m-0 mt-4 flex flex-wrap gap-x-5 gap-y-1 text-[13.5px] font-semibold'>
 						<a href={NSGO_SITE} target='_blank' rel='noopener' className={FOOT_EXT}>

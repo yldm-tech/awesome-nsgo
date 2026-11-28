@@ -133,6 +133,9 @@ function Hero() {
 					<a className={`btn-g border border-line-2 bg-panel text-fg ${BTN}`} href={NSGO_SITE} target='_blank' rel='noopener'>
 						{t.site}
 					</a>
+					<Link to='/compare' className={`text-fg-2 no-underline hover:text-fg ${BTN}`}>
+						{t.compare_link} <span className='arrow'>→</span>
+					</Link>
 				</div>
 
 				{/* The install command for the template picked in the tabs, highlighted like a shell, with its copy button. The tab lives in the address (?install=). */}

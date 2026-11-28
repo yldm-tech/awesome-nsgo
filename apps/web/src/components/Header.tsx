@@ -16,6 +16,7 @@ export const NAV = [
 	{ to: '/ai', key: 'nav_ai' },
 	{ to: '/plugins', key: 'nav_plugins' },
 	{ to: '/learn', key: 'nav_learn' },
+	{ to: '/compare', key: 'nav_compare' },
 ] as const;
 
 export const SITE_NAV = NAV;

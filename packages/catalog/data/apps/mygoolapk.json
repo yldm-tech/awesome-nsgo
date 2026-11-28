@@ -1,0 +1,37 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "mygoolapk",
+	"name": "MyGoolApk",
+	"author": "XiaoMengXinX",
+	"kind": "go",
+	"group": "chat",
+	"platforms": [
+		"mac",
+		"ios",
+		"android"
+	],
+	"url": "https://github.com/XiaoMengXinX/MyGoolApk",
+	"repo": "XiaoMengXinX/MyGoolApk",
+	"summary": {
+		"en": "Unofficial Coolapk community client for feeds, posts, comments and messages.",
+		"zh-CN": "非官方酷安社区客户端，可浏览动态、发帖、评论和查看消息",
+		"zh-TW": "非官方酷安社群用戶端，可瀏覽動態、發文、留言及查看通知",
+		"ja": "Coolapk の非公式クライアント。フィードの閲覧、投稿、コメント、通知に対応。",
+		"ko": "Coolapk 비공식 커뮤니티 클라이언트. 피드 탐색, 글쓰기, 댓글, 알림 지원."
+	},
+	"description": {
+		"en": "An unofficial Coolapk community client for browsing channels and feeds, reading and writing posts, commenting, liking and checking notifications and private messages. It covers community content only, without the app market. Written in Go with NSGo for Android, iOS and macOS; the iOS build is an unsigned IPA that has to be sideloaded.",
+		"zh-CN": "非官方酷安社区客户端，可浏览首页频道与动态，查看和发布帖子，评论、点赞，并查看通知与私信。只做社区内容，不含应用市场。用 NSGo 以 Go 编写，支持 Android、iOS 和 macOS，iOS 版为未签名 IPA，需自行侧载安装。",
+		"zh-TW": "非官方酷安社群用戶端，可瀏覽首頁頻道與動態，閱讀和發表貼文，留言、按讚，並查看通知與私訊。只做社群內容，不含應用程式市集。以 NSGo 用 Go 撰寫，支援 Android、iOS 和 macOS，iOS 版為未簽署的 IPA，需自行側載安裝。",
+		"ja": "酷安（Coolapk）の非公式コミュニティクライアントで、チャンネルやフィードの閲覧、投稿の閲覧と作成、コメントやいいね、通知や DM の確認ができます。扱うのはコミュニティのコンテンツのみで、アプリマーケットは含みません。NSGo を使って Go で書かれた Android、iOS、macOS 向けアプリで、iOS 版は署名なしの IPA のためサイドロードが必要です。",
+		"ko": "Coolapk(쿨안) 커뮤니티의 비공식 클라이언트로, 채널과 피드를 둘러보고 게시물을 읽고 쓰며 댓글과 좋아요, 알림과 쪽지를 확인할 수 있습니다. 커뮤니티 콘텐츠만 다루며 앱 마켓 기능은 없습니다. NSGo로 Go에서 작성한 Android, iOS, macOS용 앱이며, iOS 버전은 서명되지 않은 IPA라 사이드로드해야 합니다."
+	},
+	"icon": {
+		"file": "mygoolapk.webp"
+	},
+	"screenshot": "mygoolapk.webp",
+	"provisional": [
+		"screenshot"
+	],
+	"added": "2026-11-26T02:29:12Z"
+}

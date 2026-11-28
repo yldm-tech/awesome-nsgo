@@ -1,0 +1,35 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "ember-vigil",
+	"name": "Ember Vigil",
+	"author": "nsgo-dev",
+	"kind": "go",
+	"group": "game",
+	"platforms": [
+		"mac",
+		"win",
+		"linux",
+		"web"
+	],
+	"url": "https://nsgo-dev.github.io/game-ember-vigil/",
+	"repo": "nsgo-dev/game-ember-vigil",
+	"summary": {
+		"en": "Twelve-minute survivors-like game: keep the last ember alive until dawn.",
+		"zh-CN": "十二分钟的幸存者类 2D 游戏，守住最后的余烬直到黎明",
+		"zh-TW": "十二分鐘的倖存者類 2D 遊戲，守住最後的餘燼直到黎明",
+		"ja": "12分間のサバイバーズ系2Dゲーム。最後の残り火を夜明けまで守り抜く。",
+		"ko": "12분 동안 마지막 불씨를 새벽까지 지키는 서바이버류 2D 게임"
+	},
+	"description": {
+		"en": "A twelve-minute survivors-like run in an ash-choked forest: weapons fire on their own at the shadows coming for the last ember, each level-up offers three upgrade cards, and the Hollow King arrives at dawn. Plays with keyboard, gamepad or touch. Written in Go with NSGo for macOS, Windows, Linux and the web.",
+		"zh-CN": "一局十二分钟的幸存者类 2D 游戏：在灰烬森林中守住最后的余烬，武器自动开火烧尽暗影，每次升级三选一强化，黎明时迎战 Hollow King。支持键盘、手柄和触控。用 NSGo 以 Go 编写，面向 macOS、Windows、Linux 和网页。",
+		"zh-TW": "一局十二分鐘的倖存者類 2D 遊戲：在灰燼森林中守住最後的餘燼，武器自動開火燒盡暗影，每次升級三選一強化，黎明時迎戰 Hollow King。支援鍵盤、手把和觸控。以 NSGo 用 Go 撰寫，支援 macOS、Windows、Linux 和網頁。",
+		"ja": "灰に覆われた森で最後の残り火を守る、12分間のサバイバーズ系2Dゲームです。武器は自動で攻撃し、レベルアップごとに3枚のカードから強化を選び、夜明けに Hollow King と戦います。キーボード、ゲームパッド、タッチで操作できます。NSGo を使って Go で書かれ、macOS、Windows、Linux、Web 向けにビルドされます。",
+		"ko": "재로 뒤덮인 숲에서 마지막 불씨를 지키는 12분짜리 서바이버류 2D 게임입니다. 무기는 자동으로 발사되고, 레벨업마다 카드 세 장 중 하나를 골라 강화하며, 새벽에 Hollow King과 맞섭니다. 키보드, 게임패드, 터치로 조작할 수 있습니다. NSGo로 Go에서 작성했으며 macOS, Windows, Linux, 웹용으로 빌드됩니다."
+	},
+	"icon": {
+		"file": "ember-vigil.webp"
+	},
+	"screenshot": "ember-vigil.webp",
+	"added": "2026-11-28T02:28:24Z"
+}

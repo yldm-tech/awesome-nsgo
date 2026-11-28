@@ -1,0 +1,35 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "miaupaso",
+	"name": "miaupaso",
+	"author": "znbang",
+	"kind": "go",
+	"platforms": [
+		"win"
+	],
+	"group": "network",
+	"url": "https://github.com/znbang/miaupaso",
+	"repo": "znbang/miaupaso",
+	"summary": {
+		"en": "Runs a Tailcat exit node and local SOCKS5 proxies that connect through it.",
+		"zh-CN": "Tailcat 出口节点与本地 SOCKS5 代理的图形界面",
+		"zh-TW": "Tailcat 出口節點與本機 SOCKS5 代理的圖形介面",
+		"ja": "Tailcat の出口ノードとローカル SOCKS5 プロキシを動かす GUI",
+		"ko": "Tailcat 출구 노드와 로컬 SOCKS5 프록시를 실행하는 GUI"
+	},
+	"description": {
+		"en": "Turns on a Tailcat exit node on a remote machine and runs local SOCKS5 proxies that connect through it: copy the exit node's tc-addr, add it as a proxy, and point your apps to socks5://localhost:1080 or an address of your choice. Written in Go with NSGo for Windows, and installable with Scoop.",
+		"zh-CN": "在远程机器上开启 Tailcat 出口节点，复制其 tc-addr，再在本机添加 SOCKS5 代理，让应用通过 socks5://localhost:1080 或自选地址经出口节点上网。用 NSGo 以 Go 编写，面向 Windows，可通过 Scoop 安装。",
+		"zh-TW": "在遠端電腦上開啟 Tailcat 出口節點，複製其 tc-addr，再於本機新增 SOCKS5 代理，讓應用程式透過 socks5://localhost:1080 或自選位址經由出口節點連線。以 NSGo 用 Go 撰寫，支援 Windows，可透過 Scoop 安裝。",
+		"ja": "リモートの端末で Tailcat の出口ノードを有効にして tc-addr をコピーし、ローカルでそれを宛先に SOCKS5 プロキシを追加すると、アプリは socks5://localhost:1080 か任意のアドレスを通じて出口ノード経由で接続できます。NSGo を使って Go で書かれた Windows 向けアプリで、Scoop でもインストールできます。",
+		"ko": "원격 기기에서 Tailcat 출구 노드를 켜고 tc-addr를 복사한 뒤, 로컬에서 그 주소로 SOCKS5 프록시를 추가하면 앱이 socks5://localhost:1080이나 원하는 주소를 통해 출구 노드를 거쳐 연결됩니다. NSGo로 Go에서 작성한 Windows용 앱이며 Scoop으로도 설치할 수 있습니다."
+	},
+	"icon": {
+		"file": "miaupaso.webp"
+	},
+	"screenshot": "miaupaso.webp",
+	"provisional": [
+		"screenshot"
+	],
+	"added": "2026-11-26T02:29:12Z"
+}

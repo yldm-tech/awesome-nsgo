@@ -1,0 +1,36 @@
+{
+	"$schema": "../schema/app.schema.json",
+	"slug": "go-ask",
+	"name": "Go Ask",
+	"author": "liao666brant",
+	"kind": "go",
+	"platforms": [
+		"win",
+		"linux"
+	],
+	"group": "ai",
+	"url": "https://github.com/liao666brant/go-ask",
+	"repo": "liao666brant/go-ask",
+	"summary": {
+		"en": "Hotkey popup for word lookup, translation and AI chat on Windows and Linux.",
+		"zh-CN": "快捷键唤起的查词、翻译与 AI 问答浮窗",
+		"zh-TW": "以快捷鍵叫出的查詞、翻譯與 AI 問答浮動視窗",
+		"ja": "ホットキーで開く単語検索、翻訳、AI チャットのポップアップ。",
+		"ko": "단축키로 여는 단어 검색, 번역, AI 대화 팝업 창."
+	},
+	"description": {
+		"en": "A popup opened with a global hotkey that looks up the selected word in a built-in offline ECDICT dictionary, compares several online translation sources side by side, or chats with an OpenAI-compatible, Zhipu or DeepSeek model. Chats are saved in SQLite and can be searched. Written in Go with NSGo for Windows x64 and Linux x64.",
+		"zh-CN": "按全局快捷键唤起浮窗，用内置离线 ECDICT 词库查词，对照多个在线翻译，或向 OpenAI 兼容、智谱、DeepSeek 模型提问。会话存于 SQLite 并可搜索。用 NSGo 以 Go 编写，支持 Windows x64 和 Linux x64。",
+		"zh-TW": "按全域快捷鍵叫出浮動視窗，用內建離線 ECDICT 詞庫查詞、對照多個線上翻譯，或向 OpenAI 相容、智譜、DeepSeek 模型提問。對話存在 SQLite 中並可搜尋。以 NSGo 用 Go 撰寫，支援 Windows x64 與 Linux x64。",
+		"ja": "グローバルホットキーで開くポップアップで、選択した単語を内蔵のオフライン辞書 ECDICT で調べたり、複数のオンライン翻訳を並べて比べたり、OpenAI 互換や智譜、DeepSeek のモデルに質問したりできます。会話は SQLite に保存され、検索できます。NSGo を使って Go で書かれた、Windows x64 と Linux x64 向けのアプリです。",
+		"ko": "전역 단축키로 여는 팝업 창에서 선택한 단어를 내장 오프라인 사전 ECDICT로 찾거나, 여러 온라인 번역을 나란히 비교하거나, OpenAI 호환, Zhipu, DeepSeek 모델과 대화할 수 있습니다. 대화는 SQLite에 저장되어 검색할 수 있습니다. NSGo로 Go에서 작성한 Windows x64, Linux x64용 앱입니다."
+	},
+	"icon": {
+		"file": "go-ask.webp"
+	},
+	"screenshot": "go-ask.webp",
+	"provisional": [
+		"screenshot"
+	],
+	"added": "2026-11-28T02:28:24Z"
+}
